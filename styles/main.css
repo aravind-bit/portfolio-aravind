@@ -1,0 +1,63 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 :root\{\
+  --bg:#0a0d12; --ink:#ebf4ff; --ink-dim:#c5d2e8;\
+  --accent:#59c9ff; --green:#5CFFA1; --purple:#c8a0ff;\
+\}\
+*\{box-sizing:border-box\} html\{scroll-behavior:smooth\}\
+body\{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif\}\
+.grain\{position:fixed;inset:0;pointer-events:none;opacity:.07;mix-blend-mode:soft-light;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAQAAABccqhmAAAAFElEQVR42u3BMQEAAADCoPdPbQ43oAAAAAAAAJ4DGKgAAZcG0ZcAAAAASUVORK5CYII=');background-size:300px 300px;z-index:0\}\
+.nav\{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;background:rgba(10,13,18,.35);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.06)\}\
+.nav__brand\{font-family:Cinzel,serif;letter-spacing:.08em;color:var(--ink);text-decoration:none\}\
+.nav__links a\{color:var(--ink-dim);text-decoration:none;margin-left:16px\}\
+.nav__links a:hover\{color:var(--ink)\}\
+.scene\{position:relative;min-height:100vh;display:grid;place-items:center;background-position:center;background-size:cover;background-attachment:fixed\}\
+.scene__veil\{position:absolute;inset:0;background:radial-gradient(1200px 600px at 50% 100%, rgba(16,21,30,.55), transparent 60%), linear-gradient(to top, rgba(10,13,18,.65), rgba(10,13,18,.35));z-index:1\}\
+.scene__content\{position:relative;z-index:2;padding:0 24px;max-width:1100px;text-align:center\}\
+.scene__credit\{position:absolute;bottom:10px;right:12px;z-index:2;font-size:12px;color:rgba(255,255,255,.55)\}\
+/* TEMP background colors until we add images in Step 2 */\
+.scene--tatooine\{background:#5b2b59\}\
+.scene--falcon\{background:#1c3a59\}\
+.scene--yoda\{background:#2c3b2c\}\
+.lead\{color:var(--ink-dim);max-width:800px;margin:16px auto 26px\}\
+.btn\{display:inline-block;padding:10px 18px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:var(--ink);text-decoration:none\}\
+.btn:hover\{background:rgba(255,255,255,.14)\} .btn--outline\{background:transparent;border-color:rgba(255,255,255,.35)\}\
+/* Lightsaber title */\
+.saber-title\{font-family:Cinzel,serif;font-size:clamp(28px,5vw,56px);line-height:1.1;text-shadow:0 0 18px rgba(89,201,255,.18);display:inline-flex;align-items:center;gap:14px;margin:0\}\
+.saber-title em\{font-style:italic;color:#ffe3a3\}\
+.saber-title__blade\{width:120px;height:8px;border-radius:10px;display:inline-block;background:linear-gradient(90deg,rgba(255,255,255,.92),var(--accent));box-shadow:0 0 15px var(--accent),0 0 30px var(--accent);position:relative\}\
+.saber-title__blade::after\{content:'';position:absolute;left:-16px;top:50%;transform:translateY(-50%);width:0;height:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-right:16px solid #c0c0c0;filter:drop-shadow(0 0 4px rgba(255,255,255,.5))\}\
+.saber-title__blade--green\{background:linear-gradient(90deg,rgba(255,255,255,.9),var(--green));box-shadow:0 0 15px var(--green),0 0 30px var(--green)\}\
+.saber-title__blade--purple\{background:linear-gradient(90deg,rgba(255,255,255,.9),var(--purple));box-shadow:0 0 15px var(--purple),0 0 30px var(--purple)\}\
+/* Cards (poker flip) */\
+.cards\{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:18px\}\
+.card\{perspective:1000px;border:0;background:transparent;padding:0;cursor:pointer\}\
+.card__inner\{position:relative;width:100%;height:200px;border-radius:14px;transform-style:preserve-3d;transition:transform .6s;background:rgba(10,13,18,.6);border:1px solid rgba(255,255,255,.12)\}\
+.card[aria-expanded="true"] .card__inner\{transform:rotateY(180deg)\}\
+@media (prefers-reduced-motion: reduce)\{.card__inner\{transition:none\}\}\
+.card__face\{position:absolute;inset:0;padding:14px 16px;border-radius:14px;backface-visibility:hidden\}\
+.card__back\{transform:rotateY(180deg)\}\
+.card__title\{font-weight:700\}\
+.card__teaser,.card__bullets\{color:#c5d2e8;font-size:14px;margin-top:6px\}\
+.card__more\{display:inline-block;margin-top:10px;color:#ebf4ff;text-decoration:underline\}\
+/* Dagobah skills */\
+.pillbox\{margin-top:14px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap\}\
+.pillbox span\{font-size:12px;padding:6px 10px;border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(255,255,255,.06)\}\
+/* Contact */\
+.contact\{padding:80px 16px 40px;background:#0a0d12;border-top:1px solid rgba(255,255,255,.06);text-align:center\}\
+.contact__box\{max-width:760px;margin:0 auto\}\
+.contact .links a\{color:var(--ink-dim);text-decoration:none;margin:0 10px\}\
+.contact .links a:hover\{color:var(--ink)\}\
+/* Modal */\
+.modal\{position:fixed;inset:0;display:none;z-index:10\}\
+.modal.open\{display:block\}\
+.modal__backdrop\{position:absolute;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(2px)\}\
+.modal__panel\{position:relative;background:#0f141d;color:var(--ink);max-width:720px;margin:8vh auto;padding:20px;border:1px solid rgba(255,255,255,.1);border-radius:16px\}\
+.modal__close\{position:absolute;right:10px;top:10px;border:0;background:transparent;color:var(--ink);font-size:20px;cursor:pointer\}\
+.muted\{color:var(--ink-dim)\} footer\{margin-top:18px;color:var(--ink-dim)\}\
+}

@@ -1,0 +1,5 @@
+.DS_Store
+dist/
+.cache/
+*.log
+assets/bg/originals/
