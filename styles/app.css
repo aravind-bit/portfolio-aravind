@@ -160,3 +160,23 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,
   background: rgba(10,13,18,.78);
   border-color: rgba(255,255,255,.28);
 }
+/* ---- Lightsaber title animated glow (subtle) ---- */
+@keyframes saberPulse {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(89,201,255,.35)) drop-shadow(0 0 20px rgba(89,201,255,.25)); }
+  50%      { filter: drop-shadow(0 0 14px rgba(89,201,255,.45)) drop-shadow(0 0 28px rgba(89,201,255,.30)); }
+}
+@keyframes saberPulseGreen {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(92,255,161,.35)) drop-shadow(0 0 20px rgba(92,255,161,.25)); }
+  50%      { filter: drop-shadow(0 0 14px rgba(92,255,161,.45)) drop-shadow(0 0 28px rgba(92,255,161,.30)); }
+}
+@keyframes saberPulsePurple {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(200,160,255,.35)) drop-shadow(0 0 20px rgba(200,160,255,.25)); }
+  50%      { filter: drop-shadow(0 0 14px rgba(200,160,255,.45)) drop-shadow(0 0 28px rgba(200,160,255,.30)); }
+}
+.saber-title__blade { animation: saberPulse 3s ease-in-out infinite; }
+.saber-title__blade--green { animation: saberPulseGreen 3s ease-in-out infinite; }
+.saber-title__blade--purple { animation: saberPulsePurple 3s ease-in-out infinite; }
+
+/* Modal polish */
+.modal__panel h3 { margin: 0 0 6px; }
+.modal__actions .btn { margin-right: 8px; }
