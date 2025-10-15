@@ -3,56 +3,73 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aravind • Data Stories — A New Hope</title>
-  <meta name="description" content="Finance-focused data storytelling with Star Wars Episode IV inspired backdrops." />
+  <title>Aravind Anisetti — Data Science & Agentic Systems</title>
+  <meta name="description" content="Aravind Anisetti — data science, visualization, analysis, machine learning, automation, and agentic AI systems." />
   <link rel="icon" href="assets/icons/favicon.ico" />
+
+  <!-- Clean, high-legibility fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Cinzel:wght@600;800&display=swap" rel="stylesheet">
 
-  <!-- Single, relative paths (works for GitHub Pages at /portfolio-aravind/) -->
-  <link rel="stylesheet" href="styles/main.css?v=10" />
+  <link rel="stylesheet" href="styles/main.css?v=11" />
   <link rel="preload" as="image" href="assets/bg/tatooine-1536.webp"
         imagesrcset="assets/bg/tatooine-2560.webp 2x">
 </head>
 <body>
   <div class="grain"></div>
 
-  <!-- Sticky nav -->
+  <!-- Minimal sticky nav -->
   <header class="nav">
-    <a href="#tatooine" class="nav__brand">ARAVIND • DATA</a>
+    <a href="#home" class="nav__brand">ARAVIND ANISETTI</a>
     <nav class="nav__links">
-      <a href="#tatooine">Home</a>
-      <a href="#falcon">Projects</a>
-      <a href="#yoda">Training</a>
-      <a href="#contact">Contact</a>
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
     </nav>
   </header>
 
-  <!-- Scene 1: Tatooine (Intro + About) -->
-  <section id="tatooine" class="scene scene--tatooine">
+  <!-- Scene 1: Tatooine (Hero) -->
+  <section id="home" class="scene scene--tatooine" style="scroll-margin-top:72px">
     <div class="scene__veil"></div>
-    <div class="scene__content">
-      <h1 class="saber-title">
-        <span class="saber-title__blade" aria-hidden="true"></span>
-        Data Stories with a <em>New Hope</em>
+    <div class="scene__content scene__content--narrow">
+      <h1 class="hero">
+        <span class="saber-dot" aria-hidden="true"></span>
+        <span class="hero__name">Aravind&nbsp;Anisetti</span>
+        <span class="hero__title">Data Science &amp; Agentic Systems</span>
       </h1>
+
       <p class="lead">
-        Finance analytics & visualization—built like movie scenes:
-        <strong>setup → reveal → payoff</strong>.
+        I build end-to-end <strong>analytics</strong>, <strong>visualizations</strong>, and
+        <strong>ML/AI automations</strong>—from clean pipelines to clear stories
+        to <strong>agentic engineering</strong> that actually ships.
       </p>
-      <a class="btn" href="#falcon">View Projects</a>
+
+      <div class="hero__cta">
+        <a class="btn" href="#projects">See Projects</a>
+        <a class="btn btn--soft" href="mailto:hello@example.com">Contact</a>
+      </div>
+
+      <!-- First-screen quick links -->
+      <div class="quicklinks">
+        <a href="https://github.com/aravind-bit" target="_blank" rel="noopener">GitHub</a>
+        <span>•</span>
+        <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
+        <span>•</span>
+        <a href="assets/resume/aravind_resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+        <span>•</span>
+        <a href="mailto:hello@example.com">Email</a>
+      </div>
     </div>
     <div class="scene__credit">Tatooine • twin suns • homestead</div>
   </section>
 
   <!-- Scene 2: Falcon (Projects) -->
-  <section id="falcon" class="scene scene--falcon">
+  <section id="projects" class="scene scene--falcon" style="scroll-margin-top:72px">
     <div class="scene__veil"></div>
     <div class="scene__content">
-      <h2 class="saber-title">
-        <span class="saber-title__blade saber-title__blade--green" aria-hidden="true"></span>
-        Missions (Projects)
+      <h2 class="section">
+        <span class="saber-line" aria-hidden="true"></span>
+        Selected Projects
       </h2>
 
       <div class="cards">
@@ -60,12 +77,12 @@
           <div class="card__inner">
             <div class="card__face card__front">
               <div class="sw-title">Mid-Cap Tech KPI Tracker</div>
-              <div class="card__teaser">Which mid-caps convert revenue to profit most efficiently?</div>
+              <div class="card__teaser">Finding efficiency leaders via growth, margins, EPS &amp; R&amp;D.</div>
             </div>
             <div class="card__face card__back">
               <ul class="card__bullets">
-                <li>Growth, margins, EPS, R&D</li>
                 <li>20 mid-caps vs sector</li>
+                <li>Interactive KPI pivots</li>
                 <li>Volatility heatmap</li>
               </ul>
               <a class="card__more" data-modal="midcap" href="#">More →</a>
@@ -76,14 +93,14 @@
         <button class="card" aria-expanded="false">
           <div class="card__inner">
             <div class="card__face card__front">
-              <div class="sw-title">Virginia CPI Explorer</div>
-              <div class="card__teaser">Decompose inflation without lying.</div>
+              <div class="sw-title">CPI Explorer</div>
+              <div class="card__teaser">Category YoY with smoothing—no nonsense inflation read.</div>
             </div>
             <div class="card__face card__back">
               <ul class="card__bullets">
-                <li>Category YoY + rolling avg</li>
                 <li>Shelter dominance</li>
                 <li>Energy whipsaws</li>
+                <li>Rolling windows</li>
               </ul>
               <a class="card__more" data-modal="cpi" href="#">More →</a>
             </div>
@@ -94,13 +111,13 @@
           <div class="card__inner">
             <div class="card__face card__front">
               <div class="sw-title">Earnings Call Summarizer</div>
-              <div class="card__teaser">Turn transcripts into KPI snippets.</div>
+              <div class="card__teaser">Agentic LLM extracts KPIs, guidance &amp; cites evidence.</div>
             </div>
             <div class="card__face card__back">
               <ul class="card__bullets">
-                <li>LLM extraction</li>
-                <li>Guidance + evidence</li>
-                <li>Searchable snippets</li>
+                <li>RAG + tools</li>
+                <li>Traceable snippets</li>
+                <li>Search &amp; export</li>
               </ul>
               <a class="card__more" data-modal="earnings" href="#">More →</a>
             </div>
@@ -111,38 +128,11 @@
     <div class="scene__credit">Millennium Falcon • Hoth energy</div>
   </section>
 
-  <!-- Scene 3: Dagobah (Training / In-progress) -->
-  <section id="yoda" class="scene scene--yoda">
-    <div class="scene__veil"></div>
-    <div class="scene__content">
-      <h2 class="saber-title">
-        <span class="saber-title__blade saber-title__blade--purple" aria-hidden="true"></span>
-        Training Grounds (Work in Progress)
-      </h2>
-      <p class="lead">
-        Experiments, write-ups, and prototypes while I level up methods and
-        visual storytelling. Learn by doing, you must.
-      </p>
-      <div class="pillbox">
-        <span>Python</span><span>Pandas</span><span>SQL</span><span>AWS</span><span>Tableau</span><span>NLP</span>
-      </div>
-    </div>
-    <div class="scene__credit">Dagobah • mist • X-wing</div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="contact">
+  <!-- Footer -->
+  <section class="contact">
     <div class="contact__box">
-      <h3>Contact</h3>
-      <p>Open to roles in Data Visualization & Financial Analytics.</p>
-      <a class="btn btn--outline" href="mailto:hello@example.com">hello@example.com</a>
-      <div class="links">
-        <a href="assets/resume/aravind_resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
-        <a href="https://github.com/aravind-bit" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
+      <p class="muted">© <span id="year"></span> Aravind Anisetti</p>
     </div>
-    <footer>© <span id="year"></span> Aravind — Built like a storyboard.</footer>
   </section>
 
   <!-- Modal -->
@@ -155,11 +145,11 @@
       <p id="mSummary"></p>
       <div class="modal__actions">
         <a id="mLive" class="btn" href="#" target="_blank" rel="noopener">Open Live</a>
-        <a id="mRepo" class="btn btn--outline" href="#" target="_blank" rel="noopener">View Repo</a>
+        <a id="mRepo" class="btn btn--soft" href="#" target="_blank" rel="noopener">View Repo</a>
       </div>
     </div>
   </div>
 
-  <script src="scripts/main.js?v=10" defer></script>
+  <script src="scripts/main.js?v=11" defer></script>
 </body>
 </html>
