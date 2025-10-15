@@ -6,19 +6,22 @@
   <title>Aravind Anisetti — Data Science & Agentic Systems</title>
   <meta name="description" content="Aravind Anisetti — data science, visualization, analysis, machine learning, automation, and agentic AI systems." />
   <link rel="icon" href="assets/icons/favicon.ico" />
-  <!-- Crisp, legible type -->
+  <!-- Premium, legible type -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/main.css?v=20" />
-  <link rel="preload" as="image" href="assets/bg/tatooine-1536.webp"
-        imagesrcset="assets/bg/tatooine-2560.webp 2x">
+  <link rel="stylesheet" href="styles/main.css?v=30" />
+  <link rel="preload" as="image" href="assets/bg/falcon-1536.webp"
+        imagesrcset="assets/bg/falcon-2560.webp 2x">
 </head>
 <body>
+  <!-- global cinematography layers -->
+  <div class="falcon-bg"></div>
   <div class="grain"></div>
-  <body class="falcon-only">
+  <div class="vignette"></div>
+  <div class="volumetric"></div>
 
-  <!-- Minimal sticky nav (no repeated name in hero) -->
+  <!-- Minimal sticky nav -->
   <header class="nav">
     <a href="#home" class="nav__brand" aria-label="Home">AA</a>
     <nav class="nav__links">
@@ -27,21 +30,16 @@
     </nav>
   </header>
 
-  <!-- Scene 1: Tatooine (Hero) -->
-  <section id="home" class="scene scene--tatooine" style="scroll-margin-top:72px">
-    <div class="scene__veil"></div>
-    <div class="scene__content scene__content--narrow">
-      <h1 class="hero">
-        <span class="hero__name">Aravind&nbsp;Anisetti</span>
-        <span class="hero__title">Data Science • Visualization • ML • Automation • Agentic AI</span>
-      </h1>
-
-      <p class="lead">
-        I build end-to-end systems—from data pipelines and clear visuals to
-        ML/AI automations and agentic workflows that actually ship.
+  <!-- HERO (left-aligned, negative space on the right) -->
+  <main id="home" class="hero-wrap" style="scroll-margin-top:72px">
+    <div class="hero">
+      <h1 class="hero__name">Aravind&nbsp;Anisetti</h1>
+      <p class="hero__title">Data Science • Visualization • ML • Automation • Agentic AI</p>
+      <p class="hero__lead">
+        I design and ship end-to-end systems: robust data pipelines, clear visual narratives,
+        and agentic ML/AI workflows that move products forward.
       </p>
-
-      <!-- Primary actions (prominent) -->
+      <!-- Primary actions (prominent, mobile-first) -->
       <div class="hero__actions">
         <a class="btn btn--primary" href="#missions">See Missions</a>
         <a class="btn" href="https://github.com/aravind-bit" target="_blank" rel="noopener">GitHub</a>
@@ -50,98 +48,94 @@
         <a class="btn btn--soft" href="mailto:hello@example.com">Email</a>
       </div>
     </div>
-    <div class="scene__credit">Tatooine • twin suns • homestead</div>
-  </section>
+  </main>
 
-  <!-- Scene 2: Falcon (Missions) -->
-  <section id="missions" class="scene scene--falcon" style="scroll-margin-top:72px">
-    <div class="scene__veil"></div>
-    <div class="scene__content">
+  <!-- MISSIONS (Netflix-like tall tiles, adjacent) -->
+  <section id="missions" class="missions" style="scroll-margin-top:72px">
+    <div class="section-head">
       <h2 class="section-title">Missions</h2>
-
-      <div class="cards">
-        <!-- 1 -->
-        <button class="card" aria-expanded="false">
-          <div class="card__inner">
-            <div class="card__face card__front">
-              <h3 class="card__heading">Mid-Cap Tech KPI Tracker</h3>
-              <p class="card__teaser">Find efficiency leaders via growth, margins, EPS &amp; R&amp;D.</p>
-            </div>
-            <div class="card__face card__back">
-              <ul class="card__bullets">
-                <li>20 mid-caps vs sector</li>
-                <li>Interactive KPI pivots</li>
-                <li>Volatility heatmap</li>
-              </ul>
-              <a class="card__more" data-modal="midcap" href="#">More →</a>
-            </div>
-          </div>
-        </button>
-
-        <!-- 2 -->
-        <button class="card" aria-expanded="false">
-          <div class="card__inner">
-            <div class="card__face card__front">
-              <h3 class="card__heading">CPI Explorer</h3>
-              <p class="card__teaser">Category YoY with smoothing—no-nonsense inflation read.</p>
-            </div>
-            <div class="card__face card__back">
-              <ul class="card__bullets">
-                <li>Shelter dominance</li>
-                <li>Energy whipsaws</li>
-                <li>Rolling windows</li>
-              </ul>
-              <a class="card__more" data-modal="cpi" href="#">More →</a>
-            </div>
-          </div>
-        </button>
-
-        <!-- 3 -->
-        <button class="card" aria-expanded="false">
-          <div class="card__inner">
-            <div class="card__face card__front">
-              <h3 class="card__heading">Earnings Call Summarizer</h3>
-              <p class="card__teaser">Agentic LLM extracts KPIs &amp; guidance with citations.</p>
-            </div>
-            <div class="card__face card__back">
-              <ul class="card__bullets">
-                <li>RAG + tools</li>
-                <li>Traceable snippets</li>
-                <li>Search &amp; export</li>
-              </ul>
-              <a class="card__more" data-modal="earnings" href="#">More →</a>
-            </div>
-          </div>
-        </button>
-
-        <!-- 4 — NLP/ML/Media (+Agentic) -->
-        <button class="card" aria-expanded="false">
-          <div class="card__inner">
-            <div class="card__face card__front">
-              <h3 class="card__heading">Multimodal Media Analyst</h3>
-              <p class="card__teaser">Auto-ingests video/audio, segments topics, flags notable clips.</p>
-            </div>
-            <div class="card__face card__back">
-              <ul class="card__bullets">
-                <li>ASR + caption alignment</li>
-                <li>Topic &amp; sentiment tagging</li>
-                <li>Agentic clip finder</li>
-              </ul>
-              <a class="card__more" data-modal="media" href="#">More →</a>
-            </div>
-          </div>
-        </button>
-      </div>
+      <p class="section-sub">Selected work in analytics, visualization, ML, and agentic systems.</p>
     </div>
-    <div class="scene__credit">Millennium Falcon • Hoth energy</div>
-  </section>
 
-  <!-- Footer -->
-  <section class="contact">
-    <div class="contact__box">
-      <p class="muted">© <span id="year"></span> Aravind Anisetti</p>
+    <div class="tiles">
+      <!-- Minimalist -->
+      <button class="tile card--minimal" aria-expanded="false">
+        <div class="tile__inner">
+          <div class="tile__front">
+            <h3 class="tile__title">Mid-Cap Tech KPI Tracker</h3>
+            <p class="tile__tag">Minimalist</p>
+          </div>
+          <div class="tile__back">
+            <ul class="tile__bullets">
+              <li>20 mid-caps vs sector</li>
+              <li>Interactive KPI pivots</li>
+              <li>Volatility heatmap</li>
+            </ul>
+            <a class="tile__more" data-modal="midcap" href="#">More →</a>
+          </div>
+        </div>
+      </button>
+
+      <!-- News -->
+      <button class="tile card--news" aria-expanded="false">
+        <div class="tile__inner">
+          <div class="tile__front">
+            <h3 class="tile__title">CPI Explorer</h3>
+            <p class="tile__tag">News</p>
+          </div>
+          <div class="tile__back">
+            <ul class="tile__bullets">
+              <li>Shelter dominance</li>
+              <li>Energy whipsaws</li>
+              <li>Rolling windows</li>
+            </ul>
+            <a class="tile__more" data-modal="cpi" href="#">More →</a>
+          </div>
+        </div>
+      </button>
+
+      <!-- Sci-Fi -->
+      <button class="tile card--scifi" aria-expanded="false">
+        <div class="tile__inner">
+          <div class="tile__front">
+            <h3 class="tile__title">Earnings Call Summarizer</h3>
+            <p class="tile__tag">Sci-Fi</p>
+          </div>
+          <div class="tile__back">
+            <ul class="tile__bullets">
+              <li>RAG + tools</li>
+              <li>Traceable snippets</li>
+              <li>Search & export</li>
+            </ul>
+            <a class="tile__more" data-modal="earnings" href="#">More →</a>
+          </div>
+        </div>
+      </button>
+
+      <!-- Vintage (NLP/ML/Media + Agentic) -->
+      <button class="tile card--vintage" aria-expanded="false">
+        <div class="tile__inner">
+          <div class="tile__front">
+            <h3 class="tile__title">Multimodal Media Analyst</h3>
+            <p class="tile__tag">Vintage</p>
+          </div>
+          <div class="tile__back">
+            <ul class="tile__bullets">
+              <li>ASR + caption alignment</li>
+              <li>Topic & sentiment tagging</li>
+              <li>Agentic clip finder</li>
+            </ul>
+            <a class="tile__more" data-modal="media" href="#">More →</a>
+          </div>
+        </div>
+      </button>
     </div>
   </section>
+
+  <!-- Minimal footer -->
+  <footer class="footer">
+    <p>© <span id="year"></span> Aravind Anisetti</p>
+  </footer>
 
   <!-- Modal -->
   <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
@@ -158,6 +152,6 @@
     </div>
   </div>
 
-  <script src="scripts/main.js?v=20" defer></script>
+  <script src="scripts/main.js?v=30" defer></script>
 </body>
 </html>
