@@ -137,3 +137,21 @@ body{
     background-position:center 42%;
   }
 }
+/* ===== Falcon-only + white content mode =====
+   Toggle by adding class="falcon-only" to <body>.
+   - Hero (home) becomes white, ultra-clean.
+   - Missions keeps Falcon cinematic background.
+*/
+body.falcon-only .scene--tatooine{
+  background-image:none !important;
+  background:#ffffff !important;
+  color:#101418;
+}
+body.falcon-only .scene--tatooine .scene__veil{display:none}
+body.falcon-only .hero__title{color:#3a4356}
+body.falcon-only .lead{color:#52607a}
+body.falcon-only .btn{border-color:rgba(16,20,24,.12)}
+body.falcon-only .nav{background:rgba(255,255,255,.8); border-bottom:1px solid rgba(16,20,24,.08)}
+body.falcon-only .nav__links a{color:#364053}
+body.falcon-only .nav__links a:hover{color:#0f141d}
+
