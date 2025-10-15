@@ -1,15 +1,15 @@
 :root{
   --ink:#eaf1ff; --ink-dim:#c6d2e8; --ink-dark:#0f141d;
-  --accent:#2a96ff; --accent-2:#bfe1ff;
+  --brand-blue:#8ec8ff;
 
-  /* Card palettes */
-  --minimal-bg:#f7fbff; --minimal-ink:#0f1a2c; --minimal-edge:#dfe9f5;
-  --news-bg:#ffffff; --news-bar:#e31c2d; --news-ink:#141922; --news-edge:#eaeef5;
-  --scifi-bg:#0b1224; --scifi-ink:#e7f0ff; --scifi-grid:rgba(255,255,255,.06); --scifi-edge:rgba(110,230,255,.3);
-  --vintage-bg:#f3eadc; --vintage-ink:#241b15; --vintage-edge:#d9c4a8;
+  /* Distinct poster palettes (one per project) */
+  --kpi-a:#eaf3ff; --kpi-b:#cfe2ff; /* cool slate */
+  --cpi-a:#fff;    --cpi-b:#f3f6fb; /* bright news */
+  --earn-a:#0b1226;--earn-b:#1a2a4a; /* deep sci-fi */
+  --media-a:#fae9d3;--media-b:#ecd7bb; /* warm vintage */
 
-  /* Brand buttons */
-  --github:#24292f; --linkedin:#0a66c2; --neutral:#e9eef7; --email:#24a0ed;
+  /* Buttons — one format for all */
+  --btn:#1b8fff; --btn-hover:#0f7fe6; --btn-text:#ffffff;
 }
 
 *{box-sizing:border-box}
@@ -17,11 +17,11 @@ html{scroll-behavior:smooth}
 body{
   margin:0; color:var(--ink);
   font-family:Outfit, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  line-height:1.6; letter-spacing:.01em;
+  line-height:1.65; letter-spacing:.01em;
   background:#0a0f18;
 }
 
-/* ===== Falcon background (full-page) — AIRY ===== */
+/* Falcon background (airy) */
 .falcon-bg{
   position:fixed; inset:0; z-index:-3;
   background-position:center; background-size:cover; background-repeat:no-repeat;
@@ -34,20 +34,19 @@ body{
 }
 @media (max-width: 900px){ .falcon-bg{ background-attachment:scroll; } }
 
-/* Cinematic grain & lighting */
+/* Grain, vignette, volumetric (with parallax, see JS) */
 .grain{
   position:fixed; inset:0; z-index:-2; pointer-events:none;
   background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAQAAABccqhmAAAAFElEQVR42u3BMQEAAADCoPdPbQ43oAAAAAAAAJ4DGKgAAZcG0ZcAAAAASUVORK5CYII=');
   background-size:320px 320px; mix-blend-mode:soft-light; opacity:.05;
 }
-/* Softer vignette for airiness */
 .vignette{
   position:fixed; inset:0; z-index:-1; pointer-events:none;
   background:
     radial-gradient(1400px 1000px at 60% 60%, rgba(5,8,14,.0), rgba(5,8,14,.18) 65%),
     radial-gradient(100% 120% at 50% 50%, rgba(0,0,0,.0), rgba(0,0,0,.25) 72%);
+  will-change: transform;
 }
-/* Volumetric shafts (light, airy) */
 .volumetric--airy{
   position:fixed; inset:0; z-index:-1; pointer-events:none;
   background:
@@ -55,10 +54,10 @@ body{
     radial-gradient(700px 300px at 22% 28%, rgba(200,235,255,.30), transparent 60%),
     radial-gradient(520px 260px at 78% 48%, rgba(255,245,220,.18), transparent 60%);
   filter: blur(16px);
-  will-change: transform; /* for micro-parallax */
+  will-change: transform;
 }
 
-/* ===== Nav ===== */
+/* Nav */
 .nav{
   position:fixed; inset:0 0 auto 0; z-index:10;
   height:56px; display:flex; align-items:center; justify-content:space-between;
@@ -69,49 +68,48 @@ body{
 }
 .nav__brand{
   padding:6px 10px; border-radius:10px;
-  background:rgba(255,255,255,.2); color:#04203a; text-decoration:none;
+  background:rgba(255,255,255,.15); color:#06223d; text-decoration:none;
   font-weight:800; letter-spacing:.08em; font-size:14px;
+  box-shadow: inset 0 0 0 1px rgba(142,200,255,.55);
+  color: var(--ink);
+  background: rgba(142,200,255,.18);
+  text-shadow: 0 1px 0 rgba(0,0,0,.25);
 }
 .nav__links a{color:#e9f2ff; text-decoration:none; margin-left:14px; font-weight:700; text-shadow:0 1px 0 rgba(0,0,0,.2)}
 .nav__links a:hover{color:#fff}
 
-/* ===== Layout containers ===== */
+/* Layout */
 .hero-wrap{
   min-height:78vh; display:grid; align-items:center;
-  padding:96px clamp(16px,6vw,72px) 24px clamp(16px,14vw,240px); /* reserve right negative space */
+  padding:96px clamp(16px,6vw,72px) 24px clamp(16px,14vw,240px);
 }
 .hero{
   max-width:780px; text-align:left;
-  text-shadow:0 1px 0 rgba(0,0,0,.16), 0 10px 40px rgba(0,0,0,.18);
+  text-shadow:0 1px 0 rgba(0,0,0,.12), 0 10px 40px rgba(0,0,0,.18);
 }
 .hero__name{font-size:clamp(32px, 7vw, 72px); font-weight:800; letter-spacing:.01em; margin:0 0 6px}
-.hero__title{font-size:clamp(14px, 3.4vw, 20px); color:#eef5ff; letter-spacing:.08em; text-transform:uppercase; margin:0 0 8px}
+.hero__title{font-size:clamp(14px, 3.4vw, 20px); color:#eef5ff; letter-spacing:.08em; text-transform:uppercase; margin:0 0 10px}
 .hero__lead{color:#e6f0ff; margin:0 0 14px; max-width:60ch}
 .hero__actions{display:flex; gap:10px; flex-wrap:wrap}
 
-/* Buttons — brand-aligned, consistent */
+/* One consistent button format */
 .btn{
-  display:inline-block; padding:10px 16px; border-radius:12px; border:1px solid rgba(255,255,255,.22);
-  background:linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,.08));
-  color:#041018; text-decoration:none; font-weight:800; font-size:14px
+  display:inline-block; padding:10px 16px; border-radius:12px;
+  border:1px solid var(--btn); background:var(--btn); color:var(--btn-text);
+  text-decoration:none; font-weight:800; font-size:14px;
+  box-shadow: 0 6px 16px rgba(27,143,255,.25);
 }
-.btn:hover{background:rgba(255,255,255,.22)}
-.btn--primary{background:#1b8fff;border-color:#1b8fff;color:#fff}
-.btn--primary:hover{background:#0f7fe6}
-.btn--github{background:var(--github); border-color:var(--github); color:#fff}
-.btn--linkedin{background:var(--linkedin); border-color:var(--linkedin); color:#fff}
-.btn--neutral{background:var(--neutral); border-color:var(--neutral); color:#142033}
-.btn--email{background:var(--email); border-color:var(--email); color:#fff}
+.btn:hover{background:var(--btn-hover); border-color:var(--btn-hover)}
 
-/* ===== Missions ===== */
+/* Missions */
 .missions{
   padding:8px clamp(16px,6vw,72px) 56px clamp(16px,14vw,240px);
 }
 .section-head{margin:8px 0 10px}
 .section-title{font-weight:800; font-size:clamp(22px, 4vw, 36px); margin:0}
-.section-sub{color:#e9f2ff; margin:6px 0 0; max-width:70ch; text-shadow:0 1px 0 rgba(0,0,0,.2)}
+.section-sub{color:#e9f2ff; margin:6px 0 0; max-width:72ch; text-shadow:0 1px 0 rgba(0,0,0,.2)}
 
-/* ===== Netflix-like tiles ===== */
+/* Poster grid */
 .tiles{
   display:grid;
   grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
@@ -119,7 +117,7 @@ body{
 }
 .tile{ perspective:1000px; border:0; padding:0; background:transparent; cursor:pointer; }
 .tile__inner{
-  position:relative; width:100%; aspect-ratio: 2/3; /* tall posters */
+  position:relative; width:100%; aspect-ratio: 2/3;
   border-radius:16px; overflow:hidden;
   transform-style:preserve-3d; transition:transform .45s cubic-bezier(.2,.7,.2,1);
   box-shadow: 0 12px 28px rgba(0,0,0,.28), 0 5px 10px rgba(0,0,0,.14);
@@ -132,76 +130,50 @@ body{
   position:absolute; inset:0; backface-visibility:hidden; display:flex; flex-direction:column;
   padding:16px;
 }
-.tile__front{ justify-content:space-between }
+.tile__front{ justify-content:flex-end }
 .tile__back{ transform: rotateY(180deg); justify-content:center; text-align:left; background:#0f141d; color:#eaf1ff }
 
-/* front content */
-.tile__meta{ display:flex; gap:8px; flex-wrap:wrap }
-.chip{
-  font-size:11px; font-weight:800; padding:4px 8px; border-radius:999px;
-  background:rgba(255,255,255,.18); color:#fff; text-shadow:0 1px 0 rgba(0,0,0,.35)
-}
 .tile__title{
-  margin:0; font-weight:800; font-size: clamp(18px, 2.4vw, 22px);
-  color:#fff; text-shadow: 0 1px 0 rgba(0,0,0,.35), 0 10px 24px rgba(0,0,0,.45);
+  margin:0 0 4px; font-weight:800; font-size: clamp(18px, 2.4vw, 22px);
+  color:#0f1520; text-shadow: 0 1px 0 rgba(255,255,255,.6), 0 10px 24px rgba(0,0,0,.25);
 }
-.tile__footer{ display:flex; align-items:center; justify-content:space-between; color:#eaf1ff }
-.tile__tag{ opacity:.95; font-weight:700; font-size:12px; text-shadow:0 1px 0 rgba(0,0,0,.35) }
-.rating{ letter-spacing:2px }
+.card--earnings .tile__title{ color:#eaf1ff; text-shadow: 0 1px 0 rgba(0,0,0,.5), 0 10px 24px rgba(0,0,0,.5) }
 
-/* back face */
-.tile__bullets{ font-size:14px; line-height:1.45; padding-left:18px; margin:0 0 10px; }
-.tile__more{ color:#0f7fe6; text-decoration:underline; font-weight:700 }
+.tile__desc{ font-size:15px; line-height:1.55; color:#cfe0ff; margin:0 0 12px }
+.tile__actions{ display:flex; gap:8px; flex-wrap:wrap }
 
-/* ===== Card style variants (stronger color presence) ===== */
-/* Minimalist: bright slate gradient */
-.card--minimal .tile__front{
-  color:var(--minimal-ink);
+/* Distinct poster colorways */
+.card--kpi .tile__front{
+  background: linear-gradient(180deg, var(--kpi-a) 0%, var(--kpi-b) 100%);
+  box-shadow: inset 0 0 0 1px rgba(23,48,90,.08);
+}
+.card--cpi .tile__front{
   background:
-    linear-gradient(180deg, #f7fbff 0%, #e8f1ff 70%, #e4ecfb 100%);
-  box-shadow: inset 0 0 0 1px var(--minimal-edge);
+    linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,0)),
+    linear-gradient(180deg, var(--cpi-a) 0%, var(--cpi-b) 100%);
+  border-left:10px solid #e31c2d;
+  box-shadow: inset 0 0 0 1px rgba(23,48,90,.08);
 }
-.card--minimal .chip{ background:rgba(15,26,44,.18) }
-
-/* News: white with red bar and newsprint wash */
-.card--news .tile__front{
-  color:var(--news-ink);
+.card--earnings .tile__front{
   background:
-    linear-gradient(180deg, rgba(230,236,245,.45), rgba(230,236,245,.1)),
-    var(--news-bg);
-  border-left:10px solid var(--news-bar);
-  box-shadow: inset 0 0 0 1px var(--news-edge);
+    radial-gradient(900px 420px at 70% 20%, rgba(110,230,255,.25), transparent 60%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.06) 0 1px, transparent 1px 12px),
+    linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02)),
+    linear-gradient(180deg, var(--earn-a) 0%, var(--earn-b) 100%);
+  box-shadow: inset 0 0 0 1px rgba(110,230,255,.28);
 }
-.card--news .chip{ background:rgba(20,25,34,.15) }
-
-/* Sci-Fi: deep blue with neon grid */
-.card--scifi .tile__front{
-  color:var(--scifi-ink);
-  background:
-    radial-gradient(1000px 500px at 70% 20%, rgba(102,224,255,.25), transparent 60%),
-    repeating-linear-gradient(90deg, var(--scifi-grid) 0 1px, transparent 1px 12px),
-    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)),
-    var(--scifi-bg);
-  box-shadow: inset 0 0 0 1px var(--scifi-edge);
+.card--media .tile__front{
+  background: linear-gradient(180deg, var(--media-a) 0%, var(--media-b) 100%);
+  box-shadow: inset 0 0 0 1px rgba(120,95,60,.22);
 }
-.card--scifi .chip{ background:rgba(102,224,255,.22) }
 
-/* Vintage: warm paper with subtle noise */
-.card--vintage .tile__front{
-  color:var(--vintage-ink);
-  background:
-    linear-gradient(180deg, #f7ead6 0%, #f0e2cd 60%, #ead9c0 100%);
-  box-shadow: inset 0 0 0 1px var(--vintage-edge);
-}
-.card--vintage .chip{ background:rgba(36,27,21,.18) }
-
-/* ===== Footer ===== */
+/* Footer */
 .footer{
   padding:36px clamp(16px,6vw,72px);
   color:#e6efff; text-align:left; text-shadow:0 1px 0 rgba(0,0,0,.2)
 }
 
-/* ===== Modal ===== */
+/* Modal */
 .modal{position:fixed; inset:0; display:none; z-index:20}
 .modal.open{display:block}
 .modal__backdrop{position:absolute; inset:0; background:rgba(0,0,0,.65); backdrop-filter:blur(2px)}
@@ -212,7 +184,7 @@ body{
 .modal__close{position:absolute; right:10px; top:10px; border:0; background:transparent; color:#eaf1ff; font-size:20px; cursor:pointer}
 .muted{color:#b9c5db}
 
-/* ===== Mobile tweaks ===== */
+/* Mobile tweaks */
 @media (max-width: 900px){
   .hero-wrap{ padding:80px 16px 16px 16px; }
   .missions{ padding:8px 16px 56px 16px; }
