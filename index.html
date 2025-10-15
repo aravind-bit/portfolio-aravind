@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/main.css?v=31" />
+  <link rel="stylesheet" href="styles/main.css?v=40" />
   <link rel="preload" as="image" href="assets/bg/falcon-1536.webp"
         imagesrcset="assets/bg/falcon-2560.webp 2x">
 </head>
@@ -23,7 +23,7 @@
 
   <!-- Minimal sticky nav -->
   <header class="nav">
-    <a href="#home" class="nav__brand" aria-label="Home">AA</a>
+    <a href="#home" class="nav__brand" aria-label="Home">ARAVIND</a>
     <nav class="nav__links">
       <a href="#home">Home</a>
       <a href="#missions">Missions</a>
@@ -39,7 +39,7 @@
         I design and ship end-to-end systems: robust data pipelines, clear visual narratives,
         and agentic ML/AI workflows that move products forward.
       </p>
-      <!-- Primary actions (prominent, mobile-first) -->
+      <!-- Primary actions (brand-consistent palette) -->
       <div class="hero__actions">
         <a class="btn btn--primary" href="#missions">See Missions</a>
         <a class="btn btn--github" href="https://github.com/aravind-bit" target="_blank" rel="noopener">GitHub</a>
@@ -55,8 +55,8 @@
     <div class="section-head">
       <h2 class="section-title">Missions</h2>
       <p class="section-sub">
-        A curated set of shipped and in-progress work spanning <strong>analytics</strong>, <strong>visualization</strong>,
-        <strong>machine learning</strong>, and <strong>agentic systems</strong>. Each tile flips to reveal approach and links.
+        Shipped and in-progress work in <strong>analytics</strong>, <strong>visualization</strong>,
+        <strong>machine learning</strong>, and <strong>agentic systems</strong>. Each poster flips for approach & links.
       </p>
     </div>
 
@@ -65,8 +65,14 @@
       <button class="tile card--minimal" aria-expanded="false">
         <div class="tile__inner">
           <div class="tile__front">
+            <div class="tile__meta">
+              <span class="chip">Tableau</span><span class="chip">Finance</span>
+            </div>
             <h3 class="tile__title">Mid-Cap Tech KPI Tracker</h3>
-            <p class="tile__tag">Minimalist</p>
+            <div class="tile__footer">
+              <span class="tile__tag">Minimalist</span>
+              <span class="rating" aria-label="rating">★★★★★</span>
+            </div>
           </div>
           <div class="tile__back">
             <ul class="tile__bullets">
@@ -83,8 +89,14 @@
       <button class="tile card--news" aria-expanded="false">
         <div class="tile__inner">
           <div class="tile__front">
+            <div class="tile__meta">
+              <span class="chip">BLS</span><span class="chip">Time-Series</span>
+            </div>
             <h3 class="tile__title">CPI Explorer</h3>
-            <p class="tile__tag">News</p>
+            <div class="tile__footer">
+              <span class="tile__tag">News</span>
+              <span class="rating" aria-label="rating">★★★★☆</span>
+            </div>
           </div>
           <div class="tile__back">
             <ul class="tile__bullets">
@@ -101,13 +113,19 @@
       <button class="tile card--scifi" aria-expanded="false">
         <div class="tile__inner">
           <div class="tile__front">
+            <div class="tile__meta">
+              <span class="chip">RAG</span><span class="chip">LLM Tools</span>
+            </div>
             <h3 class="tile__title">Earnings Call Summarizer</h3>
-            <p class="tile__tag">Sci-Fi</p>
+            <div class="tile__footer">
+              <span class="tile__tag">Sci-Fi</span>
+              <span class="rating" aria-label="rating">★★★★★</span>
+            </div>
           </div>
           <div class="tile__back">
             <ul class="tile__bullets">
-              <li>RAG + tools</li>
               <li>Traceable snippets</li>
+              <li>Guidance extraction</li>
               <li>Search & export</li>
             </ul>
             <a class="tile__more" data-modal="earnings" href="#">More →</a>
@@ -119,13 +137,19 @@
       <button class="tile card--vintage" aria-expanded="false">
         <div class="tile__inner">
           <div class="tile__front">
+            <div class="tile__meta">
+              <span class="chip">ASR</span><span class="chip">NLP</span><span class="chip">Agent</span>
+            </div>
             <h3 class="tile__title">Multimodal Media Analyst</h3>
-            <p class="tile__tag">Vintage</p>
+            <div class="tile__footer">
+              <span class="tile__tag">Vintage</span>
+              <span class="rating" aria-label="rating">★★★★☆</span>
+            </div>
           </div>
           <div class="tile__back">
             <ul class="tile__bullets">
-              <li>ASR + caption alignment</li>
-              <li>Topic & sentiment tagging</li>
+              <li>Diarization + captions</li>
+              <li>Topic & sentiment tags</li>
               <li>Agentic clip finder</li>
             </ul>
             <a class="tile__more" data-modal="media" href="#">More →</a>
@@ -155,6 +179,6 @@
     </div>
   </div>
 
-  <script src="scripts/main.js?v=31" defer></script>
+  <script src="scripts/main.js?v=40" defer></script>
 </body>
 </html>
