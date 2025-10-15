@@ -2,29 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Aravind Anisetti — Data Science & Agentic Systems</title>
   <meta name="description" content="Aravind Anisetti — data science, visualization, analysis, machine learning, automation, and agentic AI systems." />
   <link rel="icon" href="assets/icons/favicon.ico" />
-
-  <!-- Clean, high-legibility fonts -->
+  <!-- Crisp, legible type -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Cinzel:wght@600;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles/main.css?v=11" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css?v=20" />
   <link rel="preload" as="image" href="assets/bg/tatooine-1536.webp"
         imagesrcset="assets/bg/tatooine-2560.webp 2x">
 </head>
 <body>
   <div class="grain"></div>
 
-  <!-- Minimal sticky nav -->
+  <!-- Minimal sticky nav (no repeated name in hero) -->
   <header class="nav">
-    <a href="#home" class="nav__brand">ARAVIND ANISETTI</a>
+    <a href="#home" class="nav__brand" aria-label="Home">AA</a>
     <nav class="nav__links">
       <a href="#home">Home</a>
-      <a href="#projects">Projects</a>
+      <a href="#missions">Missions</a>
     </nav>
   </header>
 
@@ -33,51 +31,40 @@
     <div class="scene__veil"></div>
     <div class="scene__content scene__content--narrow">
       <h1 class="hero">
-        <span class="saber-dot" aria-hidden="true"></span>
         <span class="hero__name">Aravind&nbsp;Anisetti</span>
-        <span class="hero__title">Data Science &amp; Agentic Systems</span>
+        <span class="hero__title">Data Science • Visualization • ML • Automation • Agentic AI</span>
       </h1>
 
       <p class="lead">
-        I build end-to-end <strong>analytics</strong>, <strong>visualizations</strong>, and
-        <strong>ML/AI automations</strong>—from clean pipelines to clear stories
-        to <strong>agentic engineering</strong> that actually ships.
+        I build end-to-end systems—from data pipelines and clear visuals to
+        ML/AI automations and agentic workflows that actually ship.
       </p>
 
-      <div class="hero__cta">
-        <a class="btn" href="#projects">See Projects</a>
-        <a class="btn btn--soft" href="mailto:hello@example.com">Contact</a>
-      </div>
-
-      <!-- First-screen quick links -->
-      <div class="quicklinks">
-        <a href="https://github.com/aravind-bit" target="_blank" rel="noopener">GitHub</a>
-        <span>•</span>
-        <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
-        <span>•</span>
-        <a href="assets/resume/aravind_resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
-        <span>•</span>
-        <a href="mailto:hello@example.com">Email</a>
+      <!-- Primary actions (prominent) -->
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#missions">See Missions</a>
+        <a class="btn" href="https://github.com/aravind-bit" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="assets/resume/aravind_resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a class="btn btn--soft" href="mailto:hello@example.com">Email</a>
       </div>
     </div>
     <div class="scene__credit">Tatooine • twin suns • homestead</div>
   </section>
 
-  <!-- Scene 2: Falcon (Projects) -->
-  <section id="projects" class="scene scene--falcon" style="scroll-margin-top:72px">
+  <!-- Scene 2: Falcon (Missions) -->
+  <section id="missions" class="scene scene--falcon" style="scroll-margin-top:72px">
     <div class="scene__veil"></div>
     <div class="scene__content">
-      <h2 class="section">
-        <span class="saber-line" aria-hidden="true"></span>
-        Selected Projects
-      </h2>
+      <h2 class="section-title">Missions</h2>
 
       <div class="cards">
+        <!-- 1 -->
         <button class="card" aria-expanded="false">
           <div class="card__inner">
             <div class="card__face card__front">
-              <div class="sw-title">Mid-Cap Tech KPI Tracker</div>
-              <div class="card__teaser">Finding efficiency leaders via growth, margins, EPS &amp; R&amp;D.</div>
+              <h3 class="card__heading">Mid-Cap Tech KPI Tracker</h3>
+              <p class="card__teaser">Find efficiency leaders via growth, margins, EPS &amp; R&amp;D.</p>
             </div>
             <div class="card__face card__back">
               <ul class="card__bullets">
@@ -90,11 +77,12 @@
           </div>
         </button>
 
+        <!-- 2 -->
         <button class="card" aria-expanded="false">
           <div class="card__inner">
             <div class="card__face card__front">
-              <div class="sw-title">CPI Explorer</div>
-              <div class="card__teaser">Category YoY with smoothing—no nonsense inflation read.</div>
+              <h3 class="card__heading">CPI Explorer</h3>
+              <p class="card__teaser">Category YoY with smoothing—no-nonsense inflation read.</p>
             </div>
             <div class="card__face card__back">
               <ul class="card__bullets">
@@ -107,11 +95,12 @@
           </div>
         </button>
 
+        <!-- 3 -->
         <button class="card" aria-expanded="false">
           <div class="card__inner">
             <div class="card__face card__front">
-              <div class="sw-title">Earnings Call Summarizer</div>
-              <div class="card__teaser">Agentic LLM extracts KPIs, guidance &amp; cites evidence.</div>
+              <h3 class="card__heading">Earnings Call Summarizer</h3>
+              <p class="card__teaser">Agentic LLM extracts KPIs &amp; guidance with citations.</p>
             </div>
             <div class="card__face card__back">
               <ul class="card__bullets">
@@ -120,6 +109,24 @@
                 <li>Search &amp; export</li>
               </ul>
               <a class="card__more" data-modal="earnings" href="#">More →</a>
+            </div>
+          </div>
+        </button>
+
+        <!-- 4 — NLP/ML/Media (+Agentic) -->
+        <button class="card" aria-expanded="false">
+          <div class="card__inner">
+            <div class="card__face card__front">
+              <h3 class="card__heading">Multimodal Media Analyst</h3>
+              <p class="card__teaser">Auto-ingests video/audio, segments topics, flags notable clips.</p>
+            </div>
+            <div class="card__face card__back">
+              <ul class="card__bullets">
+                <li>ASR + caption alignment</li>
+                <li>Topic &amp; sentiment tagging</li>
+                <li>Agentic clip finder</li>
+              </ul>
+              <a class="card__more" data-modal="media" href="#">More →</a>
             </div>
           </div>
         </button>
@@ -144,12 +151,12 @@
       <p id="mTags" class="muted"></p>
       <p id="mSummary"></p>
       <div class="modal__actions">
-        <a id="mLive" class="btn" href="#" target="_blank" rel="noopener">Open Live</a>
-        <a id="mRepo" class="btn btn--soft" href="#" target="_blank" rel="noopener">View Repo</a>
+        <a id="mLive" class="btn btn--primary" href="#" target="_blank" rel="noopener">Open Live</a>
+        <a id="mRepo" class="btn" href="#" target="_blank" rel="noopener">View Repo</a>
       </div>
     </div>
   </div>
 
-  <script src="scripts/main.js?v=11" defer></script>
+  <script src="scripts/main.js?v=20" defer></script>
 </body>
 </html>
