@@ -1,10 +1,10 @@
 // Footer year
-document.getElementById('year').textContent = new Date().getFullYear();
+const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
 
-// Flip cards
-document.querySelectorAll('.card').forEach(btn=>{
+// Flip tiles (front/back)
+document.querySelectorAll('.tile').forEach(btn=>{
   btn.addEventListener('click', (e)=>{
-    if(e.target.matches('.card__more')) return;
+    if(e.target.matches('.tile__more')) return; // allow modal link
     const isOpen = btn.getAttribute('aria-expanded') === 'true';
     btn.setAttribute('aria-expanded', String(!isOpen));
   });
@@ -15,6 +15,7 @@ const modal = document.getElementById('modal');
 const modalClose = document.getElementById('modalClose');
 let lastFocused = null;
 
+// Project data (edit URLs here)
 const projectData = {
   midcap: {
     title:'Mid-Cap Tech KPI Tracker',
@@ -24,7 +25,7 @@ const projectData = {
     repo:'https://github.com/aravind-bit/tech-equity-dashboard'
   },
   cpi: {
-    title:'Virginia CPI Explorer',
+    title:'CPI Explorer',
     summary:'Category-level YoY with rolling averages; shows shelter dominance and energy whipsaws.',
     tags:'Tableau • BLS API • Time Series',
     live:'https://public.tableau.com/views/<YOUR_WORKBOOK_2>',
@@ -32,10 +33,17 @@ const projectData = {
   },
   earnings: {
     title:'Earnings Call Summarizer',
-    summary:'LLM-assisted extraction of KPIs and guidance from earnings transcripts with evidence links.',
+    summary:'Agentic LLM extracts KPIs and guidance from earnings transcripts with citations.',
     tags:'Python • OpenAI • RAG',
     live:'https://example.com',
     repo:'https://github.com/aravind-bit/earnings-call-summarizer'
+  },
+  media: {
+    title:'Multimodal Media Analyst',
+    summary:'Auto-ingests video/audio → diarization + ASR → topic segmentation → agent finds notable clips.',
+    tags:'Whisper/ASR • NLP • Topic modeling • Sentiment • Agent tools',
+    live:'https://example.com',
+    repo:'https://github.com/aravind-bit/multimodal-media-analyst'
   }
 };
 
@@ -56,7 +64,7 @@ function closeModal(){
   if(lastFocused) lastFocused.focus();
 }
 
-document.querySelectorAll('.card__more').forEach(link=>{
+document.querySelectorAll('.tile__more').forEach(link=>{
   link.addEventListener('click', (e)=>{
     e.preventDefault();
     const id = link.dataset.modal;
