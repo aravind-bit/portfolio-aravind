@@ -24,7 +24,7 @@ const projectData = {
     repo:'https://github.com/aravind-bit/tech-equity-dashboard'
   },
   cpi: {
-    title:'Virginia CPI Explorer',
+    title:'CPI Explorer',
     summary:'Category-level YoY with rolling averages; shows shelter dominance and energy whipsaws.',
     tags:'Tableau • BLS API • Time Series',
     live:'https://public.tableau.com/views/<YOUR_WORKBOOK_2>',
@@ -32,7 +32,7 @@ const projectData = {
   },
   earnings: {
     title:'Earnings Call Summarizer',
-    summary:'LLM-assisted extraction of KPIs and guidance from earnings transcripts with evidence links.',
+    summary:'Agentic LLM extracts KPIs and guidance with citations; searchable & exportable.',
     tags:'Python • OpenAI • RAG',
     live:'https://example.com',
     repo:'https://github.com/aravind-bit/earnings-call-summarizer'
