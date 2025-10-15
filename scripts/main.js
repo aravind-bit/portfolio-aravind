@@ -10,6 +10,26 @@ document.querySelectorAll('.tile').forEach(btn=>{
   });
 });
 
+// Micro-parallax (light shafts + vignette)
+(function(){
+  const vol = document.querySelector('.volumetric--airy');
+  const vig = document.querySelector('.vignette');
+  let ticking = false;
+  function onScroll(){
+    if(ticking) return;
+    window.requestAnimationFrame(()=>{
+      const y = window.scrollY || 0;
+      // tiny offsets; keep subtle
+      if(vol) vol.style.transform = `translate3d(0, ${y * 0.06}px, 0)`;
+      if(vig) vig.style.transform = `translate3d(0, ${y * 0.03}px, 0)`;
+      ticking = false;
+    });
+    ticking = true;
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+
 // Modal
 const modal = document.getElementById('modal');
 const modalClose = document.getElementById('modalClose');
