@@ -1,16 +1,16 @@
 // Footer year
 const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
 
-// Flip tiles (front/back)
+// Flip tiles
 document.querySelectorAll('.tile').forEach(btn=>{
   btn.addEventListener('click', (e)=>{
-    if(e.target.matches('.tile__more')) return; // allow modal link
+    if(e.target.closest('.tile__actions')) return; // allow Details button
     const isOpen = btn.getAttribute('aria-expanded') === 'true';
     btn.setAttribute('aria-expanded', String(!isOpen));
   });
 });
 
-// Micro-parallax (light shafts + vignette)
+// Micro-parallax on light layers
 (function(){
   const vol = document.querySelector('.volumetric--airy');
   const vig = document.querySelector('.vignette');
@@ -19,7 +19,6 @@ document.querySelectorAll('.tile').forEach(btn=>{
     if(ticking) return;
     window.requestAnimationFrame(()=>{
       const y = window.scrollY || 0;
-      // tiny offsets; keep subtle
       if(vol) vol.style.transform = `translate3d(0, ${y * 0.06}px, 0)`;
       if(vig) vig.style.transform = `translate3d(0, ${y * 0.03}px, 0)`;
       ticking = false;
@@ -35,7 +34,6 @@ const modal = document.getElementById('modal');
 const modalClose = document.getElementById('modalClose');
 let lastFocused = null;
 
-// Project data (edit URLs here)
 const projectData = {
   midcap: {
     title:'Mid-Cap Tech KPI Tracker',
@@ -60,7 +58,7 @@ const projectData = {
   },
   media: {
     title:'Multimodal Media Analyst',
-    summary:'Auto-ingests video/audio → diarization + ASR → topic segmentation → agent finds notable clips.',
+    summary:'Auto-ingests video/audio → diarization + ASR → topic segmentation → an agent finds notable clips.',
     tags:'Whisper/ASR • NLP • Topic modeling • Sentiment • Agent tools',
     live:'https://example.com',
     repo:'https://github.com/aravind-bit/multimodal-media-analyst'
@@ -84,7 +82,8 @@ function closeModal(){
   if(lastFocused) lastFocused.focus();
 }
 
-document.querySelectorAll('.tile__more').forEach(link=>{
+// Wire "Details" buttons on flip backs
+document.querySelectorAll('[data-modal]').forEach(link=>{
   link.addEventListener('click', (e)=>{
     e.preventDefault();
     const id = link.dataset.modal;
