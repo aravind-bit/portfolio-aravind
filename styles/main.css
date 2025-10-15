@@ -123,4 +123,48 @@ body\{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui
 .modal__panel\{position:relative;background:#0f141d;color:var(--ink);max-width:720px;margin:8vh auto;padding:20px;border:1px solid rgba(255,255,255,.1);border-radius:16px\}\
 .modal__close\{position:absolute;right:10px;top:10px;border:0;background:transparent;color:var(--ink);font-size:20px;cursor:pointer\}\
 .muted\{color:var(--ink-dim)\} footer\{margin-top:18px;color:var(--ink-dim)\}\
+/* ========== Star-Wars-style title (text only) ========== */\
+/* If you added the fan font, this line will use it; else it falls back to Cinzel */\
+.sw-title\{\
+  font-family: 'StarJedi', Cinzel, serif;\
+  font-size: clamp(20px, 2.6vw, 34px);\
+  letter-spacing: .06em;\
+  text-transform: uppercase;\
+  text-align: center;\
+\
+  /* Yellow fill + black stroke vibe (classic logo feel) */\
+  color: #ffea69;                     /* warm yellow */\
+  -webkit-text-stroke: 1.2px #0a0d12; /* dark stroke */\
+  text-shadow:\
+    0 0 6px rgba(255, 234, 105, .35),\
+    0 0 14px rgba(255, 234, 105, .25);\
+\
+  /* nice spacing for multi-word titles */\
+  line-height: 1.1;\
+  margin-bottom: 6px;\
+\}\
+\
+/* Card layout tweaks for text-only look */\
+.card__front, .card__back\{\
+  display: grid;\
+  place-content: center;\
+  text-align: center;\
+  padding: 18px 16px;\
+\}\
+.card__teaser\{\
+  color:#c5d2e8;\
+  font-size: 14px;\
+  margin-top: 6px;\
+\}\
+\
+/* Slightly bolder card frame so text reads on Falcon background */\
+.scene--falcon .card__inner\{\
+  background: rgba(10,13,18,.68);\
+  border: 1px solid rgba(255,255,255,.18);\
+\}\
+/* On hover, make the frame pop just a touch */\
+.card:hover .card__inner\{\
+  background: rgba(10,13,18,.78);\
+  border-color: rgba(255,255,255,.28);\
+\}\
 }
