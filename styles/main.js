@@ -43,15 +43,27 @@ document.querySelectorAll('.card__more').forEach(link=>\{\
     e.preventDefault();\
     const id = link.dataset.modal;\
     // temporary demo data\
-    const data = \{\
-      midcap: \{ title:'Mid-Cap Tech KPI Tracker', summary:'Revenue growth, margins, EPS & R&D intensity across 20 mid-caps.', tags:'Python \'95 Tableau \'95 yfinance \'95 AWS', live:'#', repo:'#' \},\
-      cpi:    \{ title:'Virginia CPI Explorer', summary:'Category-level YoY with rolling averages; shelter dominance.', tags:'Tableau \'95 BLS API \'95 Time Series', live:'#', repo:'#' \},\
-      earnings:\{ title:'Earnings Call Summarizer', summary:'LLM-assisted KPI & guidance extraction with evidence links.', tags:'Python \'95 OpenAI \'95 RAG', live:'#', repo:'#' \}\
-    \}[id] || \{\};\
-    openModal(data);\
-  \});\
-\});\
-modalClose.addEventListener('click', closeModal);\
-modal.addEventListener('click', (e)=>\{ if(e.target.classList.contains('modal__backdrop')) closeModal(); \});\
-document.addEventListener('keydown', (e)=>\{ if(e.key === 'Escape' && modal.classList.contains('open')) closeModal(); \});\
-}
+    // ---- Project data map (edit URLs here) ----
+const projectData = {
+  midcap: {
+    title: 'Mid-Cap Tech KPI Tracker',
+    summary: 'Revenue growth, margins, EPS & R&D intensity across 20 mid-caps; surfaces efficiency leaders and volatility pockets.',
+    tags: 'Python • Tableau • yfinance • AWS',
+    live: 'https://public.tableau.com/views/<YOUR_WORKBOOK_1>',   // <-- replace
+    repo: 'https://github.com/aravind-bit/tech-equity-dashboard'
+  },
+  cpi: {
+    title: 'Virginia CPI Explorer',
+    summary: 'Category-level YoY with rolling averages; shows shelter dominance and energy whipsaws.',
+    tags: 'Tableau • BLS API • Time Series',
+    live: 'https://public.tableau.com/views/<YOUR_WORKBOOK_2>',   // <-- replace
+    repo: 'https://github.com/aravind-bit/inflation-analysis-virginia'
+  },
+  earnings: {
+    title: 'Earnings Call Summarizer',
+    summary: 'LLM-assisted extraction of KPIs and guidance from earnings transcripts with evidence links.',
+    tags: 'Python • OpenAI • RAG',
+    live: 'https://example.com',                                  // <-- replace (or remove)
+    repo: 'https://github.com/aravind-bit/earnings-call-summarizer'
+  }
+};
