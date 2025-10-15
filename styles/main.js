@@ -10,11 +10,12 @@ document.querySelectorAll('.card').forEach(btn=>{
   });
 });
 
-// Modal
+// Modal plumbing
 const modal = document.getElementById('modal');
 const modalClose = document.getElementById('modalClose');
 let lastFocused = null;
 
+// Project data (edit URLs here)
 const projectData = {
   midcap: {
     title:'Mid-Cap Tech KPI Tracker',
@@ -32,10 +33,17 @@ const projectData = {
   },
   earnings: {
     title:'Earnings Call Summarizer',
-    summary:'Agentic LLM extracts KPIs and guidance with citations; searchable & exportable.',
+    summary:'Agentic LLM extracts KPIs and guidance from earnings transcripts with citations.',
     tags:'Python • OpenAI • RAG',
     live:'https://example.com',
     repo:'https://github.com/aravind-bit/earnings-call-summarizer'
+  },
+  media: {
+    title:'Multimodal Media Analyst',
+    summary:'Auto-ingests video/audio → diarization + ASR → topic segmentation → agent finds notable clips.',
+    tags:'Whisper/ASR • NLP • Topic modeling • Sentiment • Agent tools',
+    live:'https://example.com',
+    repo:'https://github.com/aravind-bit/multimodal-media-analyst'
   }
 };
 
@@ -56,6 +64,7 @@ function closeModal(){
   if(lastFocused) lastFocused.focus();
 }
 
+// Open/close wiring
 document.querySelectorAll('.card__more').forEach(link=>{
   link.addEventListener('click', (e)=>{
     e.preventDefault();
