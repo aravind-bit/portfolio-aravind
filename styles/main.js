@@ -1,16 +1,16 @@
 // Footer year
-document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());
 
-// Flip cards
-document.querySelectorAll('.card').forEach(btn=>{
+// Flip tiles (front/back)
+document.querySelectorAll('.tile').forEach(btn=>{
   btn.addEventListener('click', (e)=>{
-    if(e.target.matches('.card__more')) return; // let "More" open modal
+    if(e.target.matches('.tile__more')) return; // allow modal link
     const isOpen = btn.getAttribute('aria-expanded') === 'true';
     btn.setAttribute('aria-expanded', String(!isOpen));
   });
 });
 
-// Modal plumbing
+// Modal
 const modal = document.getElementById('modal');
 const modalClose = document.getElementById('modalClose');
 let lastFocused = null;
@@ -64,8 +64,8 @@ function closeModal(){
   if(lastFocused) lastFocused.focus();
 }
 
-// Open/close wiring
-document.querySelectorAll('.card__more').forEach(link=>{
+// Wire modal openers
+document.querySelectorAll('.tile__more').forEach(link=>{
   link.addEventListener('click', (e)=>{
     e.preventDefault();
     const id = link.dataset.modal;
