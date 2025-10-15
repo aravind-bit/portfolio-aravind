@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/main.css?v=30" />
+  <link rel="stylesheet" href="styles/main.css?v=31" />
   <link rel="preload" as="image" href="assets/bg/falcon-1536.webp"
         imagesrcset="assets/bg/falcon-2560.webp 2x">
 </head>
@@ -19,7 +19,7 @@
   <div class="falcon-bg"></div>
   <div class="grain"></div>
   <div class="vignette"></div>
-  <div class="volumetric"></div>
+  <div class="volumetric volumetric--airy"></div>
 
   <!-- Minimal sticky nav -->
   <header class="nav">
@@ -42,10 +42,10 @@
       <!-- Primary actions (prominent, mobile-first) -->
       <div class="hero__actions">
         <a class="btn btn--primary" href="#missions">See Missions</a>
-        <a class="btn" href="https://github.com/aravind-bit" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn" href="assets/resume/aravind_resume.pdf" target="_blank" rel="noopener">Resume</a>
-        <a class="btn btn--soft" href="mailto:hello@example.com">Email</a>
+        <a class="btn btn--github" href="https://github.com/aravind-bit" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn--linkedin" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn--neutral" href="assets/resume/aravind_resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a class="btn btn--email" href="mailto:hello@example.com">Email</a>
       </div>
     </div>
   </main>
@@ -54,7 +54,10 @@
   <section id="missions" class="missions" style="scroll-margin-top:72px">
     <div class="section-head">
       <h2 class="section-title">Missions</h2>
-      <p class="section-sub">Selected work in analytics, visualization, ML, and agentic systems.</p>
+      <p class="section-sub">
+        A curated set of shipped and in-progress work spanning <strong>analytics</strong>, <strong>visualization</strong>,
+        <strong>machine learning</strong>, and <strong>agentic systems</strong>. Each tile flips to reveal approach and links.
+      </p>
     </div>
 
     <div class="tiles">
@@ -147,11 +150,11 @@
       <p id="mSummary"></p>
       <div class="modal__actions">
         <a id="mLive" class="btn btn--primary" href="#" target="_blank" rel="noopener">Open Live</a>
-        <a id="mRepo" class="btn" href="#" target="_blank" rel="noopener">View Repo</a>
+        <a id="mRepo" class="btn btn--neutral" href="#" target="_blank" rel="noopener">View Repo</a>
       </div>
     </div>
   </div>
 
-  <script src="scripts/main.js?v=30" defer></script>
+  <script src="scripts/main.js?v=31" defer></script>
 </body>
 </html>
