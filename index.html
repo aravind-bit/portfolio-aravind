@@ -6,22 +6,19 @@
   <title>Aravind Anisetti — Data Science & Agentic Systems</title>
   <meta name="description" content="Aravind Anisetti — data science, visualization, analysis, machine learning, automation, and agentic AI systems." />
   <link rel="icon" href="assets/icons/favicon.ico" />
-  <!-- Premium, legible type -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/main.css?v=41" />
+  <link rel="stylesheet" href="styles/main.css?v=50" />
   <link rel="preload" as="image" href="assets/bg/falcon-1536.webp"
         imagesrcset="assets/bg/falcon-2560.webp 2x">
 </head>
 <body>
-  <!-- global cinematography layers -->
   <div class="falcon-bg"></div>
   <div class="grain"></div>
   <div class="vignette"></div>
   <div class="volumetric volumetric--airy"></div>
 
-  <!-- Minimal sticky nav -->
   <header class="nav">
     <a href="#home" class="nav__brand" aria-label="Home">ARAVIND</a>
     <nav class="nav__links">
@@ -30,16 +27,11 @@
     </nav>
   </header>
 
-  <!-- HERO -->
   <main id="home" class="hero-wrap" style="scroll-margin-top:72px">
     <div class="hero">
       <h1 class="hero__name">Aravind&nbsp;Anisetti</h1>
       <p class="hero__title">Data Science • Visualization • ML • Automation • Agentic AI</p>
-      <p class="hero__lead">
-        I build end-to-end systems—clean data pipelines, clear visual stories, and agentic AI that ships.
-      </p>
-
-      <!-- One consistent button style -->
+      <p class="hero__lead">I build end-to-end systems—clean data pipelines, clear visual stories, and agentic AI that ships.</p>
       <div class="hero__actions">
         <a class="btn btn--primary" href="#missions">See Missions</a>
         <a class="btn btn--primary" href="https://github.com/aravind-bit" target="_blank" rel="noopener">GitHub</a>
@@ -50,13 +42,12 @@
     </div>
   </main>
 
-  <!-- MISSIONS -->
   <section id="missions" class="missions" style="scroll-margin-top:72px">
     <div class="section-head">
       <h2 class="section-title">Missions</h2>
       <p class="section-sub">
         A hand-picked run of builds in analytics, visualization, ML and agentic systems. Think
-        <em>“we’ve got a ship, a plan, and just enough fuel to make the Kessel Run.”</em> Flip a poster to see the approach and links.
+        <em>“we’ve got a ship, a plan, and just enough fuel to make the Kessel Run.”</em> Flip a poster for details and links.
       </p>
     </div>
 
@@ -65,14 +56,17 @@
       <button class="tile card--kpi" aria-expanded="false">
         <div class="tile__inner">
           <div class="tile__front">
-            <h3 class="tile__title">Mid-Cap Tech KPI Tracker</h3>
+            <div class="title-stack">
+              <h3 class="tile__title">Mid-Cap Tech KPI Tracker</h3>
+            </div>
           </div>
           <div class="tile__back">
             <p class="tile__desc">
               Interactive KPI stack for 20 mid-caps—growth, margins, EPS & R&amp;D—benchmarking efficiency and volatility in one glance.
             </p>
             <div class="tile__actions">
-              <a class="btn btn--primary" data-modal="midcap" href="#">Details</a>
+              <a class="btn btn--primary tile__link" href="https://public.tableau.com/views/<YOUR_WORKBOOK_1>" target="_blank" rel="noopener">Live Demo</a>
+              <a class="btn btn--primary tile__link" href="https://github.com/aravind-bit/tech-equity-dashboard" target="_blank" rel="noopener">Repo</a>
             </div>
           </div>
         </div>
@@ -82,14 +76,17 @@
       <button class="tile card--cpi" aria-expanded="false">
         <div class="tile__inner">
           <div class="tile__front">
-            <h3 class="tile__title">CPI Explorer</h3>
+            <div class="title-stack">
+              <h3 class="tile__title">CPI Explorer</h3>
+            </div>
           </div>
           <div class="tile__back">
             <p class="tile__desc">
               Category-level YoY with rolling smoothing—showing shelter dominance and energy whipsaws without spreadsheet fog.
             </p>
             <div class="tile__actions">
-              <a class="btn btn--primary" data-modal="cpi" href="#">Details</a>
+              <a class="btn btn--primary tile__link" href="https://public.tableau.com/views/<YOUR_WORKBOOK_2>" target="_blank" rel="noopener">Live Demo</a>
+              <a class="btn btn--primary tile__link" href="https://github.com/aravind-bit/inflation-analysis-virginia" target="_blank" rel="noopener">Repo</a>
             </div>
           </div>
         </div>
@@ -99,14 +96,17 @@
       <button class="tile card--earnings" aria-expanded="false">
         <div class="tile__inner">
           <div class="tile__front">
-            <h3 class="tile__title">Earnings Call Summarizer</h3>
+            <div class="title-stack">
+              <h3 class="tile__title">Earnings Call Summarizer</h3>
+            </div>
           </div>
           <div class="tile__back">
             <p class="tile__desc">
               Agentic LLM turns transcripts into traceable KPI snippets, guidance pulls, and searchable evidence. Less skimming, more signal.
             </p>
             <div class="tile__actions">
-              <a class="btn btn--primary" data-modal="earnings" href="#">Details</a>
+              <a class="btn btn--primary tile__link" href="https://example.com" target="_blank" rel="noopener">Live Demo</a>
+              <a class="btn btn--primary tile__link" href="https://github.com/aravind-bit/earnings-call-summarizer" target="_blank" rel="noopener">Repo</a>
             </div>
           </div>
         </div>
@@ -116,14 +116,17 @@
       <button class="tile card--media" aria-expanded="false">
         <div class="tile__inner">
           <div class="tile__front">
-            <h3 class="tile__title">Multimodal Media Analyst</h3>
+            <div class="title-stack">
+              <h3 class="tile__title">Multimodal Media Analyst</h3>
+            </div>
           </div>
           <div class="tile__back">
             <p class="tile__desc">
-              Auto-ingests video/audio → diarization + ASR → topic/sentiment tags. An agent hunts the quotable clips so you don’t.
+              Auto-ingests video/audio → diarization + ASR → topic & sentiment tags. An agent hunts the quotable clips so you don’t.
             </p>
             <div class="tile__actions">
-              <a class="btn btn--primary" data-modal="media" href="#">Details</a>
+              <a class="btn btn--primary tile__link" href="https://example.com" target="_blank" rel="noopener">Live Demo</a>
+              <a class="btn btn--primary tile__link" href="https://github.com/aravind-bit/multimodal-media-analyst" target="_blank" rel="noopener">Repo</a>
             </div>
           </div>
         </div>
@@ -131,26 +134,10 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <p>© <span id="year"></span> Aravind Anisetti</p>
   </footer>
 
-  <!-- Modal -->
-  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="modal__backdrop"></div>
-    <div class="modal__panel">
-      <button class="modal__close" id="modalClose" aria-label="Close">✕</button>
-      <h3 id="mTitle"></h3>
-      <p id="mTags" class="muted"></p>
-      <p id="mSummary"></p>
-      <div class="modal__actions">
-        <a id="mLive" class="btn btn--primary" href="#" target="_blank" rel="noopener">Open Live</a>
-        <a id="mRepo" class="btn btn--primary" href="#" target="_blank" rel="noopener">View Repo</a>
-      </div>
-    </div>
-  </div>
-
-  <script src="scripts/main.js?v=41" defer></script>
+  <script src="scripts/main.js?v=50" defer></script>
 </body>
 </html>
