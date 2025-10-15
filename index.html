@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/main.css?v=40" />
+  <link rel="stylesheet" href="styles/main.css?v=41" />
   <link rel="preload" as="image" href="assets/bg/falcon-1536.webp"
         imagesrcset="assets/bg/falcon-2560.webp 2x">
 </head>
@@ -30,136 +30,108 @@
     </nav>
   </header>
 
-  <!-- HERO (left-aligned, negative space on the right) -->
+  <!-- HERO -->
   <main id="home" class="hero-wrap" style="scroll-margin-top:72px">
     <div class="hero">
       <h1 class="hero__name">Aravind&nbsp;Anisetti</h1>
       <p class="hero__title">Data Science • Visualization • ML • Automation • Agentic AI</p>
       <p class="hero__lead">
-        I design and ship end-to-end systems: robust data pipelines, clear visual narratives,
-        and agentic ML/AI workflows that move products forward.
+        I build end-to-end systems—clean data pipelines, clear visual stories, and agentic AI that ships.
       </p>
-      <!-- Primary actions (brand-consistent palette) -->
+
+      <!-- One consistent button style -->
       <div class="hero__actions">
         <a class="btn btn--primary" href="#missions">See Missions</a>
-        <a class="btn btn--github" href="https://github.com/aravind-bit" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn btn--linkedin" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn btn--neutral" href="assets/resume/aravind_resume.pdf" target="_blank" rel="noopener">Resume</a>
-        <a class="btn btn--email" href="mailto:hello@example.com">Email</a>
+        <a class="btn btn--primary" href="https://github.com/aravind-bit" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn--primary" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn--primary" href="assets/resume/aravind_resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a class="btn btn--primary" href="mailto:hello@example.com">Email</a>
       </div>
     </div>
   </main>
 
-  <!-- MISSIONS (Netflix-like tall tiles, adjacent) -->
+  <!-- MISSIONS -->
   <section id="missions" class="missions" style="scroll-margin-top:72px">
     <div class="section-head">
       <h2 class="section-title">Missions</h2>
       <p class="section-sub">
-        Shipped and in-progress work in <strong>analytics</strong>, <strong>visualization</strong>,
-        <strong>machine learning</strong>, and <strong>agentic systems</strong>. Each poster flips for approach & links.
+        A hand-picked run of builds in analytics, visualization, ML and agentic systems. Think
+        <em>“we’ve got a ship, a plan, and just enough fuel to make the Kessel Run.”</em> Flip a poster to see the approach and links.
       </p>
     </div>
 
     <div class="tiles">
-      <!-- Minimalist -->
-      <button class="tile card--minimal" aria-expanded="false">
+      <!-- KPI Tracker -->
+      <button class="tile card--kpi" aria-expanded="false">
         <div class="tile__inner">
           <div class="tile__front">
-            <div class="tile__meta">
-              <span class="chip">Tableau</span><span class="chip">Finance</span>
-            </div>
             <h3 class="tile__title">Mid-Cap Tech KPI Tracker</h3>
-            <div class="tile__footer">
-              <span class="tile__tag">Minimalist</span>
-              <span class="rating" aria-label="rating">★★★★★</span>
-            </div>
           </div>
           <div class="tile__back">
-            <ul class="tile__bullets">
-              <li>20 mid-caps vs sector</li>
-              <li>Interactive KPI pivots</li>
-              <li>Volatility heatmap</li>
-            </ul>
-            <a class="tile__more" data-modal="midcap" href="#">More →</a>
+            <p class="tile__desc">
+              Interactive KPI stack for 20 mid-caps—growth, margins, EPS & R&amp;D—benchmarking efficiency and volatility in one glance.
+            </p>
+            <div class="tile__actions">
+              <a class="btn btn--primary" data-modal="midcap" href="#">Details</a>
+            </div>
           </div>
         </div>
       </button>
 
-      <!-- News -->
-      <button class="tile card--news" aria-expanded="false">
+      <!-- CPI Explorer -->
+      <button class="tile card--cpi" aria-expanded="false">
         <div class="tile__inner">
           <div class="tile__front">
-            <div class="tile__meta">
-              <span class="chip">BLS</span><span class="chip">Time-Series</span>
-            </div>
             <h3 class="tile__title">CPI Explorer</h3>
-            <div class="tile__footer">
-              <span class="tile__tag">News</span>
-              <span class="rating" aria-label="rating">★★★★☆</span>
-            </div>
           </div>
           <div class="tile__back">
-            <ul class="tile__bullets">
-              <li>Shelter dominance</li>
-              <li>Energy whipsaws</li>
-              <li>Rolling windows</li>
-            </ul>
-            <a class="tile__more" data-modal="cpi" href="#">More →</a>
+            <p class="tile__desc">
+              Category-level YoY with rolling smoothing—showing shelter dominance and energy whipsaws without spreadsheet fog.
+            </p>
+            <div class="tile__actions">
+              <a class="btn btn--primary" data-modal="cpi" href="#">Details</a>
+            </div>
           </div>
         </div>
       </button>
 
-      <!-- Sci-Fi -->
-      <button class="tile card--scifi" aria-expanded="false">
+      <!-- Earnings Summarizer -->
+      <button class="tile card--earnings" aria-expanded="false">
         <div class="tile__inner">
           <div class="tile__front">
-            <div class="tile__meta">
-              <span class="chip">RAG</span><span class="chip">LLM Tools</span>
-            </div>
             <h3 class="tile__title">Earnings Call Summarizer</h3>
-            <div class="tile__footer">
-              <span class="tile__tag">Sci-Fi</span>
-              <span class="rating" aria-label="rating">★★★★★</span>
-            </div>
           </div>
           <div class="tile__back">
-            <ul class="tile__bullets">
-              <li>Traceable snippets</li>
-              <li>Guidance extraction</li>
-              <li>Search & export</li>
-            </ul>
-            <a class="tile__more" data-modal="earnings" href="#">More →</a>
+            <p class="tile__desc">
+              Agentic LLM turns transcripts into traceable KPI snippets, guidance pulls, and searchable evidence. Less skimming, more signal.
+            </p>
+            <div class="tile__actions">
+              <a class="btn btn--primary" data-modal="earnings" href="#">Details</a>
+            </div>
           </div>
         </div>
       </button>
 
-      <!-- Vintage (NLP/ML/Media + Agentic) -->
-      <button class="tile card--vintage" aria-expanded="false">
+      <!-- Multimodal Media Analyst -->
+      <button class="tile card--media" aria-expanded="false">
         <div class="tile__inner">
           <div class="tile__front">
-            <div class="tile__meta">
-              <span class="chip">ASR</span><span class="chip">NLP</span><span class="chip">Agent</span>
-            </div>
             <h3 class="tile__title">Multimodal Media Analyst</h3>
-            <div class="tile__footer">
-              <span class="tile__tag">Vintage</span>
-              <span class="rating" aria-label="rating">★★★★☆</span>
-            </div>
           </div>
           <div class="tile__back">
-            <ul class="tile__bullets">
-              <li>Diarization + captions</li>
-              <li>Topic & sentiment tags</li>
-              <li>Agentic clip finder</li>
-            </ul>
-            <a class="tile__more" data-modal="media" href="#">More →</a>
+            <p class="tile__desc">
+              Auto-ingests video/audio → diarization + ASR → topic/sentiment tags. An agent hunts the quotable clips so you don’t.
+            </p>
+            <div class="tile__actions">
+              <a class="btn btn--primary" data-modal="media" href="#">Details</a>
+            </div>
           </div>
         </div>
       </button>
     </div>
   </section>
 
-  <!-- Minimal footer -->
+  <!-- Footer -->
   <footer class="footer">
     <p>© <span id="year"></span> Aravind Anisetti</p>
   </footer>
@@ -174,11 +146,11 @@
       <p id="mSummary"></p>
       <div class="modal__actions">
         <a id="mLive" class="btn btn--primary" href="#" target="_blank" rel="noopener">Open Live</a>
-        <a id="mRepo" class="btn btn--neutral" href="#" target="_blank" rel="noopener">View Repo</a>
+        <a id="mRepo" class="btn btn--primary" href="#" target="_blank" rel="noopener">View Repo</a>
       </div>
     </div>
   </div>
 
-  <script src="scripts/main.js?v=40" defer></script>
+  <script src="scripts/main.js?v=41" defer></script>
 </body>
 </html>
