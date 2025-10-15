@@ -42,6 +42,18 @@ document.querySelectorAll('.card__more').forEach(link=>\{\
   link.addEventListener('click', (e)=>\{\
     e.preventDefault();\
     const id = link.dataset.modal;\
+    // focus trap for accessibility
+const focusableSel = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+function trapFocus(panel){
+  const nodes = panel.querySelectorAll(focusableSel);
+  const first = nodes[0], last = nodes[nodes.length - 1];
+  panel.addEventListener('keydown', function(e){
+    if(e.key !== 'Tab') return;
+    if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  });
+}
+trapFocus(document.querySelector('.modal__panel'));
     // temporary demo data\
     // ---- Project data map (edit URLs here) ----
 const projectData = {
