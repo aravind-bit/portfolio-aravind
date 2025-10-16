@@ -2,7 +2,7 @@
 const y = document.getElementById('year');
 if (y) y.textContent = new Date().getFullYear();
 
-// Flip: toggle class on inner; ignore clicks on links
+// Toggle "flipped" on the inner panel; ignore clicks on links inside the back
 function toggleFlip(tile) {
   const inner = tile.querySelector('.tile__inner');
   const expanded = tile.getAttribute('aria-expanded') === 'true';
@@ -12,7 +12,7 @@ function toggleFlip(tile) {
 
 document.querySelectorAll('.tile').forEach(tile => {
   tile.addEventListener('click', (e) => {
-    if (e.target.closest('.tile__link')) return;
+    if (e.target.closest('.tile__link')) return; // don't flip when clicking a link
     toggleFlip(tile);
   });
   tile.addEventListener('keydown', (e) => {
@@ -23,7 +23,7 @@ document.querySelectorAll('.tile').forEach(tile => {
   });
 });
 
-// Gentle parallax
+// Gentle parallax on light layers
 (function(){
   const vol = document.querySelector('.volumetric--airy');
   const vig = document.querySelector('.vignette');
