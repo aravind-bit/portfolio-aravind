@@ -48,16 +48,29 @@ body{margin:0;color:var(--ink);font-family:Outfit,system-ui,-apple-system,Segoe 
 
 /* Card shell */
 .tile{perspective:1000px;-webkit-perspective:1000px;border:0;padding:0;background:transparent;cursor:pointer}
-.tile__inner{position:relative;width:100%;aspect-ratio:3/4;border-radius:16px;overflow:hidden;transform-style:preserve-3d;-webkit-transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.7,.2,1);box-shadow:0 12px 28px rgba(0,0,0,.28),0 5px 10px rgba(0,0,0,.14)}
-/* translate only when NOT flipped */
+.tile__inner{
+  position:relative;width:100%;aspect-ratio:3/4;border-radius:16px;overflow:hidden;
+  transform-style:preserve-3d;-webkit-transform-style:preserve-3d;
+  transition:transform .5s cubic-bezier(.2,.7,.2,1);
+  box-shadow:0 12px 28px rgba(0,0,0,.28),0 5px 10px rgba(0,0,0,.14)
+}
+/* Never override the rotation with hover */
 @media (hover:hover){.tile:hover .tile__inner:not(.flipped){transform:translateY(-2px)}}
 .tile__inner.flipped{transform:rotateY(180deg)}
 
-.tile__face{position:absolute;inset:0;display:flex;flex-direction:column;padding:16px;backface-visibility:hidden;-webkit-backface-visibility:hidden;will-change:opacity,transform}
+/* Faces (no base transform!) */
+.tile__face{
+  position:absolute;inset:0;display:flex;flex-direction:column;padding:16px;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  will-change:opacity
+}
 .tile__front{justify-content:space-between;opacity:1;transition:opacity .35s ease}
-.tile__back{justify-content:flex-start;text-align:left;background:#0f141d;color:#eaf1ff;transform:rotateY(180deg);opacity:0;transition:opacity .35s ease}
+.tile__back{
+  justify-content:flex-start;text-align:left;background:#0f141d;color:#eaf1ff;
+  transform:rotateY(180deg);opacity:0;transition:opacity .35s ease
+}
 
-/* Cross-fade to guarantee readability even if a browser glitches */
+/* Cross-fade ensures back content is readable even if WebKit hiccups */
 .tile__inner.flipped .tile__front{opacity:0}
 .tile__inner.flipped .tile__back{opacity:1}
 
