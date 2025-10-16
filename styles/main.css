@@ -97,7 +97,13 @@ body{
   transition: transform .45s cubic-bezier(.2,.7,.2,1);
   box-shadow: 0 12px 28px rgba(0,0,0,.28), 0 5px 10px rgba(0,0,0,.14)
 }
-.tile:hover .tile__inner{ transform: translateY(-2px) }
+
+/* ✨ Hover should NOT override the flip rotation */
+@media (hover:hover){
+  .tile:hover .tile__inner:not(.flipped){ transform: translateY(-2px); }
+  .tile:hover .tile__inner.flipped{ transform: rotateY(180deg); } /* keep rotation when flipped */
+}
+
 .tile__inner.flipped{ transform: rotateY(180deg) }  /* flip target */
 
 /* Faces */
@@ -108,9 +114,9 @@ body{
 }
 .tile__front{ justify-content:space-between }
 .tile__back{
-  justify-content:center; text-align:left; background:#0f141d; color:#eaf1ff;
+  justify-content:flex-start; text-align:left; background:#0f141d; color:#eaf1ff;
   transform: rotateY(180deg); -webkit-transform: rotateY(180deg);
-  overflow:auto
+  overflow:auto; padding:18px
 }
 
 /* Content */
@@ -126,7 +132,7 @@ body{
   font-size:12px; letter-spacing:.06em; text-transform:uppercase;
   color: rgba(255,255,255,.92)
 }
-.tile__desc{ font-size:15px; line-height:1.55; color:#cfe0ff; margin:0 0 14px }
+.tile__desc{ font-size:15px; line-height:1.6; color:#d6e6ff; margin:0 0 18px }
 .tile__actions{ display:flex; gap:10px; flex-wrap:wrap }
 
 /* Card colors */
