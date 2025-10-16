@@ -2,7 +2,7 @@
 const y = document.getElementById('year');
 if (y) y.textContent = new Date().getFullYear();
 
-// Flip: toggle class on the inner panel only (prevents "random" flips)
+// Flip: class on the inner panel; ignore clicks on links
 function toggleFlip(tile) {
   const inner = tile.querySelector('.tile__inner');
   const expanded = tile.getAttribute('aria-expanded') === 'true';
@@ -10,10 +10,8 @@ function toggleFlip(tile) {
   inner.classList.toggle('flipped', !expanded);
 }
 
-// Click & keyboard handlers
 document.querySelectorAll('.tile').forEach(tile => {
   tile.addEventListener('click', (e) => {
-    // don't flip when clicking a link on the back
     if (e.target.closest('.tile__link')) return;
     toggleFlip(tile);
   });
@@ -25,21 +23,21 @@ document.querySelectorAll('.tile').forEach(tile => {
   });
 });
 
-// Micro-parallax (very light)
+// Light parallax
 (function(){
   const vol = document.querySelector('.volumetric--airy');
   const vig = document.querySelector('.vignette');
   let ticking = false;
   function onScroll(){
-    if(ticking) return;
+    if (ticking) return;
     requestAnimationFrame(()=>{
       const s = window.scrollY || 0;
-      if (vol) vol.style.transform = `translate3d(0, ${s * 0.06}px, 0)`;
-      if (vig) vig.style.transform = `translate3d(0, ${s * 0.03}px, 0)`;
+      if (vol) vol.style.transform = `translate3d(0, ${s*0.06}px, 0)`;
+      if (vig) vig.style.transform = `translate3d(0, ${s*0.03}px, 0)`;
       ticking = false;
     });
     ticking = true;
   }
-  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
 })();
