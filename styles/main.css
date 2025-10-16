@@ -148,3 +148,9 @@ body{
 @supports (-webkit-touch-callout:none){
   @media (max-width:600px){ .tile__inner{ max-height:190px } }
 }
+/* --- Fix: prevent hidden back-face links from being clickable --- */
+.tile__front { z-index: 2; }
+.tile__back  { z-index: 1; pointer-events: none; }        /* disable clicks while hidden */
+
+.tile__inner.flipped .tile__front { z-index: 1; pointer-events: none; }
+.tile__inner.flipped .tile__back  { z-index: 2; pointer-events: auto; }  /* enable clicks */
