@@ -1,16 +1,31 @@
 // Year
-const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+const y = document.getElementById('year');
+if (y) y.textContent = new Date().getFullYear();
 
-// Flip (don’t flip when pressing links)
-document.querySelectorAll('.tile').forEach(tile=>{
-  tile.addEventListener('click', (e)=>{
-    if(e.target.closest('.tile__link')) return;
-    const open = tile.getAttribute('aria-expanded') === 'true';
-    tile.setAttribute('aria-expanded', String(!open));
+// Robust flip: use a class on the inner poster, sync aria-expanded
+function toggleFlip(tile) {
+  const inner = tile.querySelector('.tile__inner');
+  const expanded = tile.getAttribute('aria-expanded') === 'true';
+  tile.setAttribute('aria-expanded', String(!expanded));
+  inner.classList.toggle('flipped', !expanded);
+}
+
+// Click / keyboard
+document.querySelectorAll('.tile').forEach(tile => {
+  tile.addEventListener('click', (e) => {
+    // Don’t flip when a link inside the back is clicked
+    if (e.target.closest('.tile__link')) return;
+    toggleFlip(tile);
+  });
+  tile.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleFlip(tile);
+    }
   });
 });
 
-// Micro-parallax
+// Micro-parallax on light layers (tiny, performant)
 (function(){
   const vol = document.querySelector('.volumetric--airy');
   const vig = document.querySelector('.vignette');
