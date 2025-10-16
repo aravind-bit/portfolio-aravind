@@ -2,7 +2,7 @@
 const y = document.getElementById('year');
 if (y) y.textContent = new Date().getFullYear();
 
-// Flip: class on the inner panel; ignore clicks on links
+// Flip: toggle class on inner; ignore clicks on links
 function toggleFlip(tile) {
   const inner = tile.querySelector('.tile__inner');
   const expanded = tile.getAttribute('aria-expanded') === 'true';
@@ -23,7 +23,7 @@ document.querySelectorAll('.tile').forEach(tile => {
   });
 });
 
-// Light parallax
+// Gentle parallax
 (function(){
   const vol = document.querySelector('.volumetric--airy');
   const vig = document.querySelector('.vignette');
