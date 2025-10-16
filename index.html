@@ -6,10 +6,11 @@
   <title>Aravind Anisetti — Data Science & Agentic Systems</title>
   <meta name="description" content="Aravind Anisetti — data science, visualization, analysis, machine learning, automation, and agentic AI systems." />
   <link rel="icon" href="assets/icons/favicon.ico" />
+  <!-- Type: legible body + tall condensed display (Andor-like) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/main.css?v=52" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css?v=70" />
   <link rel="preload" as="image" href="assets/bg/falcon-1536.webp"
         imagesrcset="assets/bg/falcon-2560.webp 2x">
 </head>
@@ -25,7 +26,7 @@
     <a href="#home" class="nav__brand" aria-label="Home">ARAVIND</a>
     <nav class="nav__links">
       <a href="#home">Home</a>
-      <a href="#missions">Missions</a>
+      <a href="#projects">Projects</a>
     </nav>
   </header>
 
@@ -34,9 +35,12 @@
     <div class="hero">
       <h1 class="hero__name">Aravind&nbsp;Anisetti</h1>
       <p class="hero__title">Data Science • Visualization • ML • Automation • Agentic AI</p>
-      <p class="hero__lead">I build end-to-end systems—clean data pipelines, clear visual stories, and agentic AI that ships.</p>
+      <p class="hero__lead">
+        I build clear, end-to-end data products: fast pipelines, readable visuals, and agentic AI that
+        turns analysis into action.
+      </p>
       <div class="hero__actions">
-        <a class="btn btn--primary" href="#missions">See Missions</a>
+        <a class="btn btn--primary" href="#projects">See Projects</a>
         <a class="btn btn--primary" href="https://github.com/aravind-bit" target="_blank" rel="noopener">GitHub</a>
         <a class="btn btn--primary" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn btn--primary" href="assets/resume/aravind_resume.pdf" target="_blank" rel="noopener">Resume</a>
@@ -45,14 +49,14 @@
     </div>
   </main>
 
-  <!-- missions -->
-  <section id="missions" class="missions" style="scroll-margin-top:72px">
+  <!-- projects -->
+  <section id="projects" class="missions" style="scroll-margin-top:72px">
     <div class="section-head">
-      <h2 class="section-title">Missions</h2>
+      <h2 class="section-title">Projects</h2>
       <p class="section-sub">
-        A hand-picked run of builds in analytics, visualization, ML and agentic systems.
-        Think <em>“we’ve got a ship, a plan, and just enough fuel to make the Kessel Run.”</em>
-        Flip a poster for details and links.
+        A tight reel of work across analytics, visualization, ML, and agentic systems—
+        practical builds that ship, with a touch of Star-Wars grit.
+        Flip a card for a high-level summary and links.
       </p>
     </div>
 
@@ -61,17 +65,19 @@
       <button class="tile card--kpi" aria-expanded="false">
         <div class="tile__inner">
           <div class="tile__face tile__front">
-            <div class="title-stack">
+            <div class="title-stack title-stack--top">
               <h3 class="tile__title">Mid-Cap Tech KPI Tracker</h3>
             </div>
+            <div class="techline">Python • Tableau • yfinance • AWS</div>
           </div>
           <div class="tile__face tile__back">
             <p class="tile__desc">
-              Interactive KPI stack for 20 mid-caps—growth, margins, EPS &amp; R&amp;D—benchmarking efficiency and volatility in one glance.
+              Benchmarks ~20 mid-cap tech firms across growth, margins, EPS, and R&amp;D to surface
+              efficiency leaders and volatility pockets.
             </p>
             <div class="tile__actions">
-              <a class="btn btn--primary tile__link" href="https://public.tableau.com/views/<YOUR_WORKBOOK_1>" target="_blank" rel="noopener">Live Demo</a>
-              <a class="btn btn--primary tile__link" href="https://github.com/aravind-bit/tech-equity-dashboard" target="_blank" rel="noopener">Repo</a>
+              <a class="btn btn--primary tile__link" href="https://public.tableau.com/app/profile/aravind.anisetti/viz/Mid-CapRevenueAnalysis/Mid-CapTechKPITracker" target="_blank" rel="noopener">Live Demo</a>
+              <a class="btn btn--primary tile__link" href="https://github.com/aravind-bit" target="_blank" rel="noopener">Repo</a>
             </div>
           </div>
         </div>
@@ -81,17 +87,19 @@
       <button class="tile card--cpi" aria-expanded="false">
         <div class="tile__inner">
           <div class="tile__face tile__front">
-            <div class="title-stack">
+            <div class="title-stack title-stack--top">
               <h3 class="tile__title">CPI Explorer</h3>
             </div>
+            <div class="techline">Tableau • BLS API • Time-Series</div>
           </div>
           <div class="tile__face tile__back">
             <p class="tile__desc">
-              Category-level YoY with rolling smoothing—showing shelter dominance and energy whipsaws without spreadsheet fog.
+              Decomposes inflation by category with rolling windows—revealing shelter’s heft and energy’s
+              whipsaws without spreadsheet fog.
             </p>
             <div class="tile__actions">
-              <a class="btn btn--primary tile__link" href="https://public.tableau.com/views/<YOUR_WORKBOOK_2>" target="_blank" rel="noopener">Live Demo</a>
-              <a class="btn btn--primary tile__link" href="https://github.com/aravind-bit/inflation-analysis-virginia" target="_blank" rel="noopener">Repo</a>
+              <a class="btn btn--primary tile__link" href="https://public.tableau.com/app/profile/aravind.anisetti/viz/InflationAnalysis-Virginia/InflationAnalysisVA" target="_blank" rel="noopener">Live Demo</a>
+              <a class="btn btn--primary tile__link" href="https://github.com/aravind-bit" target="_blank" rel="noopener">Repo</a>
             </div>
           </div>
         </div>
@@ -101,17 +109,19 @@
       <button class="tile card--earnings" aria-expanded="false">
         <div class="tile__inner">
           <div class="tile__face tile__front">
-            <div class="title-stack">
+            <div class="title-stack title-stack--top">
               <h3 class="tile__title">Earnings Call Summarizer</h3>
             </div>
+            <div class="techline">Python • RAG • OpenAI • Retrieval</div>
           </div>
           <div class="tile__face tile__back">
             <p class="tile__desc">
-              Agentic LLM turns transcripts into traceable KPI snippets, guidance pulls, and searchable evidence. Less skimming, more signal.
+              Agentic LLM ingests transcripts and returns traceable KPI snippets, guidance highlights,
+              and searchable evidence—less skimming, more signal.
             </p>
             <div class="tile__actions">
-              <a class="btn btn--primary tile__link" href="https://example.com" target="_blank" rel="noopener">Live Demo</a>
-              <a class="btn btn--primary tile__link" href="https://github.com/aravind-bit/earnings-call-summarizer" target="_blank" rel="noopener">Repo</a>
+              <a class="btn btn--primary tile__link" href="https://github.com/aravind-bit" target="_blank" rel="noopener">Live Demo</a>
+              <a class="btn btn--primary tile__link" href="https://github.com/aravind-bit" target="_blank" rel="noopener">Repo</a>
             </div>
           </div>
         </div>
@@ -121,17 +131,19 @@
       <button class="tile card--media" aria-expanded="false">
         <div class="tile__inner">
           <div class="tile__face tile__front">
-            <div class="title-stack">
+            <div class="title-stack title-stack--top">
               <h3 class="tile__title">Multimodal Media Analyst</h3>
             </div>
+            <div class="techline">Whisper/ASR • NLP • Agents • Sentiment</div>
           </div>
           <div class="tile__face tile__back">
             <p class="tile__desc">
-              Auto-ingests video/audio → diarization + ASR → topic &amp; sentiment tags. An agent hunts the quotable clips so you don’t.
+              Ingests video/audio → diarization + ASR → topic &amp; sentiment tags; an agent hunts
+              quotable clips and timestamps for highlights.
             </p>
             <div class="tile__actions">
-              <a class="btn btn--primary tile__link" href="https://example.com" target="_blank" rel="noopener">Live Demo</a>
-              <a class="btn btn--primary tile__link" href="https://github.com/aravind-bit/multimodal-media-analyst" target="_blank" rel="noopener">Repo</a>
+              <a class="btn btn--primary tile__link" href="https://github.com/aravind-bit" target="_blank" rel="noopener">Live Demo</a>
+              <a class="btn btn--primary tile__link" href="https://github.com/aravind-bit" target="_blank" rel="noopener">Repo</a>
             </div>
           </div>
         </div>
