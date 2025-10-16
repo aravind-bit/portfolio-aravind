@@ -12,9 +12,30 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles/main.css?v=80" />
+  <!-- Main site CSS -->
+  <link rel="stylesheet" href="styles/main.css?v=95" />
+
+  <!-- Preload background -->
   <link rel="preload" as="image" href="assets/bg/falcon-1536.webp"
         imagesrcset="assets/bg/falcon-2560.webp 2x">
+
+  <!-- Mobile/Safari size overrides: make cards smaller on phones -->
+  <style>
+    /* Make tiles smaller on phones */
+    @media (max-width: 600px) {
+      .tiles{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .tile__inner{ aspect-ratio: 1 / 1.25; max-height: 200px; border-radius: 10px; }
+      .tile__face{ padding: 10px; }
+      .tile__title{ font-size: clamp(22px, 7.2vw, 36px); line-height: 1.05; }
+      .techline{ font-size: 10.5px; letter-spacing: .04em; }
+    }
+    /* Extra nudge for iOS Safari */
+    @supports (-webkit-touch-callout: none) {
+      @media (max-width: 600px) {
+        .tile__inner{ max-height: 190px; }
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- background layers -->
@@ -32,7 +53,7 @@
     </nav>
   </header>
 
-  <!-- hero -->
+  <!-- hero / about -->
   <main id="home" class="hero-wrap" style="scroll-margin-top:72px">
     <div class="hero">
       <h1 class="hero__name">Aravind&nbsp;Anisetti</h1>
@@ -56,28 +77,35 @@
       <h2 class="section-title">Projects</h2>
       <p class="section-sub">
         A tight reel across analytics, visualization, ML, and agentic systems—practical builds that ship
-        with a touch of Star-Wars grit. Tap a card for a high-level summary and links.
+        with a hint of Star-Wars grit. Tap a card to flip for a high-level summary and links.
       </p>
     </div>
 
     <div class="tiles">
+
       <!-- KPI Tracker -->
       <div class="tile" role="button" tabindex="0" aria-expanded="false">
-        <div class="tile__inner" data-card="kpi">
+        <div class="tile__inner">
+          <!-- FRONT -->
           <div class="tile__face tile__front card--kpi">
             <div class="title-stack title-stack--top">
               <h3 class="tile__title">Mid-Cap Tech KPI Tracker</h3>
             </div>
             <div class="techline">Python • Tableau • yfinance • AWS</div>
           </div>
+          <!-- BACK -->
           <div class="tile__face tile__back">
             <p class="tile__desc">
               Benchmarks ~20 mid-cap tech firms across revenue growth, margins, EPS, and R&amp;D
               to surface efficiency leaders and volatility pockets.
             </p>
             <div class="tile__actions">
-              <a class="btn tile__link" href="https://public.tableau.com/app/profile/aravind.anisetti/viz/Mid-CapRevenueAnalysis/Mid-CapTechKPITracker" target="_blank" rel="noopener">Live Demo</a>
-              <a class="btn tile__link" href="https://github.com/aravind-bit" target="_blank" rel="noopener">Repo</a>
+              <a class="btn tile__link"
+                 href="https://public.tableau.com/app/profile/aravind.anisetti/viz/Mid-CapRevenueAnalysis/Mid-CapTechKPITracker"
+                 target="_blank" rel="noopener">Live Demo</a>
+              <a class="btn tile__link"
+                 href="https://github.com/aravind-bit"
+                 target="_blank" rel="noopener">Repo</a>
             </div>
           </div>
         </div>
@@ -85,21 +113,27 @@
 
       <!-- CPI Explorer -->
       <div class="tile" role="button" tabindex="0" aria-expanded="false">
-        <div class="tile__inner" data-card="cpi">
+        <div class="tile__inner">
+          <!-- FRONT -->
           <div class="tile__face tile__front card--cpi">
             <div class="title-stack title-stack--top">
               <h3 class="tile__title">CPI Explorer</h3>
             </div>
             <div class="techline">Tableau • BLS API • Time-Series</div>
           </div>
+          <!-- BACK -->
           <div class="tile__face tile__back">
             <p class="tile__desc">
               Decomposes inflation by category with rolling windows—revealing shelter’s heft and
               energy’s whipsaws without spreadsheet fog.
             </p>
             <div class="tile__actions">
-              <a class="btn tile__link" href="https://public.tableau.com/app/profile/aravind.anisetti/viz/InflationAnalysis-Virginia/InflationAnalysisVA" target="_blank" rel="noopener">Live Demo</a>
-              <a class="btn tile__link" href="https://github.com/aravind-bit" target="_blank" rel="noopener">Repo</a>
+              <a class="btn tile__link"
+                 href="https://public.tableau.com/app/profile/aravind.anisetti/viz/InflationAnalysis-Virginia/InflationAnalysisVA"
+                 target="_blank" rel="noopener">Live Demo</a>
+              <a class="btn tile__link"
+                 href="https://github.com/aravind-bit"
+                 target="_blank" rel="noopener">Repo</a>
             </div>
           </div>
         </div>
@@ -107,21 +141,27 @@
 
       <!-- Earnings Summarizer -->
       <div class="tile" role="button" tabindex="0" aria-expanded="false">
-        <div class="tile__inner" data-card="earnings">
+        <div class="tile__inner">
+          <!-- FRONT -->
           <div class="tile__face tile__front card--earnings">
             <div class="title-stack title-stack--top">
               <h3 class="tile__title">Earnings Call Summarizer</h3>
             </div>
             <div class="techline">Python • RAG • OpenAI • Retrieval</div>
           </div>
+          <!-- BACK -->
           <div class="tile__face tile__back">
             <p class="tile__desc">
               Agentic LLM ingests transcripts and returns traceable KPI snippets, guidance highlights,
               and searchable evidence—less skimming, more signal.
             </p>
             <div class="tile__actions">
-              <a class="btn tile__link" href="https://github.com/aravind-bit" target="_blank" rel="noopener">Live Demo</a>
-              <a class="btn tile__link" href="https://github.com/aravind-bit" target="_blank" rel="noopener">Repo</a>
+              <a class="btn tile__link"
+                 href="https://github.com/aravind-bit"
+                 target="_blank" rel="noopener">Live Demo</a>
+              <a class="btn tile__link"
+                 href="https://github.com/aravind-bit"
+                 target="_blank" rel="noopener">Repo</a>
             </div>
           </div>
         </div>
@@ -129,21 +169,27 @@
 
       <!-- Multimodal Media Analyst -->
       <div class="tile" role="button" tabindex="0" aria-expanded="false">
-        <div class="tile__inner" data-card="media">
+        <div class="tile__inner">
+          <!-- FRONT -->
           <div class="tile__face tile__front card--media">
             <div class="title-stack title-stack--top">
               <h3 class="tile__title">Multimodal Media Analyst</h3>
             </div>
             <div class="techline">Whisper/ASR • NLP • Agents • Sentiment</div>
           </div>
+          <!-- BACK -->
           <div class="tile__face tile__back">
             <p class="tile__desc">
               Ingests video/audio → diarization + ASR → topic &amp; sentiment tags; an agent finds
               quotable clips and timestamps for highlights.
             </p>
             <div class="tile__actions">
-              <a class="btn tile__link" href="https://github.com/aravind-bit" target="_blank" rel="noopener">Live Demo</a>
-              <a class="btn tile__link" href="https://github.com/aravind-bit" target="_blank" rel="noopener">Repo</a>
+              <a class="btn tile__link"
+                 href="https://github.com/aravind-bit"
+                 target="_blank" rel="noopener">Live Demo</a>
+              <a class="btn tile__link"
+                 href="https://github.com/aravind-bit"
+                 target="_blank" rel="noopener">Repo</a>
             </div>
           </div>
         </div>
@@ -156,6 +202,7 @@
     <p>© <span id="year"></span> Aravind Anisetti</p>
   </footer>
 
-  <script src="scripts/main.js?v=80" defer></script>
+  <!-- Your existing JS (handles flip + parallax) -->
+  <script src="scripts/main.js?v=95" defer></script>
 </body>
 </html>
