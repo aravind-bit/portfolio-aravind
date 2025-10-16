@@ -7,35 +7,14 @@
   <meta name="description" content="Aravind Anisetti — data science, visualization, analysis, machine learning, automation, and agentic AI systems." />
   <link rel="icon" href="assets/icons/favicon.ico" />
 
-  <!-- Type: legible body + tall condensed display (Andor-ish) -->
+  <!-- Type: legible body + tall condensed display -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Main site CSS -->
-  <link rel="stylesheet" href="styles/main.css?v=95" />
-
-  <!-- Preload background -->
+  <link rel="stylesheet" href="styles/main.css?v=100" />
   <link rel="preload" as="image" href="assets/bg/falcon-1536.webp"
         imagesrcset="assets/bg/falcon-2560.webp 2x">
-
-  <!-- Mobile/Safari size overrides: make cards smaller on phones -->
-  <style>
-    /* Make tiles smaller on phones */
-    @media (max-width: 600px) {
-      .tiles{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-      .tile__inner{ aspect-ratio: 1 / 1.25; max-height: 200px; border-radius: 10px; }
-      .tile__face{ padding: 10px; }
-      .tile__title{ font-size: clamp(22px, 7.2vw, 36px); line-height: 1.05; }
-      .techline{ font-size: 10.5px; letter-spacing: .04em; }
-    }
-    /* Extra nudge for iOS Safari */
-    @supports (-webkit-touch-callout: none) {
-      @media (max-width: 600px) {
-        .tile__inner{ max-height: 190px; }
-      }
-    }
-  </style>
 </head>
 <body>
   <!-- background layers -->
@@ -53,7 +32,7 @@
     </nav>
   </header>
 
-  <!-- hero / about -->
+  <!-- hero -->
   <main id="home" class="hero-wrap" style="scroll-margin-top:72px">
     <div class="hero">
       <h1 class="hero__name">Aravind&nbsp;Anisetti</h1>
@@ -156,12 +135,8 @@
               and searchable evidence—less skimming, more signal.
             </p>
             <div class="tile__actions">
-              <a class="btn tile__link"
-                 href="https://github.com/aravind-bit"
-                 target="_blank" rel="noopener">Live Demo</a>
-              <a class="btn tile__link"
-                 href="https://github.com/aravind-bit"
-                 target="_blank" rel="noopener">Repo</a>
+              <a class="btn tile__link" href="https://github.com/aravind-bit" target="_blank" rel="noopener">Live Demo</a>
+              <a class="btn tile__link" href="https://github.com/aravind-bit" target="_blank" rel="noopener">Repo</a>
             </div>
           </div>
         </div>
@@ -184,12 +159,8 @@
               quotable clips and timestamps for highlights.
             </p>
             <div class="tile__actions">
-              <a class="btn tile__link"
-                 href="https://github.com/aravind-bit"
-                 target="_blank" rel="noopener">Live Demo</a>
-              <a class="btn tile__link"
-                 href="https://github.com/aravind-bit"
-                 target="_blank" rel="noopener">Repo</a>
+              <a class="btn tile__link" href="https://github.com/aravind-bit" target="_blank" rel="noopener">Live Demo</a>
+              <a class="btn tile__link" href="https://github.com/aravind-bit" target="_blank" rel="noopener">Repo</a>
             </div>
           </div>
         </div>
@@ -202,7 +173,6 @@
     <p>© <span id="year"></span> Aravind Anisetti</p>
   </footer>
 
-  <!-- Your existing JS (handles flip + parallax) -->
-  <script src="scripts/main.js?v=95" defer></script>
+  <script src="scripts/main.js?v=100" defer></script>
 </body>
 </html>
