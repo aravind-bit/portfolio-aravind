@@ -2,28 +2,58 @@
 const y = document.getElementById('year');
 if (y) y.textContent = new Date().getFullYear();
 
-// Toggle "flipped" on the inner panel; ignore clicks on links inside the back
-function toggleFlip(tile) {
+// Toggle helper
+function setFlipped(tile, on) {
   const inner = tile.querySelector('.tile__inner');
-  const expanded = tile.getAttribute('aria-expanded') === 'true';
-  tile.setAttribute('aria-expanded', String(!expanded));
-  inner.classList.toggle('flipped', !expanded);
+  tile.setAttribute('aria-expanded', String(on));
+  inner.classList.toggle('flipped', on);
 }
 
 document.querySelectorAll('.tile').forEach(tile => {
-  tile.addEventListener('click', (e) => {
-    if (e.target.closest('.tile__link')) return; // don't flip when clicking a link
-    toggleFlip(tile);
+  // Per-tile suppression flag to avoid click-through after flip
+  let suppressNextBackLinkClick = false;
+  const backLinks = tile.querySelectorAll('.tile__back .tile__link');
+
+  // Any click on a back link is ignored during the suppression window
+  backLinks.forEach(a => {
+    a.addEventListener('click', ev => {
+      if (suppressNextBackLinkClick) {
+        ev.preventDefault();
+        ev.stopPropagation();
+      }
+    }, true); // capture so we stop it early
   });
-  tile.addEventListener('keydown', (e) => {
+
+  // Main click handler for the card
+  tile.addEventListener('click', e => {
+    // If you actually clicked a link, let it behave normally
+    if (e.target.closest('.tile__link')) return;
+
+    e.preventDefault(); // don't let this click bubble into new state
+    e.stopPropagation();
+
+    const expanded = tile.getAttribute('aria-expanded') === 'true';
+    setFlipped(tile, !expanded);
+
+    // Suppress link clicks for a short window after the flip
+    suppressNextBackLinkClick = true;
+    setTimeout(() => { suppressNextBackLinkClick = false; }, 250);
+  });
+
+  // Keyboard accessibility
+  tile.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      toggleFlip(tile);
+      const expanded = tile.getAttribute('aria-expanded') === 'true';
+      setFlipped(tile, !expanded);
+
+      suppressNextBackLinkClick = true;
+      setTimeout(() => { suppressNextBackLinkClick = false; }, 250);
     }
   });
 });
 
-// Gentle parallax on light layers
+// Gentle parallax (unchanged)
 (function(){
   const vol = document.querySelector('.volumetric--airy');
   const vig = document.querySelector('.vignette');
@@ -38,6 +68,6 @@ document.querySelectorAll('.tile').forEach(tile => {
     });
     ticking = true;
   }
-  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 })();
