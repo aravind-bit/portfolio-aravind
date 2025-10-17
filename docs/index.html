@@ -72,7 +72,9 @@
       </div>
     </div>
   </main>
-
+  <!-- External JS inside /docs -->
+  <script src="styles/main.js?v=ui280" defer></script>
+  
   <!-- projects -->
   <section id="projects" class="missions" style="scroll-margin-top:72px">
     <div class="section-head">
@@ -177,8 +179,7 @@
     <p>© <span id="year"></span> Aravind Anisetti</p>
   </footer>
 
-  <!-- External JS inside /docs -->
-  <script src="styles/main.js?v=ui280" defer></script>
+
 
   <!-- GUARANTEED inline fallback: flips even if external JS fails/caches -->
   <script>
@@ -197,5 +198,25 @@
       });
     })();
   </script>
+  <script>
+(function(){
+  // Bind flips even if external JS is cached or blocked
+  var tiles = document.querySelectorAll('.tile');
+  tiles.forEach(function(tile){
+    var inner = tile.querySelector('.tile__inner');
+    if(!inner) return;
+    function toggle(e){
+      if (e && e.target && e.target.closest && e.target.closest('a,button')) return;
+      inner.classList.toggle('flipped');
+      tile.setAttribute('aria-expanded', inner.classList.contains('flipped'));
+    }
+    tile.addEventListener('click', toggle);
+    tile.addEventListener('keydown', function(e){
+      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(e); }
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
