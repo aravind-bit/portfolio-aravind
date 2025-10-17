@@ -1,24 +1,31 @@
-// Year
-(function(){
-  var y = document.getElementById('year');
-  if (y) y.textContent = new Date().getFullYear();
-})();
+// docs/styles/main.js
 
-// Flip cards on click/tap; ignore clicks on links/buttons
-(function(){
+// Run after HTML is parsed
+document.addEventListener('DOMContentLoaded', function () {
+  // Sanity ping (check DevTools Console to confirm)
+  try { console.log('[portfolio] main.js loaded'); } catch(e){}
+
   var tiles = document.querySelectorAll('.tile');
-  tiles.forEach(function(tile){
+  tiles.forEach(function (tile) {
     var inner = tile.querySelector('.tile__inner');
+    if (!inner) return;
 
-    function toggle(e){
+    function toggle(e) {
+      // Don't flip when clicking links/buttons on the back
       if (e && e.target && e.target.closest && e.target.closest('a,button')) return;
       inner.classList.toggle('flipped');
       tile.setAttribute('aria-expanded', inner.classList.contains('flipped'));
     }
 
+    // Click / tap
     tile.addEventListener('click', toggle);
-    tile.addEventListener('keydown', function(e){
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(e); }
+
+    // Keyboard (accessibility)
+    tile.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle(e);
+      }
     });
   });
-})();
+});
