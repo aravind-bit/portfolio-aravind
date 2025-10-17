@@ -19,6 +19,25 @@
     .tile__inner{ outline: none !important; }
   </style>
 </head>
+  <script>
+(function(){
+  if (!document.querySelector) return;
+  var tiles = document.querySelectorAll('.tile'), bound=false;
+  tiles.forEach(function(tile){
+    var inner = tile.querySelector('.tile__inner');
+    if(!inner) return;
+    function toggle(e){
+      if (e && e.target && e.target.closest && e.target.closest('a,button')) return;
+      inner.classList.toggle('flipped');
+      tile.setAttribute('aria-expanded', inner.classList.contains('flipped'));
+    }
+    tile.addEventListener('click', toggle);
+    tile.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(e); }});
+    bound = true;
+  });
+  try { console.log('[portfolio] inline flip fallback ' + (bound?'bound':'no tiles')); } catch(e){}
+})();
+</script>
 <body>
   <!-- background layers -->
   <div class="falcon-bg" aria-hidden="true"></div>
