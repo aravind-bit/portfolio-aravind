@@ -13,14 +13,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Main CSS (cache-busted) -->
-  <link rel="stylesheet" href="styles/main.css?v=230" />
+  <link rel="stylesheet" href="styles/main.css?v=240" />
 
-  <!-- Critical fallback: guarantees visible cards even if external CSS is stale -->
-  <style id="critical-cards">
+  <!-- Critical fallback so cards ALWAYS paint -->
+  <style>
     .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;justify-items:start;align-items:start}
     .tile{cursor:pointer}
-    .tile__inner{position:relative;width:100%;height:280px;border-radius:14px;overflow:hidden;background:#0e1a23;box-shadow:0 12px 28px rgba(0,0,0,.28)}
-    @media (max-width:750px){.tile__inner{height:240px;border-radius:12px}}
+    .tile__inner{position:relative;width:100%;height:320px;border-radius:16px;overflow:hidden;background:#0e1a23;box-shadow:0 12px 28px rgba(0,0,0,.28)}
+    @media (max-width:1000px){.tile__inner{height:280px}}
+    @media (max-width:750px){.tile__inner{height:240px}}
     @media (max-width:600px){.tile__inner{height:200px;border-radius:10px}}
     .tile__face{position:absolute;inset:0;display:flex;flex-direction:column;padding:14px}
     .tile__front{opacity:1}
@@ -87,6 +88,7 @@
       </p>
     </div>
 
+    <!-- THE CARDS: keep these four blocks intact -->
     <div class="tiles">
       <!-- KPI Tracker -->
       <div class="tile" role="button" tabindex="0" aria-expanded="false">
@@ -183,6 +185,6 @@
     <p>© <span id="year"></span> Aravind Anisetti</p>
   </footer>
 
-  <script src="scripts/main.js?v=230" defer></script>
+  <script src="scripts/main.js?v=240" defer></script>
 </body>
 </html>
