@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles/main.css?v=120" />
+  <link rel="stylesheet" href="styles/main.css?v=210" />
   <link rel="preload" as="image" href="assets/bg/falcon-1536.webp"
         imagesrcset="assets/bg/falcon-2560.webp 2x">
 </head>
@@ -32,13 +32,14 @@
     </nav>
   </header>
 
-  <!-- hero -->
+  <!-- hero / about -->
   <main id="home" class="hero-wrap" style="scroll-margin-top:72px">
     <div class="hero">
       <h1 class="hero__name">Aravind&nbsp;Anisetti</h1>
       <p class="hero__title">Data Science • Visualization • ML • Automation • Agentic AI</p>
       <p class="hero__lead">
-        I build clear, end-to-end data products: fast pipelines, readable visuals, and agentic AI that turns analysis into action.
+        I build data-driven solutions that connect raw information to strategic insights.
+        End-to-end data products—lean pipelines, visualizations and agentic systems that turn insight into action.
       </p>
       <div class="hero__actions">
         <a class="btn" href="#projects">See Projects</a>
@@ -55,36 +56,37 @@
     <div class="section-head">
       <h2 class="section-title">Projects</h2>
       <p class="section-sub">
-        A tight reel across analytics, visualization, ML, and agentic systems—practical builds that ship
-        with a hint of Star-Wars grit. Tap a card to flip for a high-level summary and links.
+        A tight reel across analytics, visualization, ML, and agentic systems—practical builds. 
+        Tap a card to flip for a high-level summary and links.
       </p>
     </div>
 
     <div class="tiles">
-
-      <!-- KPI -->
+      <!-- KPI Tracker -->
       <div class="tile" role="button" tabindex="0" aria-expanded="false">
         <div class="tile__inner">
+          <!-- FRONT -->
           <div class="tile__face tile__front card--kpi">
             <h3 class="tile__title">Mid-Cap Tech KPI Tracker</h3>
             <div class="techline">Python • Tableau • yfinance • AWS</div>
           </div>
+          <!-- BACK (buttons first) -->
           <div class="tile__face tile__back">
-            <p class="tile__desc">
-              Benchmarks ~20 mid-cap tech firms across revenue growth, margins, EPS, and R&amp;D
-              to surface efficiency leaders and volatility pockets.
-            </p>
             <div class="tile__actions">
               <a class="btn tile__link" target="_blank" rel="noopener"
                  href="https://public.tableau.com/app/profile/aravind.anisetti/viz/Mid-CapRevenueAnalysis/Mid-CapTechKPITracker">Live Demo</a>
               <a class="btn tile__link" target="_blank" rel="noopener"
                  href="https://github.com/aravind-bit">Repo</a>
             </div>
+            <p class="tile__desc">
+              Benchmarks ~20 mid-cap tech firms across growth, margins, EPS, and R&amp;D
+              to surface efficiency leaders and volatility pockets.
+            </p>
           </div>
         </div>
       </div>
 
-      <!-- CPI -->
+      <!-- CPI Explorer -->
       <div class="tile" role="button" tabindex="0" aria-expanded="false">
         <div class="tile__inner">
           <div class="tile__face tile__front card--cpi">
@@ -92,21 +94,21 @@
             <div class="techline">Tableau • BLS API • Time-Series</div>
           </div>
           <div class="tile__face tile__back">
-            <p class="tile__desc">
-              Decomposes inflation by category with rolling windows—revealing shelter’s heft and
-              energy’s whipsaws without spreadsheet fog.
-            </p>
             <div class="tile__actions">
               <a class="btn tile__link" target="_blank" rel="noopener"
                  href="https://public.tableau.com/app/profile/aravind.anisetti/viz/InflationAnalysis-Virginia/InflationAnalysisVA">Live Demo</a>
               <a class="btn tile__link" target="_blank" rel="noopener"
                  href="https://github.com/aravind-bit">Repo</a>
             </div>
+            <p class="tile__desc">
+              Decomposes inflation by category with rolling windows—showcasing shelter’s heft
+              and energy’s whipsaws without spreadsheet fog.
+            </p>
           </div>
         </div>
       </div>
 
-      <!-- Earnings -->
+      <!-- Earnings Summarizer -->
       <div class="tile" role="button" tabindex="0" aria-expanded="false">
         <div class="tile__inner">
           <div class="tile__face tile__front card--earnings">
@@ -114,21 +116,21 @@
             <div class="techline">Python • RAG • OpenAI • Retrieval</div>
           </div>
           <div class="tile__face tile__back">
-            <p class="tile__desc">
-              Agentic LLM ingests transcripts and returns traceable KPI snippets, guidance highlights,
-              and searchable evidence—less skimming, more signal.
-            </p>
             <div class="tile__actions">
               <a class="btn tile__link" target="_blank" rel="noopener"
                  href="https://github.com/aravind-bit">Live Demo</a>
               <a class="btn tile__link" target="_blank" rel="noopener"
                  href="https://github.com/aravind-bit">Repo</a>
             </div>
+            <p class="tile__desc">
+              Agentic LLM ingests transcripts and returns traceable KPI snippets, guidance highlights,
+              and searchable evidence—less skimming, more signal.
+            </p>
           </div>
         </div>
       </div>
 
-      <!-- Media -->
+      <!-- Multimodal Media Analyst -->
       <div class="tile" role="button" tabindex="0" aria-expanded="false">
         <div class="tile__inner">
           <div class="tile__face tile__front card--media">
@@ -136,16 +138,16 @@
             <div class="techline">Whisper/ASR • NLP • Agents • Sentiment</div>
           </div>
           <div class="tile__face tile__back">
-            <p class="tile__desc">
-              Ingests video/audio → diarization + ASR → topic &amp; sentiment tags; an agent finds
-              quotable clips and timestamps for highlights.
-            </p>
             <div class="tile__actions">
               <a class="btn tile__link" target="_blank" rel="noopener"
                  href="https://github.com/aravind-bit">Live Demo</a>
               <a class="btn tile__link" target="_blank" rel="noopener"
                  href="https://github.com/aravind-bit">Repo</a>
             </div>
+            <p class="tile__desc">
+              Ingests video/audio → diarization + ASR → topic &amp; sentiment tags; an agent finds
+              quotable clips and timestamps for highlights.
+            </p>
           </div>
         </div>
       </div>
@@ -157,6 +159,6 @@
     <p>© <span id="year"></span> Aravind Anisetti</p>
   </footer>
 
-  <script src="scripts/main.js?v=120" defer></script>
+  <script src="scripts/main.js?v=210" defer></script>
 </body>
 </html>
