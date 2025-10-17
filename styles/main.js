@@ -4,7 +4,7 @@
   if (y) y.textContent = new Date().getFullYear();
 })();
 
-// Card flip logic: click/tap toggles; ignore clicks on links/buttons
+// Flip cards on click/tap; ignore clicks on links/buttons
 (function(){
   var tiles = document.querySelectorAll('.tile');
   tiles.forEach(function(tile){
