@@ -1,77 +1,38 @@
-// Footer year
-document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());
+// Year in footer
+(function(){
+  var y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+})();
 
-// Flip tiles (front/back)
-document.querySelectorAll('.tile').forEach(btn=>{
-  btn.addEventListener('click', (e)=>{
-    if(e.target.matches('.tile__more')) return; // allow modal link
-    const isOpen = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!isOpen));
+// Card flip logic: click/tap toggles; ignore clicks on links/buttons
+(function(){
+  var tiles = document.querySelectorAll('.tile');
+  tiles.forEach(function(tile){
+    var inner = tile.querySelector('.tile__inner');
+
+    function toggle(e){
+      if (e && e.target && e.target.closest && e.target.closest('a,button')) return;
+      inner.classList.toggle('flipped');
+      tile.setAttribute('aria-expanded', inner.classList.contains('flipped'));
+    }
+
+    tile.addEventListener('click', toggle);
+    tile.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(e); }
+    });
   });
-});
 
-// Modal
-const modal = document.getElementById('modal');
-const modalClose = document.getElementById('modalClose');
-let lastFocused = null;
-
-// Project data (edit URLs here)
-const projectData = {
-  midcap: {
-    title:'Mid-Cap Tech KPI Tracker',
-    summary:'Revenue growth, margins, EPS & R&D intensity across 20 mid-caps; surfaces efficiency leaders and volatility pockets.',
-    tags:'Python • Tableau • yfinance • AWS',
-    live:'https://public.tableau.com/views/<YOUR_WORKBOOK_1>',
-    repo:'https://github.com/aravind-bit/tech-equity-dashboard'
-  },
-  cpi: {
-    title:'CPI Explorer',
-    summary:'Category-level YoY with rolling averages; shows shelter dominance and energy whipsaws.',
-    tags:'Tableau • BLS API • Time Series',
-    live:'https://public.tableau.com/views/<YOUR_WORKBOOK_2>',
-    repo:'https://github.com/aravind-bit/inflation-analysis-virginia'
-  },
-  earnings: {
-    title:'Earnings Call Summarizer',
-    summary:'Agentic LLM extracts KPIs and guidance from earnings transcripts with citations.',
-    tags:'Python • OpenAI • RAG',
-    live:'https://example.com',
-    repo:'https://github.com/aravind-bit/earnings-call-summarizer'
-  },
-  media: {
-    title:'Multimodal Media Analyst',
-    summary:'Auto-ingests video/audio → diarization + ASR → topic segmentation → agent finds notable clips.',
-    tags:'Whisper/ASR • NLP • Topic modeling • Sentiment • Agent tools',
-    live:'https://example.com',
-    repo:'https://github.com/aravind-bit/multimodal-media-analyst'
-  }
-};
-
-function openModal({ title, tags='', summary='', live='#', repo='#' }){
-  lastFocused = document.activeElement;
-  document.getElementById('mTitle').textContent = title || '';
-  document.getElementById('mTags').textContent = tags || '';
-  document.getElementById('mSummary').textContent = summary || '';
-  document.getElementById('mLive').href = live || '#';
-  document.getElementById('mRepo').href = repo || '#';
-  modal.classList.add('open');
-  modal.setAttribute('aria-hidden','false');
-  modalClose.focus();
-}
-function closeModal(){
-  modal.classList.remove('open');
-  modal.setAttribute('aria-hidden','true');
-  if(lastFocused) lastFocused.focus();
-}
-
-// Wire modal openers
-document.querySelectorAll('.tile__more').forEach(link=>{
-  link.addEventListener('click', (e)=>{
-    e.preventDefault();
-    const id = link.dataset.modal;
-    openModal(projectData[id] || {});
-  });
-});
-modalClose.addEventListener('click', closeModal);
-modal.addEventListener('click', (e)=>{ if(e.target.classList.contains('modal__backdrop')) closeModal(); });
-document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
+  // Close any flipped card when clicking outside
+  document.addEventListener('click', function(e){
+    var clickedTile = e.target.closest ? e.target.closest('.tile') : null;
+    document.querySelectorAll('.tile .tile__inner.flipped').forEach(function(inner){
+      if (!clickedTile || !clickedTile.contains(inner)){
+        inner.classList.remove('flipped');
+        if (inner.closest) {
+          var t = inner.closest('.tile');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        }
+      }
+    });
+  }, true);
+})();
