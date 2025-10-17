@@ -15,8 +15,8 @@ body{margin:0;color:var(--ink);font-family:Outfit,system-ui,-apple-system,"Segoe
 .falcon-bg{
   position:fixed; inset:0; z-index:-3; background:center/cover no-repeat;
   background-image:image-set(
-    url('../assets/bg/falcon-2560.webp') type('image/webp') 2x,
-    url('../assets/bg/falcon-1536.webp') type('image/webp') 1x
+    url('/portfolio-aravind/assets/bg/falcon-2560.webp') type('image/webp') 2x,
+    url('/portfolio-aravind/assets/bg/falcon-1536.webp') type('image/webp') 1x
   );
   filter:brightness(1.1) contrast(1.05) saturate(1.08)
 }
