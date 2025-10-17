@@ -304,3 +304,8 @@ body {
   text-align: left;
   font-size: 14px;
 }
+/* 3D flip essentials */
+.tile { perspective: 1200px; }
+.tile__face { -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.tile__inner { will-change: transform; }
+
