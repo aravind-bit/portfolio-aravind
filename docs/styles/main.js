@@ -1,4 +1,4 @@
-// Year in footer
+// Year
 (function(){
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
@@ -21,18 +21,4 @@
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(e); }
     });
   });
-
-  // Close any flipped card when clicking outside
-  document.addEventListener('click', function(e){
-    var clickedTile = e.target.closest ? e.target.closest('.tile') : null;
-    document.querySelectorAll('.tile .tile__inner.flipped').forEach(function(inner){
-      if (!clickedTile || !clickedTile.contains(inner)){
-        inner.classList.remove('flipped');
-        if (inner.closest) {
-          var t = inner.closest('.tile');
-          if (t) t.setAttribute('aria-expanded', 'false');
-        }
-      }
-    });
-  }, true);
 })();
