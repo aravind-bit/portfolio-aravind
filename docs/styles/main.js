@@ -1,175 +1,30 @@
-/* =============== ROOT COLORS =================== */
-:root {
-  --p0:#050c11; --p1:#072330; --p2:#08202a; --p3:#0b3542; --p4:#0d4c59;
-  --p5:#0f6a74; --p6:#108c98; --p7:#b8efe8; --p8:#63c9d1;
+// docs/styles/main.js
 
-  --ink:#f6f9ff; --ink-dim:#dfe9ff;
+document.addEventListener('DOMContentLoaded', function () {
+  // sanity ping (optional)
+  try { console.log('[portfolio] main.js loaded'); } catch(e){}
 
-  --btn:var(--p6); --btn-hover:#0b7883; --btn-text:#fff;
+  var tiles = document.querySelectorAll('.tile');
+  tiles.forEach(function (tile) {
+    var inner = tile.querySelector('.tile__inner');
+    if (!inner) return;
 
-  --kpi:var(--p6); --cpi:var(--p4); --earn:var(--p8); --media:var(--p3);
-}
+    function toggle(e) {
+      // Ignore clicks on links/buttons
+      if (e && e.target && e.target.closest && e.target.closest('a,button')) return;
+      inner.classList.toggle('flipped');
+      tile.setAttribute('aria-expanded', inner.classList.contains('flipped'));
+    }
 
-/* =============== BASE =================== */
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  color: var(--ink);
-  font-family: 'Outfit', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  line-height: 1.65;
-  background: #0a0f18;
-  overflow-x: hidden;
-}
+    // Click/tap
+    tile.addEventListener('click', toggle);
 
-/* Ensure content sits above background layers */
-main, section, .missions, .tiles { position: relative; z-index: 1; }
-
-/* =============== BACKGROUND =================== */
-/* note: CSS is in /docs/styles → go up one level to /docs/assets */
-.falcon-bg {
-  position: fixed; inset: 0; z-index: -3;
-  background: center/cover no-repeat;
-  background-image: image-set(
-    url('../assets/bg/falcon-2560.webp') type('image/webp') 2x,
-    url('../assets/bg/falcon-1536.webp') type('image/webp') 1x
-  );
-  filter: brightness(1.08) contrast(1.05) saturate(1.06);
-}
-@media (max-width: 900px) { .falcon-bg { background-attachment: scroll; } }
-
-.grain {
-  position: fixed; inset: 0; z-index: -2; pointer-events: none;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAQAAABccqhmAAAAFElEQVR42u3BMQEAAADCoPdPbQ43oAAAAAAAAJ4DGKgAAZcG0ZcAAAAASUVORK5CYII=');
-  background-size: 320px 320px; mix-blend-mode: soft-light; opacity: .05;
-}
-.vignette {
-  position: fixed; inset: 0; z-index: -1; pointer-events: none;
-  background:
-    radial-gradient(1400px 1000px at 60% 60%, rgba(5,8,14,0), rgba(5,8,14,.22) 65%),
-    radial-gradient(100% 120% at 50% 50%, rgba(0,0,0,0), rgba(0,0,0,.32) 72%);
-}
-.volumetric--airy {
-  position: fixed; inset: 0; z-index: -1; pointer-events: none;
-  background:
-    linear-gradient(105deg, rgba(190,230,255,.18), transparent 40%),
-    radial-gradient(700px 300px at 22% 28%, rgba(210,240,255,.22), transparent 60%),
-    radial-gradient(520px 260px at 78% 48%, rgba(255,245,220,.14), transparent 60%);
-  filter: blur(14px);
-}
-
-/* =============== NAV =================== */
-.nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 10; height: 56px;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 8px 16px; background: rgba(255,255,255,.12); backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(255,255,255,.22);
-}
-.nav__brand {
-  padding: 6px 10px; border-radius: 10px; text-decoration: none; font-weight: 800;
-  letter-spacing: .08em; font-size: 14px; color: #0a2a4a;
-  background: rgba(142,200,255,.22); box-shadow: inset 0 0 0 1px rgba(142,200,255,.6);
-}
-.nav__links a { color: #e9f2ff; text-decoration: none; margin-left: 14px; font-weight: 700; }
-
-/* =============== HERO =================== */
-.hero-wrap { min-height: 54vh; display: grid; align-items: center; padding: 80px clamp(16px,6vw,56px) 12px; }
-.hero {
-  max-width: 780px; background: rgba(8,14,20,.30); backdrop-filter: blur(6px) saturate(1.05);
-  border: 1px solid rgba(255,255,255,.18); border-radius: 14px; padding: 16px 18px;
-}
-.hero__name { font-size: clamp(32px,7vw,64px); font-weight: 800; margin: 0 0 6px; color: #f7fbff; }
-.hero__title { font-size: clamp(14px,3.2vw,18px); color: #f1f7ff; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 10px; }
-.hero__lead { margin: 0 0 14px; }
-.hero__actions { display: flex; gap: 10px; flex-wrap: wrap; }
-
-/* =============== BUTTONS =================== */
-.btn {
-  display: inline-block; padding: 10px 16px; border-radius: 12px;
-  border: 1px solid var(--btn); background: var(--btn); color: var(--btn-text);
-  text-decoration: none; font-weight: 800; font-size: 14px; box-shadow: 0 6px 16px rgba(16,140,152,.28);
-  cursor: pointer;
-}
-.btn:hover { background: var(--btn-hover); border-color: var(--btn-hover); }
-.btn--ghost { background: transparent; color: #e8f6ff; border-color: #9fe3ea; box-shadow: none; }
-.btn--ghost:hover { background: rgba(159,227,234,.15); }
-
-/* =============== PROJECTS =================== */
-.missions { padding: 8px clamp(16px,6vw,56px) 64px; }
-.section-head {
-  margin: 8px 0 14px; max-width: 820px; background: rgba(8,14,20,.30);
-  backdrop-filter: blur(6px) saturate(1.05); border: 1px solid rgba(255,255,255,.18);
-  border-radius: 14px; padding: 14px 16px;
-}
-.section-title { font-weight: 800; font-size: clamp(22px,4vw,36px); margin: 0; }
-.section-sub { color: var(--ink-dim); margin-top: 6px; }
-
-/* =============== GRID =================== */
-.tiles {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 16px;
-  align-items: start;
-  margin-top: 8px;
-}
-
-/* =============== CARDS (reliable fade/slide flip) =================== */
-.tile {
-  border: 0; padding: 0; background: transparent; cursor: pointer;
-  position: relative; z-index: 1; /* above bg layers */
-}
-.tile__inner {
-  position: relative; width: 100%; height: 320px;
-  border-radius: 16px; overflow: hidden;
-  box-shadow: 0 12px 28px rgba(0,0,0,.28), 0 5px 10px rgba(0,0,0,.14);
-  transition: transform .25s ease;
-}
-@media (max-width:1000px){ .tile__inner{ height: 280px; } }
-@media (max-width:750px){ .tile__inner{ height: 240px; } }
-@media (max-width:600px){ .tile__inner{ height: 200px; border-radius: 10px; } }
-@media (hover:hover){ .tile:hover .tile__inner{ transform: translateY(-2px); } }
-
-.tile__face {
-  position: absolute; inset: 0; display: flex; flex-direction: column; padding: 16px;
-}
-@media (max-width:600px){ .tile__face{ padding: 10px; } }
-
-/* The secret: no 3D. Just swap opacity + slide and pointer-events. */
-.tile__front {
-  opacity: 1; transform: translateY(0);
-  transition: opacity .28s ease, transform .28s ease;
-  justify-content: space-between; align-items: flex-start; z-index: 2; pointer-events: auto;
-}
-.tile__back {
-  background: #0f141d; color: #eaf1ff;
-  opacity: 0; transform: translateY(10px);
-  transition: opacity .28s ease, transform .28s ease;
-  z-index: 1; pointer-events: none; overflow: auto;
-}
-.tile__inner.flipped .tile__front {
-  opacity: 0; transform: translateY(-10px); pointer-events: none; z-index: 1;
-}
-.tile__inner.flipped .tile__back {
-  opacity: 1; transform: translateY(0); pointer-events: auto; z-index: 2;
-}
-
-/* =============== CARD CONTENT =================== */
-.tile__title {
-  margin: 0 0 6px; color: #fff;
-  font-family: 'Bebas Neue', system-ui, sans-serif; font-weight: 400;
-  letter-spacing: .06em; text-transform: uppercase;
-  font-size: clamp(26px,3.8vw,38px); line-height: 1.0;
-  text-shadow: 0 2px 14px rgba(0,0,0,.45);
-}
-.techline { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.96); }
-.tile__actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
-.tile__desc { font-size: 15px; line-height: 1.6; color: #dceaff; margin: 0; }
-
-/* =============== CARD COLORS =================== */
-.card--kpi { background: var(--kpi); }
-.card--cpi { background: var(--cpi); }
-.card--earnings { background: var(--earn); color: #05222a; }
-.card--media { background: var(--p3); }
-
-/* =============== FOOTER =================== */
-.footer { padding: 36px clamp(16px,6vw,56px); color: #e6efff; text-align: left; font-size: 14px; }
+    // Keyboard support
+    tile.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle(e);
+      }
+    });
+  });
+});
