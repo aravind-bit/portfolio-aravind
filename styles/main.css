@@ -1,103 +1,85 @@
-<!doctype html>
-<html lang="en">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portfolio — Cards Smoke Test</title>
-<style>
-  :root{ --ink:#eaf1ff; --bg:#0a0f18; --teal:#108c98; --cpi:#0d4c59; --earn:#63c9d1; --media:#0b3542 }
-  *{box-sizing:border-box} body{margin:0;background:#0a0f18;color:var(--ink);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif}
-  header{position:sticky;top:0;background:#0e1620; padding:12px 16px; font-weight:800}
-  h1{margin:0;font-size:22px}
-  .wrap{padding:18px 16px}
-  .sub{opacity:.9;max-width:72ch;margin:.4rem 0 1rem}
-  .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;align-items:start}
-  .tile{background:#13202a;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.3);overflow:hidden;cursor:pointer}
-  .front,.back{padding:14px;min-height:200px;display:flex;flex-direction:column;justify-content:space-between}
-  .front{color:#fff}
-  .front.kpi{background:var(--teal)}
-  .front.cpi{background:var(--cpi)}
-  .front.earn{background:var(--earn); color:#042026}
-  .front.media{background:var(--media)}
-  .title{font:700 20px/1.1 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin:0 0 6px}
-  .tech{font:11px/1.3 system-ui; opacity:.95; text-transform:uppercase; letter-spacing:.05em}
-  .back{background:#0f141d; color:#d6e6ff; display:none}
-  .actions{display:flex;gap:8px;margin:0 0 10px}
-  a.btn{display:inline-block;padding:8px 12px;border-radius:10px;background:#108c98;color:#fff;text-decoration:none;font-weight:800;font-size:13px}
-</style>
+:root{
+  --p0:#050c11; --p1:#072330; --p2:#08202a; --p3:#0b3542; --p4:#0d4c59;
+  --p5:#0f6a74; --p6:#108c98; --p7:#b8efe8; --p8:#63c9d1;
+  --ink:#eaf1ff; --btn:var(--p6); --btn-hover:#0b7883; --btn-text:#fff;
+  --kpi:var(--p6); --cpi:var(--p4); --earn:var(--p8); --media:var(--p3);
+}
 
-<header><h1>Projects — Smoke Test</h1></header>
-<main class="wrap">
-  <p class="sub">You should see four colored cards below. Click one to toggle its back face. If you see nothing, GitHub Pages isn’t serving this file (or the block is commented out).</p>
+/* Base */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:Outfit,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.65;letter-spacing:.01em;background:#0a0f18}
 
-  <div class="tiles" id="tiles">
+/* Background */
+.falcon-bg{position:fixed;inset:0;z-index:-3;background:center/cover no-repeat;
+  background-image:image-set(url('../assets/bg/falcon-2560.webp') type('image/webp') 2x,url('../assets/bg/falcon-1536.webp') type('image/webp') 1x);
+  filter:brightness(1.08) contrast(1.02) saturate(1.06)}
+@media (max-width:900px){.falcon-bg{background-attachment:scroll}}
+.grain{position:fixed;inset:0;z-index:-2;pointer-events:none;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAQAAABccqhmAAAAFElEQVR42u3BMQEAAADCoPdPbQ43oAAAAAAAAJ4DGKgAAZcG0ZcAAAAASUVORK5CYII=');background-size:320px 320px;mix-blend-mode:soft-light;opacity:.05}
+.vignette{position:fixed;inset:0;z-index:-1;pointer-events:none;background:
+  radial-gradient(1400px 1000px at 60% 60%,rgba(5,8,14,0),rgba(5,8,14,.22) 65%),
+  radial-gradient(100% 120% at 50% 50%,rgba(0,0,0,0),rgba(0,0,0,.30) 72%)}
+.volumetric--airy{position:fixed;inset:0;z-index:-1;pointer-events:none;background:
+  linear-gradient(105deg,rgba(180,215,255,.22),transparent 40%),
+  radial-gradient(700px 300px at 22% 28%,rgba(200,235,255,.28),transparent 60%),
+  radial-gradient(520px 260px at 78% 48%,rgba(255,245,220,.16),transparent 60%);filter:blur(16px)}
 
-    <div class="tile">
-      <section class="front kpi">
-        <h3 class="title">Mid-Cap Tech KPI Tracker</h3>
-        <div class="tech">Python • Tableau • yfinance • AWS</div>
-      </section>
-      <section class="back">
-        <div class="actions">
-          <a class="btn" target="_blank" href="https://public.tableau.com/app/profile/aravind.anisetti/viz/Mid-CapRevenueAnalysis/Mid-CapTechKPITracker">Live Demo</a>
-          <a class="btn" target="_blank" href="https://github.com/aravind-bit">Repo</a>
-        </div>
-        Benchmarks ~20 mid-cap tech firms across growth, margins, EPS, and R&amp;D to surface efficiency leaders and volatility pockets.
-      </section>
-    </div>
+/* Nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:10;height:56px;display:flex;align-items:center;justify-content:space-between;padding:8px 16px;background:rgba(255,255,255,.12);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.22)}
+.nav__brand{padding:6px 10px;border-radius:10px;text-decoration:none;font-weight:800;letter-spacing:.08em;font-size:14px;color:#0a2a4a;background:rgba(142,200,255,.22);box-shadow:inset 0 0 0 1px rgba(142,200,255,.6);text-shadow:0 1px 0 rgba(0,0,0,.25)}
+.nav__links a{color:#e9f2ff;text-decoration:none;margin-left:14px;font-weight:700;text-shadow:0 1px 0 rgba(0,0,0,.2)}
+.nav__links a:hover{color:#fff}
 
-    <div class="tile">
-      <section class="front cpi">
-        <h3 class="title">CPI Explorer</h3>
-        <div class="tech">Tableau • BLS API • Time-Series</div>
-      </section>
-      <section class="back">
-        <div class="actions">
-          <a class="btn" target="_blank" href="https://public.tableau.com/app/profile/aravind.anisetti/viz/InflationAnalysis-Virginia/InflationAnalysisVA">Live Demo</a>
-          <a class="btn" target="_blank" href="https://github.com/aravind-bit">Repo</a>
-        </div>
-        Decomposes inflation by category with rolling windows—showing shelter’s heft and energy’s whipsaws without spreadsheet fog.
-      </section>
-    </div>
+/* Hero — smaller to remove blank space */
+.hero-wrap{min-height:60vh;display:grid;align-items:center;padding:80px clamp(16px,6vw,56px) 12px clamp(16px,6vw,56px)}
+@media (max-width:800px){.hero-wrap{min-height:54vh;padding:72px 20px 8px}}
+.hero{max-width:780px;text-align:left;background:rgba(8,14,20,.26);backdrop-filter:blur(6px) saturate(1.05);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:16px 18px;text-shadow:0 1px 0 rgba(0,0,0,.12),0 10px 40px rgba(0,0,0,.18)}
+.hero__name{font-size:clamp(32px,7vw,64px);font-weight:800;margin:0 0 6px;color:#f2f7ff}
+.hero__title{font-size:clamp(14px,3.2vw,18px);color:#f2f7ff;letter-spacing:.08em;text-transform:uppercase;margin:0 0 10px}
+.hero__lead{color:#f2f7ff;margin:0 0 14px;max-width:60ch}
+.hero__actions{display:flex;gap:10px;flex-wrap:wrap}
 
-    <div class="tile">
-      <section class="front earn">
-        <h3 class="title">Earnings Call Summarizer</h3>
-        <div class="tech">Python • RAG • OpenAI • Retrieval</div>
-      </section>
-      <section class="back">
-        <div class="actions">
-          <a class="btn" target="_blank" href="https://github.com/aravind-bit">Live Demo</a>
-          <a class="btn" target="_blank" href="https://github.com/aravind-bit">Repo</a>
-        </div>
-        Agentic LLM that ingests transcripts and returns traceable KPI snippets and guidance highlights with searchable evidence.
-      </section>
-    </div>
+/* Buttons */
+.btn{display:inline-block;padding:10px 16px;border-radius:12px;border:1px solid var(--btn);background:var(--btn);color:var(--btn-text);text-decoration:none;font-weight:800;font-size:14px;box-shadow:0 6px 16px rgba(16,140,152,.28)}
+.btn:hover{background:var(--btn-hover);border-color:var(--btn-hover)}
 
-    <div class="tile">
-      <section class="front media">
-        <h3 class="title">Multimodal Media Analyst</h3>
-        <div class="tech">Whisper/ASR • NLP • Agents • Sentiment</div>
-      </section>
-      <section class="back">
-        <div class="actions">
-          <a class="btn" target="_blank" href="https://github.com/aravind-bit">Live Demo</a>
-          <a class="btn" target="_blank" href="https://github.com/aravind-bit">Repo</a>
-        </div>
-        Ingests video/audio → diarization + ASR → topic & sentiment tags; an agent finds quotable clips and timestamps.
-      </section>
-    </div>
+/* Projects */
+.missions{padding:8px clamp(16px,6vw,56px) 56px clamp(16px,6vw,56px)}
+.section-head{margin:8px 0 14px;max-width:820px;background:rgba(8,14,20,.26);backdrop-filter:blur(6px) saturate(1.05);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:14px 16px}
+.section-title{font-weight:800;font-size:clamp(22px,4vw,36px);margin:0;color:#f2f7ff}
+.section-sub{color:#f2f7ff;margin:6px 0 10px;max-width:72ch;text-shadow:0 1px 0 rgba(0,0,0,.25)}
 
-  </div>
-</main>
+/* Grid */
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;justify-items:start;align-items:start}
 
-<script>
-  document.querySelectorAll('.tile').forEach(t=>{
-    t.addEventListener('click', e=>{
-      const front=t.querySelector('.front'), back=t.querySelector('.back');
-      const showBack = back.style.display!=='block';
-      front.style.display = showBack ? 'none':'flex';
-      back.style.display  = showBack ? 'block':'none';
-    });
-  });
-</script>
-</html>
+/* Cards (explicit heights: bullet-proof) */
+.tile{border:0;padding:0;background:transparent;cursor:pointer}
+.tile__inner{position:relative;width:100%;height:320px;border-radius:16px;overflow:hidden;box-shadow:0 12px 28px rgba(0,0,0,.28),0 5px 10px rgba(0,0,0,.14);transition:transform .25s ease}
+@media (max-width:1000px){.tile__inner{height:280px}}
+@media (max-width:750px){.tile__inner{height:240px}}
+@media (max-width:600px){.tile__inner{height:200px;border-radius:10px}}
+@media (hover:hover){.tile:hover .tile__inner{transform:translateY(-2px)}}
+
+.tile__face{position:absolute;inset:0;display:flex;flex-direction:column;padding:16px}
+@media (max-width:600px){.tile__face{padding:10px}}
+
+/* Reveal + click-through guard */
+.tile__front{opacity:1;transform:none;transition:opacity .28s ease,transform .28s ease;justify-content:space-between;align-items:flex-start;z-index:2;pointer-events:auto}
+.tile__back{background:#0f141d;color:#eaf1ff;opacity:0;transform:translateY(10px);transition:opacity .28s ease,transform .28s ease;overflow:auto;align-items:flex-start;z-index:1;pointer-events:none}
+.tile__inner.flipped .tile__front{opacity:0;transform:translateY(-6px);pointer-events:none;z-index:1}
+.tile__inner.flipped .tile__back{opacity:1;transform:translateY(0);pointer-events:auto;z-index:2}
+
+/* Content */
+.tile__title{margin:0 0 6px;color:#fff;font-family:"Bebas Neue",system-ui,sans-serif;font-weight:400;letter-spacing:.06em;text-transform:uppercase;font-size:clamp(26px,3.8vw,38px);line-height:1.0;text-shadow:0 1px 10px rgba(0,0,0,.35)}
+.techline{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.92)}
+.tile__actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.tile__desc{font-size:15px;line-height:1.6;color:#d6e6ff;margin:0}
+
+/* Card colors */
+.card--kpi{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(0,0,0,.12)),var(--kpi)}
+.card--cpi{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(0,0,0,.14)),var(--cpi)}
+.card--earnings{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(0,0,0,.14)),var(--earn)}
+.card--media{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(0,0,0,.14)),var(--media)}
+
+/* Footer */
+.footer{padding:36px clamp(16px,6vw,56px);color:#e6efff;text-align:left;text-shadow:0 1px 0 rgba(0,0,0,.2)}
