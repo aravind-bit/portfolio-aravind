@@ -114,22 +114,35 @@ body{
   gap:12px;
   justify-items:start;
 }
-.tile{
-  border:0; padding:0; background:transparent; cursor:pointer;
-}
 
-/* Card shell + hover lift */
+/* Card container */
+.tile{ border:0; padding:0; background:transparent; cursor:pointer }
+
+/* Card shell + **aspect-ratio fallback** */
 .tile__inner{
-  position:relative; width:100%; aspect-ratio:3/4; border-radius:16px; overflow:hidden;
+  position:relative;
+  width:100%;
+  aspect-ratio:3/4;               /* modern browsers */
+  border-radius:16px;
+  overflow:hidden;
   box-shadow:0 12px 28px rgba(0,0,0,.28), 0 5px 10px rgba(0,0,0,.14);
   transition: transform .25s ease;
+}
+/* Fallback for browsers ignoring aspect-ratio */
+.tile__inner::before{
+  content:"";
+  display:block;
+  padding-top:133.333%;           /* 3:4 ratio = 4/3 * 100% */
+}
+.tile__face{
+  position:absolute; inset:0;     /* absolutely position faces within the ratio box */
+  display:flex; flex-direction:column; padding:16px;
 }
 @media (hover:hover){
   .tile:hover .tile__inner{ transform: translateY(-2px); }
 }
 
 /* Flat reveal (no 3D) */
-.tile__face{ position:absolute; inset:0; display:flex; flex-direction:column; padding:16px }
 .tile__front{ opacity:1; transform:none; transition:opacity .28s ease, transform .28s ease; justify-content:space-between; align-items:flex-start }
 .tile__back {
   background:#0f141d; color:#eaf1ff; opacity:0; transform: translateY(10px);
@@ -137,7 +150,7 @@ body{
   overflow:auto; align-items:flex-start;
 }
 
-/* Click-through fix: only the visible face gets pointer events */
+/* Click-through + visibility control */
 .tile__front { z-index:2; pointer-events:auto; }
 .tile__back  { z-index:1; pointer-events:none; }
 .tile__inner.flipped .tile__front{ opacity:0; transform: translateY(-6px); pointer-events:none; z-index:1 }
@@ -166,12 +179,12 @@ body{
 /* ── Mobile ─────────────────────────────────────── */
 @media (max-width:600px){
   .tiles{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px }
-  .tile__inner{ aspect-ratio:1/1.25; max-height:200px; border-radius:10px }
+  .tile__inner{ border-radius:10px }
   .tile__face{ padding:10px }
   .tile__title{ font-size:clamp(22px,7.2vw,36px); line-height:1.05 }
   .techline{ font-size:10.5px; letter-spacing:.04em }
 }
-/* iOS Safari nudge */
+/* iOS Safari nudge (extra safety) */
 @supports (-webkit-touch-callout:none){
-  @media (max-width:600px){ .tile__inner{ max-height:190px } }
+  @media (max-width:600px){ .tile__inner{ }
 }
