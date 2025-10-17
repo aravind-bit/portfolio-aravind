@@ -11,10 +11,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- CSS & Preload (now INSIDE docs) -->
-  <link rel="stylesheet" href="styles/main.css?v=ui270">
-  <link rel="preload" as="image" href="assets/bg/falcon-1536.webp"
-        imagesrcset="assets/bg/falcon-2560.webp 2x">
+  <!-- CSS (inside docs) -->
+  <link rel="stylesheet" href="styles/main.css?v=ui272">
+  <!-- Preload bg -->
+  <link rel="preload" as="image" href="assets/bg/falcon-1536.webp" imagesrcset="assets/bg/falcon-2560.webp 2x">
 </head>
 <body>
   <!-- background layers -->
@@ -60,7 +60,7 @@
       </p>
     </div>
 
-    <div class="tiles">
+    <div class="tiles" id="tiles">
       <!-- KPI -->
       <div class="tile" role="button" tabindex="0" aria-expanded="false">
         <div class="tile__inner">
@@ -155,10 +155,10 @@
     <p>© <span id="year"></span> Aravind Anisetti</p>
   </footer>
 
-  <!-- JS (now INSIDE docs) -->
-  <script src="styles/main.js?v=ui270" defer></script>
+  <!-- JS (inside docs) -->
+  <script src="styles/main.js?v=ui272" defer></script>
 
-  <!-- Tiny fallback so year + flip still work if JS is blocked from cache -->
+  <!-- Minimal fallback -->
   <script>
     (function(){var y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();})();
     document.querySelectorAll('.tile').forEach(function(tile){
