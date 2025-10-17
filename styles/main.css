@@ -188,3 +188,33 @@ body{
 @supports (-webkit-touch-callout:none){
   @media (max-width:600px){ .tile__inner{ }
 }
+/* --- SAFARI GRID HEIGHT PATCH --- */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  justify-items: start;
+  align-items: start;
+}
+
+.tile__inner {
+  position: relative;
+  width: 100%;
+  min-height: 280px;              /* ensures visible height even if aspect-ratio fails */
+  aspect-ratio: 3 / 4;
+}
+
+@supports not (aspect-ratio: 3 / 4) {
+  .tile__inner::before {
+    content: "";
+    display: block;
+    padding-top: 133.333%;       /* fallback for old engines */
+  }
+}
+
+/* iOS Safari hard fallback */
+@supports (-webkit-touch-callout: none) {
+  .tile__inner {
+    min-height: 320px !important;
+  }
+}
