@@ -12,16 +12,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <!-- CSS inside /docs -->
-  <link rel="stylesheet" href="styles/main.css?v=ui290">
+  <link rel="stylesheet" href="styles/main.css?v=ui280">
   <link rel="preload" as="image" href="assets/bg/falcon-1536.webp" imagesrcset="assets/bg/falcon-2560.webp 2x">
+  <style>
+    /* Optional: remove debug outline if still present */
+    .tile__inner{ outline: none !important; }
+  </style>
 </head>
+  <script>
+(function(){
+  if (!document.querySelector) return;
+  var tiles = document.querySelectorAll('.tile'), bound=false;
+  tiles.forEach(function(tile){
+    var inner = tile.querySelector('.tile__inner');
+    if(!inner) return;
+    function toggle(e){
+      if (e && e.target && e.target.closest && e.target.closest('a,button')) return;
+      inner.classList.toggle('flipped');
+      tile.setAttribute('aria-expanded', inner.classList.contains('flipped'));
+    }
+    tile.addEventListener('click', toggle);
+    tile.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(e); }});
+    bound = true;
+  });
+  try { console.log('[portfolio] inline flip fallback ' + (bound?'bound':'no tiles')); } catch(e){}
+})();
+</script>
 <body>
   <!-- background layers -->
   <div class="falcon-bg" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
   <div class="vignette" aria-hidden="true"></div>
   <div class="volumetric volumetric--airy" aria-hidden="true"></div>
-  <div class="lightshafts" aria-hidden="true"></div>
 
   <!-- nav -->
   <header class="nav">
@@ -38,46 +60,34 @@
       <h1 class="hero__name">Aravind&nbsp;Anisetti</h1>
       <p class="hero__title">Data Science • Visualization • ML • Automation • Agentic AI</p>
       <p class="hero__lead">
-        I build lean pipelines, readable visuals, and agentic systems that turn insight into action.
-        Practical, traceable, and fast—set in a slightly cinematic galaxy.
+        I build data-driven solutions that connect raw information to strategic insights.
+        End-to-end data products—lean pipelines, visualizations and agentic systems that turn insight into action.
       </p>
       <div class="hero__actions">
         <a class="btn" href="#projects">See Projects</a>
         <a class="btn" href="https://github.com/aravind-bit" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://www.linkedin.com/in/aravind-a-7534b6168/" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn" href="assets/resume/aravind_resume.pdf" target="_blank" rel="noopener">Resume</a>
-        <a class="btn" href="mailto:hello@example.com">Email</a>
+        <a class="btn" href="mailto:anisetti.ar@example.com">Email</a>
       </div>
     </div>
-
-    <!-- Right-side HUD (desktop only) -->
-    <aside class="right-hud" aria-label="Quick links">
-      <div class="hud__inner">
-        <div class="hud__title">Comms Panel</div>
-        <div class="hud__list">
-          <a class="btn btn--ghost" href="#projects">See Projects</a>
-          <a class="btn btn--ghost" href="https://github.com/aravind-bit" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn btn--ghost" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn btn--ghost" href="assets/resume/aravind_resume.pdf" target="_blank" rel="noopener">Resume</a>
-          <a class="btn btn--ghost" href="mailto:hello@example.com">Email</a>
-        </div>
-        <p class="hud__note">“Great shot, kid. That was one in a million.”</p>
-      </div>
-    </aside>
   </main>
-
+  <!-- External JS inside /docs -->
+  <script src="styles/main.js?v=ui280" defer></script>
+  
   <!-- projects -->
   <section id="projects" class="missions" style="scroll-margin-top:72px">
     <div class="section-head">
       <h2 class="section-title">Projects</h2>
       <p class="section-sub">
-        Selected builds in analytics, visualization, ML, and agentic systems. Tap a card to flip for a concise summary and links.
+        A tight reel across analytics, visualization, ML, and agentic systems—practical builds.
+        Tap a card to flip for a high-level summary and links.
       </p>
     </div>
 
     <div class="tiles">
       <!-- KPI -->
-      <div class="tile" role="button" tabindex="0" aria-label="Open Mid-Cap Tech KPI Tracker" aria-expanded="false">
+      <div class="tile" role="button" tabindex="0" aria-expanded="false">
         <div class="tile__inner">
           <div class="tile__face tile__front card--kpi">
             <h3 class="tile__title">Mid-Cap Tech KPI Tracker</h3>
@@ -90,16 +100,16 @@
               <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
                  href="https://github.com/aravind-bit">Repo</a>
             </div>
-            <div class="tile__content">
+            <p class="tile__desc">
               Benchmarks ~20 mid-cap tech firms across growth, margins, EPS, and R&amp;D
               to surface efficiency leaders and volatility pockets.
-            </div>
+            </p>
           </div>
         </div>
       </div>
 
       <!-- CPI -->
-      <div class="tile" role="button" tabindex="0" aria-label="Open CPI Explorer" aria-expanded="false">
+      <div class="tile" role="button" tabindex="0" aria-expanded="false">
         <div class="tile__inner">
           <div class="tile__face tile__front card--cpi">
             <h3 class="tile__title">CPI Explorer</h3>
@@ -112,16 +122,16 @@
               <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
                  href="https://github.com/aravind-bit">Repo</a>
             </div>
-            <div class="tile__content">
+            <p class="tile__desc">
               Decomposes inflation by category with rolling windows—showcasing shelter’s heft
               and energy’s whipsaws without spreadsheet fog.
-            </div>
+            </p>
           </div>
         </div>
       </div>
 
       <!-- Earnings -->
-      <div class="tile" role="button" tabindex="0" aria-label="Open Earnings Call Summarizer" aria-expanded="false">
+      <div class="tile" role="button" tabindex="0" aria-expanded="false">
         <div class="tile__inner">
           <div class="tile__face tile__front card--earnings">
             <h3 class="tile__title">Earnings Call Summarizer</h3>
@@ -134,16 +144,16 @@
               <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
                  href="https://github.com/aravind-bit">Repo</a>
             </div>
-            <div class="tile__content">
+            <p class="tile__desc">
               Agentic LLM ingests transcripts and returns traceable KPI snippets, guidance highlights,
               and searchable evidence—less skimming, more signal.
-            </div>
+            </p>
           </div>
         </div>
       </div>
 
       <!-- Media -->
-      <div class="tile" role="button" tabindex="0" aria-label="Open Multimodal Media Analyst" aria-expanded="false">
+      <div class="tile" role="button" tabindex="0" aria-expanded="false">
         <div class="tile__inner">
           <div class="tile__face tile__front card--media">
             <h3 class="tile__title">Multimodal Media Analyst</h3>
@@ -156,10 +166,10 @@
               <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
                  href="https://github.com/aravind-bit">Repo</a>
             </div>
-            <div class="tile__content">
+            <p class="tile__desc">
               Ingests video/audio → diarization + ASR → topic &amp; sentiment tags; an agent finds
               quotable clips and timestamps for highlights.
-            </div>
+            </p>
           </div>
         </div>
       </div>
@@ -170,25 +180,44 @@
     <p>© <span id="year"></span> Aravind Anisetti</p>
   </footer>
 
-  <!-- External JS inside /docs -->
-  <script src="styles/main.js?v=ui290" defer></script>
 
-  <!-- Inline binder (guarantee flip even if external JS caches) -->
+
+  <!-- GUARANTEED inline fallback: flips even if external JS fails/caches -->
   <script>
     (function(){
       var y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
       var tiles=document.querySelectorAll('.tile');
       tiles.forEach(function(tile){
-        var inner=tile.querySelector('.tile__inner'); if(!inner) return;
+        var inner=tile.querySelector('.tile__inner');
         function toggle(e){
           if(e && e.target && e.target.closest && e.target.closest('a,button')) return;
           inner.classList.toggle('flipped');
           tile.setAttribute('aria-expanded', inner.classList.contains('flipped'));
         }
         tile.addEventListener('click',toggle);
-        tile.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(e);} });
+        tile.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(e);} });
       });
     })();
   </script>
+  <script>
+(function(){
+  // Bind flips even if external JS is cached or blocked
+  var tiles = document.querySelectorAll('.tile');
+  tiles.forEach(function(tile){
+    var inner = tile.querySelector('.tile__inner');
+    if(!inner) return;
+    function toggle(e){
+      if (e && e.target && e.target.closest && e.target.closest('a,button')) return;
+      inner.classList.toggle('flipped');
+      tile.setAttribute('aria-expanded', inner.classList.contains('flipped'));
+    }
+    tile.addEventListener('click', toggle);
+    tile.addEventListener('keydown', function(e){
+      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(e); }
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
