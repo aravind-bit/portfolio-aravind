@@ -27,36 +27,38 @@ main, section, .missions, .tiles { position: relative; z-index: 1; }
 
 /* =============== BACKGROUND =================== */
 /* CSS is in /docs/styles → go up to /docs/assets; disable pointer events so BG never blocks clicks */
-.falcon-bg {
-  position: fixed; inset: 0; z-index: -3;
-  background: center/cover no-repeat;
-  background-image: image-set(
+/* Background — CSS is in /docs/styles, images in /docs/assets */
+.falcon-bg{
+  position:fixed; inset:0; z-index:-3;
+  background:center/cover no-repeat;
+  background-image:image-set(
     url('../assets/bg/falcon-2560.webp') type('image/webp') 2x,
     url('../assets/bg/falcon-1536.webp') type('image/webp') 1x
   );
-  filter: brightness(1.08) contrast(1.05) saturate(1.06);
-  pointer-events: none;
+  /* Show more of the scene without washing it out */
+  filter:brightness(1.12) contrast(1.05) saturate(1.06);
+  pointer-events:none; /* ensure BG never intercepts clicks */
 }
-@media (max-width: 900px) { .falcon-bg { background-attachment: scroll; } }
+@media (max-width:900px){ .falcon-bg{ background-attachment:scroll } }
 
 .grain {
   position: fixed; inset: 0; z-index: -2; pointer-events: none;
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAQAAABccqhmAAAAFElEQVR42u3BMQEAAADCoPdPbQ43oAAAAAAAAJ4DGKgAAZcG0ZcAAAAASUVORK5CYII=');
   background-size: 320px 320px; mix-blend-mode: soft-light; opacity: .05;
 }
-.vignette {
-  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+.vignette{
+  position:fixed; inset:0; z-index:-1; pointer-events:none;
   background:
-    radial-gradient(1400px 1000px at 60% 60%, rgba(5,8,14,0), rgba(5,8,14,.22) 65%),
-    radial-gradient(100% 120% at 50% 50%, rgba(0,0,0,0), rgba(0,0,0,.32) 72%);
+    radial-gradient(1400px 1000px at 60% 60%, rgba(5,8,14,0), rgba(5,8,14,.14) 65%),
+    radial-gradient(100% 120% at 50% 50%, rgba(0,0,0,0), rgba(0,0,0,.22) 72%);
 }
-.volumetric--airy {
-  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+.volumetric--airy{
+  position:fixed; inset:0; z-index:-1; pointer-events:none;
   background:
-    linear-gradient(105deg, rgba(190,230,255,.18), transparent 40%),
-    radial-gradient(700px 300px at 22% 28%, rgba(210,240,255,.22), transparent 60%),
-    radial-gradient(520px 260px at 78% 48%, rgba(255,245,220,.14), transparent 60%);
-  filter: blur(14px);
+    linear-gradient(105deg, rgba(190,230,255,.14), transparent 40%),
+    radial-gradient(700px 300px at 22% 28%, rgba(210,240,255,.18), transparent 60%),
+    radial-gradient(520px 260px at 78% 48%, rgba(255,245,220,.10), transparent 60%);
+  filter:blur(12px);
 }
 
 /* =============== NAV =================== */
