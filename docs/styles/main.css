@@ -92,26 +92,22 @@ main, section, .missions, .tiles { position: relative; z-index: 1; }
   display: inline-block;
   padding: 10px 16px;
   border-radius: 12px;
-  border: 1px solid #E25A0F;
-  background: #E25A0F;
+  border: 1px solid #A1435B;
+  background: linear-gradient(90deg,#A1435B,#E18A45);
   color: #fff;
   text-decoration: none;
   font-weight: 800;
   font-size: 14px;
-  box-shadow: 0 6px 16px rgba(226, 90, 15, .3);
+  box-shadow: 0 6px 16px rgba(161,67,91,0.3);
   cursor: pointer;
-  transition: background .2s ease, transform .2s ease;
+  transition: background .3s ease, transform .2s ease;
 }
-
 .btn:hover {
-  background: #F27610;
-  border-color: #F27610;
+  background: linear-gradient(90deg,#E18A45,#EBC7B2);
   transform: translateY(-2px);
 }
-
 .btn:active {
-  background: #C63C10;
-  border-color: #C63C10;
+  background: linear-gradient(90deg,#6B2E52,#A1435B);
   transform: translateY(0);
 }
 
@@ -191,21 +187,22 @@ main, section, .missions, .tiles { position: relative; z-index: 1; }
 
 /* =============== CARD COLORS =================== */
 /* ====== Warm Cinematic Card Palette ====== */
+/* ====== Cosmic Dusk Card Palette ====== */
 .card--kpi {
-  background: linear-gradient(160deg,#A62A0C,#E25A0F);
+  background: linear-gradient(160deg,#40205B,#6B2E52);
   color: #fff;
 }
 .card--cpi {
-  background: linear-gradient(160deg,#C63C10,#F27610);
+  background: linear-gradient(160deg,#6B2E52,#A1435B);
   color: #fff;
 }
 .card--earnings {
-  background: linear-gradient(160deg,#E25A0F,#F79710);
+  background: linear-gradient(160deg,#A1435B,#E18A45);
   color: #fff;
 }
 .card--media {
-  background: linear-gradient(160deg,#F27610,#F8BE0E);
-  color: #2b1505;
+  background: linear-gradient(160deg,#E18A45,#EBC7B2);
+  color: #24181F;
 }
 
 /* =============== FOOTER =================== */
