@@ -1,14 +1,11 @@
-/* ===========================
-   CORE VARIABLES
-   =========================== */
-
+/* ========== VARIABLES ========== */
 :root{
-  --ink: #ffffff;
-  --ink-dim: rgba(255,255,255,.8);
-  --bg-deep: #0a0f18;
+  --ink:#fff;
+  --ink-dim:rgba(255,255,255,.8);
+  --bg-deep:#0a0f18;
 }
 
-/* RESET */
+/* ========== RESET ========== */
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -20,10 +17,7 @@ body{
   overflow-x:hidden;
 }
 
-/* ===========================
-   BACKGROUND
-   =========================== */
-
+/* ========== BACKGROUND LAYERS ========== */
 .falcon-bg{
   position:fixed; inset:0; z-index:-4;
   background:center/cover no-repeat;
@@ -31,15 +25,12 @@ body{
     url('../assets/bg/falcon-2560.webp') type('image/webp') 2x,
     url('../assets/bg/falcon-1536.webp') type('image/webp') 1x
   );
-  /* consistent brightness, no tinted gradients */
   filter:brightness(1.12) contrast(1.05) saturate(1.06);
   pointer-events:none;
 }
-@media (max-width:900px){
+@media(max-width:900px){
   .falcon-bg{background-attachment:scroll}
 }
-
-/* subtle film grain */
 .grain{
   position:fixed; inset:0; z-index:-3; pointer-events:none;
   background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAQAAABccqhmAAAAFElEQVR42u3BMQEAAADCoPdPbQ43oAAAAAAAAJ4DGKgAAZcG0ZcAAAAASUVORK5CYII=');
@@ -47,8 +38,6 @@ body{
   mix-blend-mode:soft-light;
   opacity:.05;
 }
-
-/* mild vignette only */
 .vignette{
   position:fixed; inset:0; z-index:-2; pointer-events:none;
   background:
@@ -56,10 +45,7 @@ body{
     radial-gradient(100% 120% at 50% 50%, rgba(0,0,0,0), rgba(0,0,0,.22) 72%);
 }
 
-/* ===========================
-   NAV
-   =========================== */
-
+/* ========== NAV ========== */
 .nav{
   position:fixed;
   inset:0 0 auto 0;
@@ -94,10 +80,7 @@ body{
   text-shadow:0 2px 8px rgba(0,0,0,.8);
 }
 
-/* ===========================
-   HERO / ABOUT
-   =========================== */
-
+/* ========== HERO / ABOUT ========== */
 .hero-wrap{
   min-height:56vh;
   display:grid;
@@ -106,8 +89,6 @@ body{
   position:relative;
   z-index:1;
 }
-
-/* glass-block: frosted glass card for hero + headers */
 .glass-block{
   background:rgba(10,15,24,.35);
   border:1px solid rgba(255,255,255,.14);
@@ -117,7 +98,6 @@ body{
     0 20px 60px rgba(0,0,0,.75),
     0 2px 4px rgba(255,255,255,.08) inset;
 }
-
 .hero{
   max-width:780px;
   padding:16px 18px;
@@ -153,7 +133,7 @@ body{
   flex-wrap:wrap;
 }
 
-/* simple frosted pill buttons */
+/* hero/cta buttons */
 .btn{
   display:inline-block;
   padding:10px 16px;
@@ -188,16 +168,12 @@ body{
     0 1px 2px rgba(255,255,255,.18) inset;
 }
 
-/* ===========================
-   PROJECTS SECTION
-   =========================== */
-
+/* ========== PROJECTS SECTION ========== */
 .projects-block{
   padding:32px clamp(16px,6vw,56px) 64px;
   position:relative;
   z-index:1;
 }
-
 .section-head{
   max-width:820px;
   padding:14px 16px;
@@ -205,7 +181,6 @@ body{
   color:var(--ink);
   text-shadow:0 2px 8px rgba(0,0,0,.8);
 }
-
 .section-title{
   font-weight:800;
   font-size:clamp(22px,4vw,36px);
@@ -220,8 +195,6 @@ body{
   color:var(--ink);
   line-height:1.6;
 }
-
-/* text-scrim: improves readability behind busy BG */
 .text-scrim{
   position:relative;
   font-weight:400;
@@ -230,7 +203,7 @@ body{
 .text-scrim::before{
   content:"";
   position:absolute;
-  inset:-2px -6px -2px -6px;
+  inset:-2px -6px;
   pointer-events:none;
   z-index:-1;
   background:linear-gradient(
@@ -241,18 +214,16 @@ body{
   border-radius:6px;
 }
 
-/* ===========================
-   TILES GRID
-   =========================== */
-
+/* ========== TILE GRID ========== */
 .tiles{
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+  grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
   gap:16px;
   align-items:start;
   margin-top:8px;
 }
 
+/* Each clickable card wrapper */
 .tile{
   border:0;
   padding:0;
@@ -267,46 +238,61 @@ body{
              0 0 20px rgba(255,255,255,.4);
 }
 
+/* Card body */
 .tile__inner{
   position:relative;
   width:100%;
-  height:320px;
-  border-radius:16px;
+  height:220px; /* smaller / leaner */
+  border-radius:14px;
   overflow:hidden;
   transition:transform .25s ease, box-shadow .25s ease;
-}
-@media (max-width:1000px){.tile__inner{height:280px}}
-@media (max-width:750px){.tile__inner{height:240px}}
-@media (max-width:600px){.tile__inner{height:200px;border-radius:10px}}
-
-@media (hover:hover){
-  .tile:hover .tile__inner{
-    transform:translateY(-2px);
-  }
-}
-
-/* card--glass: frosted / translucent dark glass for front */
-.card--glass{
+  will-change:transform, box-shadow;
   background:rgba(10,15,24,.45);
   border:1px solid rgba(255,255,255,.14);
   backdrop-filter:blur(8px) saturate(1.05);
   box-shadow:
-    0 20px 60px rgba(0,0,0,.75),
+    0 16px 40px rgba(0,0,0,.75),
     0 2px 4px rgba(255,255,255,.08) inset;
 }
+@media(max-width:900px){.tile__inner{height:200px}}
+@media(max-width:600px){.tile__inner{height:180px;border-radius:10px}}
 
-/* tile faces for flip/fade */
+@media(hover:hover){
+  .tile:hover .tile__inner{
+    transform:translateY(-2px);
+    box-shadow:
+      0 20px 48px rgba(0,0,0,.85),
+      0 2px 4px rgba(255,255,255,.1) inset;
+  }
+}
+
+/* shared glass style for back too */
+.card--glass{ /* already applied on .tile__inner in HTML; kept for clarity */ }
+.card--glass-back{
+  background:rgba(10,15,24,.7);
+  border-top:1px solid rgba(255,255,255,.18);
+  box-shadow:
+    inset 0 0 30px rgba(0,0,0,.6),
+    0 20px 60px rgba(0,0,0,.75);
+}
+
+/* front/back faces */
 .tile__face{
   position:absolute;
   inset:0;
   display:flex;
   flex-direction:column;
-  padding:16px;
+  padding:14px;
   color:var(--ink);
   text-shadow:0 2px 10px rgba(0,0,0,.8);
+  font-size:14px;
+  line-height:1.4;
 }
-@media (max-width:600px){.tile__face{padding:12px}}
+@media(max-width:600px){
+  .tile__face{padding:12px;font-size:13px;line-height:1.4}
+}
 
+/* FRONT */
 .tile__front{
   opacity:1;
   transform:translateY(0);
@@ -316,23 +302,36 @@ body{
   z-index:2;
   pointer-events:auto;
 }
-
-.tile__back{
-  background:rgba(10,15,24,.7);
+.tile__title{
+  margin:0 0 6px;
+  font-family:"Bebas Neue",system-ui,sans-serif;
+  font-weight:400;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  font-size:clamp(20px,3vw,28px); /* smaller title */
+  line-height:1.05;
+  color:#fff;
+}
+.techline{
+  font-size:11px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
   color:var(--ink);
-  border-top:1px solid rgba(255,255,255,.18);
+  text-shadow:0 2px 6px rgba(0,0,0,.8);
+}
+
+/* BACK */
+.tile__back{
   opacity:0;
   transform:translateY(10px);
   transition:opacity .28s ease,transform .28s ease .05s;
   z-index:1;
   pointer-events:none;
   overflow:auto;
-  box-shadow:
-    inset 0 0 30px rgba(0,0,0,.6),
-    0 20px 60px rgba(0,0,0,.75);
-  border-radius:16px;
+  border-radius:14px;
 }
 
+/* flip state */
 .tile__inner.flipped .tile__front{
   opacity:0;
   transform:translateY(-10px);
@@ -346,36 +345,16 @@ body{
   z-index:2;
 }
 
-/* TITLE / TECH */
-.tile__title{
-  margin:0 0 6px;
-  font-family:"Bebas Neue",system-ui,sans-serif;
-  font-weight:400;
-  letter-spacing:.06em;
-  text-transform:uppercase;
-  font-size:clamp(24px,3.6vw,34px);
-  line-height:1.05;
-  color:#fff;
-}
-.techline{
-  font-size:12px;
-  letter-spacing:.06em;
-  text-transform:uppercase;
-  color:var(--ink);
-  text-shadow:0 2px 6px rgba(0,0,0,.8);
-}
-
-/* BACK FACE CONTENT */
+/* BACK CONTENT */
 .tile__actions{
   display:flex;
   flex-wrap:wrap;
   gap:8px;
-  margin-bottom:12px;
+  margin-bottom:10px;
 }
 .tile__link{
   flex-shrink:0;
 }
-
 .btn--ghost{
   background:rgba(0,0,0,.4);
   border:1px solid rgba(255,255,255,.3);
@@ -384,10 +363,10 @@ body{
     0 10px 24px rgba(0,0,0,.8),
     0 1px 2px rgba(255,255,255,.1) inset;
   color:#fff;
-  font-size:13px;
+  font-size:12px;
   font-weight:700;
   line-height:1.3;
-  padding:8px 12px;
+  padding:6px 10px;
   text-decoration:none;
   display:inline-block;
   transition:background .15s ease, box-shadow .15s ease;
@@ -399,21 +378,18 @@ body{
     0 1px 2px rgba(255,255,255,.15) inset;
 }
 
-.tile__content{
+.tile__desc{
   background:rgba(0,0,0,.28);
   border:1px solid rgba(255,255,255,.12);
-  border-radius:10px;
-  padding:10px;
+  border-radius:8px;
+  padding:8px;
   color:var(--ink);
-  font-size:14px;
+  font-size:12.5px;
   line-height:1.5;
   text-shadow:0 2px 6px rgba(0,0,0,.8);
 }
 
-/* ===========================
-   FOOTER
-   =========================== */
-
+/* ========== FOOTER ========== */
 .footer{
   padding:36px clamp(16px,6vw,56px);
   color:var(--ink);
