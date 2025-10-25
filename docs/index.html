@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Aravind Anisetti — Data Science • Data Engineering • ML • Automation • Agentic AI</title>
-  <meta name="description" content="Data science, visualization, ML, automation, and agentic AI systems by Aravind Anisetti." />
+  <meta name="description" content="Data science, data engineering, visualization, ML, automation, and agentic AI systems by Aravind Anisetti." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="styles/main.css?v=ui600">
+  <link rel="stylesheet" href="styles/main.css?v=ui700">
 
   <!-- Preload BG -->
   <link rel="preload" as="image" href="assets/bg/falcon-1536.webp"
@@ -40,10 +40,14 @@
       <h1 class="hero__name">Aravind&nbsp;Anisetti</h1>
 
       <p class="hero__title">
-        Data Science • Data Engineering • ML • Automation • Agentic AI
+        Data Science <span class="dot">•</span>
+        Data Engineering <span class="dot">•</span>
+        ML <span class="dot">•</span>
+        Automation <span class="dot">•</span>
+        Agentic AI
       </p>
 
-      <p class="hero__lead text-scrim">
+      <p class="hero__lead">
         I build lean pipelines, readable visuals, and agentic systems that turn insight into action.
         Practical, traceable, and fast—set in a slightly cinematic galaxy.
       </p>
@@ -62,8 +66,9 @@
   <section id="projects" class="projects-block" style="scroll-margin-top:72px">
     <header class="section-head glass-block">
       <h2 class="section-title">Projects</h2>
-      <p class="section-sub text-scrim">
-        Selected builds in analytics, visualization, ML, and agentic systems. Tap a card to flip for a concise summary and links.
+      <p class="section-sub">
+        Selected builds in analytics, visualization, ML, and agentic systems.
+        Tap a card to flip for Demo / Repo.
       </p>
     </header>
 
@@ -73,25 +78,25 @@
       <div class="tile" role="button" tabindex="0" aria-expanded="false">
         <div class="tile__inner card--glass">
           <div class="tile__face tile__front">
-            <h3 class="tile__title">Mid-Cap Tech KPI Tracker</h3>
-            <div class="techline">Python • Tableau • yfinance • AWS</div>
+            <div class="tile__front-top">
+              <h3 class="tile__title">Mid-Cap Tech KPI Tracker</h3>
+              <div class="techline">Python • Tableau • yfinance • AWS</div>
+            </div>
+            <p class="tile__blurb">
+              Benchmarks ~20 mid-cap tech firms across growth, margins, EPS, and R&amp;D
+              to surface efficiency leaders and volatility pockets.
+            </p>
           </div>
+
           <div class="tile__face tile__back card--glass card--glass-back">
             <div class="tile__actions">
               <a class="btn btn--ghost tile__link"
                  href="https://public.tableau.com/app/profile/aravind.anisetti/viz/Mid-CapRevenueAnalysis/Mid-CapTechKPITracker"
-                 target="_blank" rel="noopener">Live Demo</a>
-              <a class="btn btn--ghost tile__link"
-                 href="https://github.com/aravind-bit"
-                 target="_blank" rel="noopener">Read Me</a>
+                 target="_blank" rel="noopener">Demo</a>
               <a class="btn btn--ghost tile__link"
                  href="https://github.com/aravind-bit"
                  target="_blank" rel="noopener">Repo</a>
             </div>
-            <p class="tile__desc">
-              Benchmarks ~20 mid-cap tech firms across growth, margins, EPS, and R&amp;D
-              to surface efficiency leaders and volatility pockets.
-            </p>
           </div>
         </div>
       </div>
@@ -100,25 +105,25 @@
       <div class="tile" role="button" tabindex="0" aria-expanded="false">
         <div class="tile__inner card--glass">
           <div class="tile__face tile__front">
-            <h3 class="tile__title">CPI Explorer</h3>
-            <div class="techline">Tableau • BLS API • Time-Series</div>
+            <div class="tile__front-top">
+              <h3 class="tile__title">CPI Explorer</h3>
+              <div class="techline">Tableau • BLS API • Time-Series</div>
+            </div>
+            <p class="tile__blurb">
+              Decomposes inflation by category with rolling windows —
+              shows shelter’s weight and energy’s whipsaws without spreadsheet fog.
+            </p>
           </div>
+
           <div class="tile__face tile__back card--glass card--glass-back">
             <div class="tile__actions">
               <a class="btn btn--ghost tile__link"
                  href="https://public.tableau.com/app/profile/aravind.anisetti/viz/InflationAnalysis-Virginia/InflationAnalysisVA"
-                 target="_blank" rel="noopener">Live Demo</a>
-              <a class="btn btn--ghost tile__link"
-                 href="https://github.com/aravind-bit"
-                 target="_blank" rel="noopener">Read Me</a>
+                 target="_blank" rel="noopener">Demo</a>
               <a class="btn btn--ghost tile__link"
                  href="https://github.com/aravind-bit"
                  target="_blank" rel="noopener">Repo</a>
             </div>
-            <p class="tile__desc">
-              Decomposes inflation by category with rolling windows — showing shelter’s weight
-              and energy’s whipsaws without spreadsheet fog.
-            </p>
           </div>
         </div>
       </div>
@@ -127,25 +132,25 @@
       <div class="tile" role="button" tabindex="0" aria-expanded="false">
         <div class="tile__inner card--glass">
           <div class="tile__face tile__front">
-            <h3 class="tile__title">Earnings Call Summarizer</h3>
-            <div class="techline">Python • RAG • OpenAI • Retrieval</div>
+            <div class="tile__front-top">
+              <h3 class="tile__title">Earnings Call Summarizer</h3>
+              <div class="techline">Python • RAG • OpenAI • Retrieval</div>
+            </div>
+            <p class="tile__blurb">
+              Agentic LLM that ingests transcripts and returns traceable KPI snippets,
+              guidance highlights, and searchable evidence — less skimming, more signal.
+            </p>
           </div>
+
           <div class="tile__face tile__back card--glass card--glass-back">
             <div class="tile__actions">
               <a class="btn btn--ghost tile__link"
                  href="https://github.com/aravind-bit"
-                 target="_blank" rel="noopener">Live Demo</a>
-              <a class="btn btn--ghost tile__link"
-                 href="https://github.com/aravind-bit"
-                 target="_blank" rel="noopener">Read Me</a>
+                 target="_blank" rel="noopener">Demo</a>
               <a class="btn btn--ghost tile__link"
                  href="https://github.com/aravind-bit"
                  target="_blank" rel="noopener">Repo</a>
             </div>
-            <p class="tile__desc">
-              Agentic LLM that ingests transcripts and returns traceable KPI snippets,
-              guidance highlights, and searchable evidence — less skimming, more signal.
-            </p>
           </div>
         </div>
       </div>
@@ -154,25 +159,25 @@
       <div class="tile" role="button" tabindex="0" aria-expanded="false">
         <div class="tile__inner card--glass">
           <div class="tile__face tile__front">
-            <h3 class="tile__title">Multimodal Media Analyst</h3>
-            <div class="techline">Whisper/ASR • NLP • Agents • Sentiment</div>
+            <div class="tile__front-top">
+              <h3 class="tile__title">Multimodal Media Analyst</h3>
+              <div class="techline">Whisper/ASR • NLP • Agents • Sentiment</div>
+            </div>
+            <p class="tile__blurb">
+              Ingests video/audio → diarization + ASR → topic &amp; sentiment tags;
+              an agent surfaces quotable clips and timestamps.
+            </p>
           </div>
+
           <div class="tile__face tile__back card--glass card--glass-back">
             <div class="tile__actions">
               <a class="btn btn--ghost tile__link"
                  href="https://github.com/aravind-bit"
-                 target="_blank" rel="noopener">Live Demo</a>
-              <a class="btn btn--ghost tile__link"
-                 href="https://github.com/aravind-bit"
-                 target="_blank" rel="noopener">Read Me</a>
+                 target="_blank" rel="noopener">Demo</a>
               <a class="btn btn--ghost tile__link"
                  href="https://github.com/aravind-bit"
                  target="_blank" rel="noopener">Repo</a>
             </div>
-            <p class="tile__desc">
-              Ingests video/audio → diarization + ASR → topic &amp; sentiment tags;
-              an agent surfaces quotable clips and timestamps.
-            </p>
           </div>
         </div>
       </div>
@@ -184,7 +189,7 @@
     <p>© <span id="year"></span> Aravind Anisetti</p>
   </footer>
 
-  <!-- inline flip binder (reliable on GH Pages, Safari, etc.) -->
+  <!-- inline flip binder -->
   <script>
   (function(){
     var y=document.getElementById('year');
@@ -196,14 +201,13 @@
       if(!inner) return;
 
       function toggle(e){
-        // don't flip if user clicked a link/button inside back face
+        // don't flip if clicking Demo/Repo
         if(e && e.target && e.target.closest && e.target.closest('a,button')) return;
         inner.classList.toggle('flipped');
         tile.setAttribute('aria-expanded', inner.classList.contains('flipped'));
       }
 
       tile.addEventListener('click',toggle);
-
       tile.addEventListener('keydown',function(e){
         if(e.key==='Enter'||e.key===' '){
           e.preventDefault();
