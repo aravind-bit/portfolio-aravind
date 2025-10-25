@@ -1,26 +1,14 @@
 /* ===========================
-   VARIABLES: BRAND PALETTE
-   From your provided palette
+   CORE VARIABLES
    =========================== */
 
 :root{
-  /* Finance tones */
-  --brick-red:     #9E2C21;
-  --amber:         #B06821;
-  --mahogany:      #511B18;
-
-  /* Media tones */
-  --deep-teal:     #305853;
-  --slate-blue:    #1B2A30;
-
-  /* Base neutrals & ink */
-  --ink:           #ffffff;
-  --ink-dim:       rgba(255,255,255,.8);
-
-  --bg-deep:       #0a0f18;
+  --ink: #ffffff;
+  --ink-dim: rgba(255,255,255,.8);
+  --bg-deep: #0a0f18;
 }
 
-/* RESET / BASICS */
+/* RESET */
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -28,12 +16,12 @@ body{
   color:var(--ink);
   font-family:Outfit,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   line-height:1.6;
-  background:#0a0f18;
+  background:var(--bg-deep);
   overflow-x:hidden;
 }
 
 /* ===========================
-   BACKGROUND LAYERS
+   BACKGROUND
    =========================== */
 
 .falcon-bg{
@@ -43,6 +31,7 @@ body{
     url('../assets/bg/falcon-2560.webp') type('image/webp') 2x,
     url('../assets/bg/falcon-1536.webp') type('image/webp') 1x
   );
+  /* consistent brightness, no tinted gradients */
   filter:brightness(1.12) contrast(1.05) saturate(1.06);
   pointer-events:none;
 }
@@ -50,7 +39,7 @@ body{
   .falcon-bg{background-attachment:scroll}
 }
 
-/* film grain */
+/* subtle film grain */
 .grain{
   position:fixed; inset:0; z-index:-3; pointer-events:none;
   background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAQAAABccqhmAAAAFElEQVR42u3BMQEAAADCoPdPbQ43oAAAAAAAAJ4DGKgAAZcG0ZcAAAAASUVORK5CYII=');
@@ -59,35 +48,12 @@ body{
   opacity:.05;
 }
 
-/* subdued vignette */
+/* mild vignette only */
 .vignette{
   position:fixed; inset:0; z-index:-2; pointer-events:none;
   background:
-    radial-gradient(1400px 1000px at 60% 60%, rgba(5,8,14,0), rgba(5,8,14,.12) 65%),
-    radial-gradient(100% 120% at 50% 50%, rgba(0,0,0,0), rgba(0,0,0,.18) 72%);
-}
-
-/* volumetric wash */
-.volumetric--airy{
-  position:fixed; inset:0; z-index:-2; pointer-events:none;
-  background:
-    linear-gradient(105deg, rgba(190,230,255,.14), transparent 40%),
-    radial-gradient(700px 300px at 22% 28%, rgba(210,240,255,.18), transparent 60%),
-    radial-gradient(520px 260px at 78% 48%, rgba(255,245,220,.10), transparent 60%);
-  filter:blur(12px);
-}
-
-/* subtle animated shafts */
-.lightshafts{
-  position:fixed; inset:0; z-index:-1; pointer-events:none;
-  mix-blend-mode:screen;
-  background:
-    linear-gradient(80deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,0) 40%),
-    linear-gradient(100deg,rgba(255,255,255,.05) 10%,rgba(255,255,255,0) 50%);
-  animation:shafts 10s linear infinite;
-}
-@keyframes shafts{
-  0%{transform:translateX(-8%)}100%{transform:translateX(8%)}
+    radial-gradient(1400px 1000px at 60% 60%, rgba(5,8,14,0), rgba(5,8,14,.15) 65%),
+    radial-gradient(100% 120% at 50% 50%, rgba(0,0,0,0), rgba(0,0,0,.22) 72%);
 }
 
 /* ===========================
@@ -116,7 +82,7 @@ body{
   letter-spacing:.08em;
   font-size:14px;
   color:var(--ink);
-  background:rgba(27,42,48,.6);
+  background:rgba(10,15,24,.6);
   border:1px solid rgba(255,255,255,.2);
   box-shadow:0 4px 12px rgba(0,0,0,.7);
 }
@@ -129,7 +95,7 @@ body{
 }
 
 /* ===========================
-   HERO / ABOUT BLOCK
+   HERO / ABOUT
    =========================== */
 
 .hero-wrap{
@@ -141,7 +107,7 @@ body{
   z-index:1;
 }
 
-/* glass-block: transparent glassmorphism for hero, section headers */
+/* glass-block: frosted glass card for hero + headers */
 .glass-block{
   background:rgba(10,15,24,.35);
   border:1px solid rgba(255,255,255,.14);
@@ -187,31 +153,57 @@ body{
   flex-wrap:wrap;
 }
 
+/* simple frosted pill buttons */
+.btn{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.28);
+  background:rgba(10,15,24,.5);
+  backdrop-filter:blur(8px) saturate(1.1);
+  color:var(--ink);
+  text-decoration:none;
+  font-weight:700;
+  font-size:14px;
+  line-height:1.3;
+  box-shadow:
+    0 10px 24px rgba(0,0,0,.8),
+    0 1px 2px rgba(255,255,255,.1) inset;
+  cursor:pointer;
+  transition:transform .18s ease, box-shadow .18s ease,
+             background .18s ease, border .18s ease;
+}
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:
+    0 16px 32px rgba(0,0,0,.85),
+    0 1px 2px rgba(255,255,255,.15) inset;
+  background:rgba(10,15,24,.7);
+  border-color:rgba(255,255,255,.45);
+}
+.btn:active{
+  transform:translateY(0);
+  box-shadow:
+    0 8px 16px rgba(0,0,0,.9),
+    0 1px 2px rgba(255,255,255,.18) inset;
+}
+
 /* ===========================
-   SECTIONS (Finance / Media)
+   PROJECTS SECTION
    =========================== */
 
-.missions{
+.projects-block{
   padding:32px clamp(16px,6vw,56px) 64px;
   position:relative;
   z-index:1;
 }
+
 .section-head{
   max-width:820px;
   padding:14px 16px;
   margin:0 0 20px;
   color:var(--ink);
   text-shadow:0 2px 8px rgba(0,0,0,.8);
-}
-.finance-head{
-  /* warm glass tint for Finance/Analytics */
-  background:rgba(176,104,33,.14); /* amber wash */
-  border:1px solid rgba(176,104,33,.4);
-}
-.media-head{
-  /* cool glass tint for Media/AI */
-  background:rgba(27,42,48,.22); /* slate/teal wash */
-  border:1px solid rgba(27,42,48,.55);
 }
 
 .section-title{
@@ -229,7 +221,7 @@ body{
   line-height:1.6;
 }
 
-/* text-scrim: small gradient behind text for readability */
+/* text-scrim: improves readability behind busy BG */
 .text-scrim{
   position:relative;
   font-weight:400;
@@ -271,7 +263,8 @@ body{
   outline:none;
 }
 .tile:focus-visible .tile__inner{
-  box-shadow:0 0 0 3px rgba(255,255,255,.4),0 0 20px rgba(255,255,255,.4);
+  box-shadow:0 0 0 3px rgba(255,255,255,.4),
+             0 0 20px rgba(255,255,255,.4);
 }
 
 .tile__inner{
@@ -280,11 +273,7 @@ body{
   height:320px;
   border-radius:16px;
   overflow:hidden;
-  box-shadow:
-    0 12px 28px rgba(0,0,0,.45),
-    0 5px 10px rgba(0,0,0,.4);
   transition:transform .25s ease, box-shadow .25s ease;
-  backdrop-filter:blur(2px);
 }
 @media (max-width:1000px){.tile__inner{height:280px}}
 @media (max-width:750px){.tile__inner{height:240px}}
@@ -293,11 +282,20 @@ body{
 @media (hover:hover){
   .tile:hover .tile__inner{
     transform:translateY(-2px);
-    box-shadow:0 16px 32px rgba(0,0,0,.6);
   }
 }
 
-/* faces for flip-fade */
+/* card--glass: frosted / translucent dark glass for front */
+.card--glass{
+  background:rgba(10,15,24,.45);
+  border:1px solid rgba(255,255,255,.14);
+  backdrop-filter:blur(8px) saturate(1.05);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.75),
+    0 2px 4px rgba(255,255,255,.08) inset;
+}
+
+/* tile faces for flip/fade */
 .tile__face{
   position:absolute;
   inset:0;
@@ -305,6 +303,7 @@ body{
   flex-direction:column;
   padding:16px;
   color:var(--ink);
+  text-shadow:0 2px 10px rgba(0,0,0,.8);
 }
 @media (max-width:600px){.tile__face{padding:12px}}
 
@@ -317,17 +316,20 @@ body{
   z-index:2;
   pointer-events:auto;
 }
+
 .tile__back{
-  background:rgba(0,0,0,.55);
+  background:rgba(10,15,24,.7);
   color:var(--ink);
-  border-top:1px solid rgba(255,255,255,.2);
+  border-top:1px solid rgba(255,255,255,.18);
   opacity:0;
   transform:translateY(10px);
   transition:opacity .28s ease,transform .28s ease .05s;
   z-index:1;
   pointer-events:none;
   overflow:auto;
-  box-shadow:inset 0 0 30px rgba(0,0,0,.6);
+  box-shadow:
+    inset 0 0 30px rgba(0,0,0,.6),
+    0 20px 60px rgba(0,0,0,.75);
   border-radius:16px;
 }
 
@@ -344,7 +346,7 @@ body{
   z-index:2;
 }
 
-/* card headers */
+/* TITLE / TECH */
 .tile__title{
   margin:0 0 6px;
   font-family:"Bebas Neue",system-ui,sans-serif;
@@ -354,7 +356,6 @@ body{
   font-size:clamp(24px,3.6vw,34px);
   line-height:1.05;
   color:#fff;
-  text-shadow:0 2px 10px rgba(0,0,0,.8);
 }
 .techline{
   font-size:12px;
@@ -364,28 +365,38 @@ body{
   text-shadow:0 2px 6px rgba(0,0,0,.8);
 }
 
-/* back content */
+/* BACK FACE CONTENT */
 .tile__actions{
   display:flex;
-  gap:12px;
   flex-wrap:wrap;
-  margin-bottom:10px;
-  font-size:14px;
-  line-height:1.4;
+  gap:8px;
+  margin-bottom:12px;
 }
-.link-inline{
-  color:#fff;
-  font-weight:700;
-  text-decoration:none;
+.tile__link{
+  flex-shrink:0;
+}
+
+.btn--ghost{
   background:rgba(0,0,0,.4);
-  padding:4px 8px;
-  border-radius:6px;
   border:1px solid rgba(255,255,255,.3);
-  box-shadow:0 10px 24px rgba(0,0,0,.8),
-             0 1px 2px rgba(255,255,255,.1) inset;
+  border-radius:10px;
+  box-shadow:
+    0 10px 24px rgba(0,0,0,.8),
+    0 1px 2px rgba(255,255,255,.1) inset;
+  color:#fff;
+  font-size:13px;
+  font-weight:700;
+  line-height:1.3;
+  padding:8px 12px;
+  text-decoration:none;
+  display:inline-block;
+  transition:background .15s ease, box-shadow .15s ease;
 }
-.link-inline:hover{
+.btn--ghost:hover{
   background:rgba(0,0,0,.6);
+  box-shadow:
+    0 16px 32px rgba(0,0,0,.9),
+    0 1px 2px rgba(255,255,255,.15) inset;
 }
 
 .tile__content{
@@ -397,103 +408,6 @@ body{
   font-size:14px;
   line-height:1.5;
   text-shadow:0 2px 6px rgba(0,0,0,.8);
-  margin-bottom:10px;
-}
-.opslist{
-  list-style:none;
-  padding:0;
-  margin:0;
-  font-size:13px;
-  color:var(--ink);
-  opacity:.9;
-  text-shadow:0 2px 6px rgba(0,0,0,.8);
-}
-.opslist li{margin:2px 0}
-.opslist strong{color:#fff}
-
-/* ===========================
-   CARD COLOR THEMES
-   Finance cards use Brick / Amber / Mahogany
-   Media cards use Deep Teal / Slate Blue
-   =========================== */
-
-/* Finance A (KPI Tracker): brick red -> mahogany */
-.card--finance-a{
-  background:linear-gradient(
-    160deg,
-    rgba(158,44,33,0.9) 0%,
-    rgba(81,27,24,0.9) 100%
-  );
-  border:1px solid rgba(176,104,33,.4); /* amber accent edge */
-}
-
-/* Finance B (CPI Explorer): amber -> brick */
-.card--finance-b{
-  background:linear-gradient(
-    160deg,
-    rgba(176,104,33,0.9) 0%,
-    rgba(158,44,33,0.9) 100%
-  );
-  border:1px solid rgba(176,104,33,.5);
-}
-
-/* Finance C (Earnings Summarizer): mahogany -> amber */
-.card--finance-c{
-  background:linear-gradient(
-    160deg,
-    rgba(81,27,24,0.9) 0%,
-    rgba(176,104,33,0.9) 100%
-  );
-  border:1px solid rgba(81,27,24,.6);
-}
-
-/* Media A (Multimodal Media Analyst): deep teal -> slate blue */
-.card--media-a{
-  background:linear-gradient(
-    160deg,
-    rgba(48,88,83,0.9) 0%,
-    rgba(27,42,48,0.9) 100%
-  );
-  border:1px solid rgba(48,88,83,.6);
-}
-
-/* ===========================
-   BUTTONS (GitHub / Resume / etc.)
-   simple pill, consistent
-   =========================== */
-
-.btn{
-  display:inline-block;
-  padding:10px 16px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.28);
-  background:rgba(10,15,24,.5);
-  backdrop-filter:blur(8px) saturate(1.1);
-  color:var(--ink);
-  text-decoration:none;
-  font-weight:700;
-  font-size:14px;
-  line-height:1.3;
-  box-shadow:
-    0 10px 24px rgba(0,0,0,.8),
-    0 1px 2px rgba(255,255,255,.1) inset;
-  cursor:pointer;
-  transition:transform .18s ease, box-shadow .18s ease,
-             background .18s ease, border .18s ease;
-}
-.btn:hover{
-  transform:translateY(-2px);
-  box-shadow:
-    0 16px 32px rgba(0,0,0,.85),
-    0 1px 2px rgba(255,255,255,.15) inset;
-  background:rgba(10,15,24,.7);
-  border-color:rgba(255,255,255,.45);
-}
-.btn:active{
-  transform:translateY(0);
-  box-shadow:
-    0 8px 16px rgba(0,0,0,.9),
-    0 1px 2px rgba(255,255,255,.18) inset;
 }
 
 /* ===========================
