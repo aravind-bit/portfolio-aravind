@@ -3,21 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Aravind Anisetti — Data Science & Agentic Systems</title>
-  <meta name="description" content="Data science, analytics engineering, visualization, automation, and agentic AI systems by Aravind Anisetti." />
+  <title>Aravind Anisetti — Data Science • Data Engineering • ML • Automation • Agentic AI</title>
+  <meta name="description" content="Data science, visualization, ML, automation, and agentic AI systems by Aravind Anisetti." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="styles/main.css?v=ui500">
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/main.css?v=ui600">
 
   <!-- Preload BG -->
   <link rel="preload" as="image" href="assets/bg/falcon-1536.webp"
         imagesrcset="assets/bg/falcon-2560.webp 2x">
 </head>
+
 <body>
   <!-- background -->
   <div class="falcon-bg" aria-hidden="true"></div>
@@ -57,140 +58,121 @@
     </section>
   </main>
 
-  <!-- unified projects -->
+  <!-- projects -->
   <section id="projects" class="projects-block" style="scroll-margin-top:72px">
     <header class="section-head glass-block">
       <h2 class="section-title">Projects</h2>
       <p class="section-sub text-scrim">
-        Selected builds in analytics, visualization, ML, and agentic systems. Tap a card to flip for summary and links.
+        Selected builds in analytics, visualization, ML, and agentic systems. Tap a card to flip for a concise summary and links.
       </p>
     </header>
 
     <div class="tiles">
-      <!-- 1. Mid-Cap Tech KPI Tracker -->
-      <div class="tile" role="button" tabindex="0"
-           aria-label="Open Mid-Cap Tech KPI Tracker"
-           aria-expanded="false">
+
+      <!-- KPI Tracker -->
+      <div class="tile" role="button" tabindex="0" aria-expanded="false">
         <div class="tile__inner card--glass">
           <div class="tile__face tile__front">
             <h3 class="tile__title">Mid-Cap Tech KPI Tracker</h3>
             <div class="techline">Python • Tableau • yfinance • AWS</div>
           </div>
-          <div class="tile__face tile__back">
+          <div class="tile__face tile__back card--glass card--glass-back">
             <div class="tile__actions">
-              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
-                 href="https://public.tableau.com/app/profile/aravind.anisetti/viz/Mid-CapRevenueAnalysis/Mid-CapTechKPITracker">
-                Live Demo
-              </a>
-              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
-                 href="https://github.com/aravind-bit">
-                Read Me
-              </a>
-              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
-                 href="https://github.com/aravind-bit">
-                Repo
-              </a>
+              <a class="btn btn--ghost tile__link"
+                 href="https://public.tableau.com/app/profile/aravind.anisetti/viz/Mid-CapRevenueAnalysis/Mid-CapTechKPITracker"
+                 target="_blank" rel="noopener">Live Demo</a>
+              <a class="btn btn--ghost tile__link"
+                 href="https://github.com/aravind-bit"
+                 target="_blank" rel="noopener">Read Me</a>
+              <a class="btn btn--ghost tile__link"
+                 href="https://github.com/aravind-bit"
+                 target="_blank" rel="noopener">Repo</a>
             </div>
-            <div class="tile__content">
+            <p class="tile__desc">
               Benchmarks ~20 mid-cap tech firms across growth, margins, EPS, and R&amp;D
               to surface efficiency leaders and volatility pockets.
-            </div>
+            </p>
           </div>
         </div>
       </div>
 
-      <!-- 2. CPI Explorer -->
-      <div class="tile" role="button" tabindex="0"
-           aria-label="Open CPI Explorer"
-           aria-expanded="false">
+      <!-- CPI Explorer -->
+      <div class="tile" role="button" tabindex="0" aria-expanded="false">
         <div class="tile__inner card--glass">
           <div class="tile__face tile__front">
             <h3 class="tile__title">CPI Explorer</h3>
             <div class="techline">Tableau • BLS API • Time-Series</div>
           </div>
-          <div class="tile__face tile__back">
+          <div class="tile__face tile__back card--glass card--glass-back">
             <div class="tile__actions">
-              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
-                 href="https://public.tableau.com/app/profile/aravind.anisetti/viz/InflationAnalysis-Virginia/InflationAnalysisVA">
-                Live Demo
-              </a>
-              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
-                 href="https://github.com/aravind-bit">
-                Read Me
-              </a>
-              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
-                 href="https://github.com/aravind-bit">
-                Repo
-              </a>
+              <a class="btn btn--ghost tile__link"
+                 href="https://public.tableau.com/app/profile/aravind.anisetti/viz/InflationAnalysis-Virginia/InflationAnalysisVA"
+                 target="_blank" rel="noopener">Live Demo</a>
+              <a class="btn btn--ghost tile__link"
+                 href="https://github.com/aravind-bit"
+                 target="_blank" rel="noopener">Read Me</a>
+              <a class="btn btn--ghost tile__link"
+                 href="https://github.com/aravind-bit"
+                 target="_blank" rel="noopener">Repo</a>
             </div>
-            <div class="tile__content">
+            <p class="tile__desc">
               Decomposes inflation by category with rolling windows — showing shelter’s weight
               and energy’s whipsaws without spreadsheet fog.
-            </div>
+            </p>
           </div>
         </div>
       </div>
 
-      <!-- 3. Earnings Call Summarizer -->
-      <div class="tile" role="button" tabindex="0"
-           aria-label="Open Earnings Call Summarizer"
-           aria-expanded="false">
+      <!-- Earnings Call Summarizer -->
+      <div class="tile" role="button" tabindex="0" aria-expanded="false">
         <div class="tile__inner card--glass">
           <div class="tile__face tile__front">
             <h3 class="tile__title">Earnings Call Summarizer</h3>
             <div class="techline">Python • RAG • OpenAI • Retrieval</div>
           </div>
-          <div class="tile__face tile__back">
+          <div class="tile__face tile__back card--glass card--glass-back">
             <div class="tile__actions">
-              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
-                 href="https://github.com/aravind-bit">
-                Live Demo
-              </a>
-              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
-                 href="https://github.com/aravind-bit">
-                Read Me
-              </a>
-              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
-                 href="https://github.com/aravind-bit">
-                Repo
-              </a>
+              <a class="btn btn--ghost tile__link"
+                 href="https://github.com/aravind-bit"
+                 target="_blank" rel="noopener">Live Demo</a>
+              <a class="btn btn--ghost tile__link"
+                 href="https://github.com/aravind-bit"
+                 target="_blank" rel="noopener">Read Me</a>
+              <a class="btn btn--ghost tile__link"
+                 href="https://github.com/aravind-bit"
+                 target="_blank" rel="noopener">Repo</a>
             </div>
-            <div class="tile__content">
+            <p class="tile__desc">
               Agentic LLM that ingests transcripts and returns traceable KPI snippets,
               guidance highlights, and searchable evidence — less skimming, more signal.
-            </div>
+            </p>
           </div>
         </div>
       </div>
 
-      <!-- 4. Multimodal Media Analyst -->
-      <div class="tile" role="button" tabindex="0"
-           aria-label="Open Multimodal Media Analyst"
-           aria-expanded="false">
+      <!-- Multimodal Media Analyst -->
+      <div class="tile" role="button" tabindex="0" aria-expanded="false">
         <div class="tile__inner card--glass">
           <div class="tile__face tile__front">
             <h3 class="tile__title">Multimodal Media Analyst</h3>
             <div class="techline">Whisper/ASR • NLP • Agents • Sentiment</div>
           </div>
-          <div class="tile__face tile__back">
+          <div class="tile__face tile__back card--glass card--glass-back">
             <div class="tile__actions">
-              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
-                 href="https://github.com/aravind-bit">
-                Live Demo
-              </a>
-              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
-                 href="https://github.com/aravind-bit">
-                Read Me
-              </a>
-              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
-                 href="https://github.com/aravind-bit">
-                Repo
-              </a>
+              <a class="btn btn--ghost tile__link"
+                 href="https://github.com/aravind-bit"
+                 target="_blank" rel="noopener">Live Demo</a>
+              <a class="btn btn--ghost tile__link"
+                 href="https://github.com/aravind-bit"
+                 target="_blank" rel="noopener">Read Me</a>
+              <a class="btn btn--ghost tile__link"
+                 href="https://github.com/aravind-bit"
+                 target="_blank" rel="noopener">Repo</a>
             </div>
-            <div class="tile__content">
+            <p class="tile__desc">
               Ingests video/audio → diarization + ASR → topic &amp; sentiment tags;
               an agent surfaces quotable clips and timestamps.
-            </div>
+            </p>
           </div>
         </div>
       </div>
@@ -202,32 +184,34 @@
     <p>© <span id="year"></span> Aravind Anisetti</p>
   </footer>
 
-  <!-- JS -->
-  <script src="styles/main.js?v=ui500" defer></script>
-
-  <!-- inline fallback binder if defer didn't run yet -->
+  <!-- inline flip binder (reliable on GH Pages, Safari, etc.) -->
   <script>
-    (function(){
-      var y=document.getElementById('year');
-      if(y){y.textContent=new Date().getFullYear();}
+  (function(){
+    var y=document.getElementById('year');
+    if(y){ y.textContent=new Date().getFullYear(); }
 
-      var tiles=document.querySelectorAll('.tile');
-      tiles.forEach(function(tile){
-        var inner=tile.querySelector('.tile__inner');
-        if(!inner) return;
-        function toggle(e){
-          if(e && e.target && e.target.closest && e.target.closest('a,button')) return;
-          inner.classList.toggle('flipped');
-          tile.setAttribute('aria-expanded', inner.classList.contains('flipped'));
+    var tiles=document.querySelectorAll('.tile');
+    tiles.forEach(function(tile){
+      var inner = tile.querySelector('.tile__inner');
+      if(!inner) return;
+
+      function toggle(e){
+        // don't flip if user clicked a link/button inside back face
+        if(e && e.target && e.target.closest && e.target.closest('a,button')) return;
+        inner.classList.toggle('flipped');
+        tile.setAttribute('aria-expanded', inner.classList.contains('flipped'));
+      }
+
+      tile.addEventListener('click',toggle);
+
+      tile.addEventListener('keydown',function(e){
+        if(e.key==='Enter'||e.key===' '){
+          e.preventDefault();
+          toggle(e);
         }
-        tile.addEventListener('click',toggle);
-        tile.addEventListener('keydown',function(e){
-          if(e.key==='Enter'||e.key===' '){
-            e.preventDefault(); toggle(e);
-          }
-        });
       });
-    })();
+    });
+  })();
   </script>
 </body>
 </html>
