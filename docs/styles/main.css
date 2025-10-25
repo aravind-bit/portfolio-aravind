@@ -89,14 +89,31 @@ main, section, .missions, .tiles { position: relative; z-index: 1; }
 
 /* =============== BUTTONS =================== */
 .btn {
-  display: inline-block; padding: 10px 16px; border-radius: 12px;
-  border: 1px solid var(--btn); background: var(--btn); color: var(--btn-text);
-  text-decoration: none; font-weight: 800; font-size: 14px; box-shadow: 0 6px 16px rgba(16,140,152,.28);
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid #E25A0F;
+  background: #E25A0F;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 14px;
+  box-shadow: 0 6px 16px rgba(226, 90, 15, .3);
   cursor: pointer;
+  transition: background .2s ease, transform .2s ease;
 }
-.btn:hover { background: var(--btn-hover); border-color: var(--btn-hover); }
-.btn--ghost { background: transparent; color: #e8f6ff; border-color: #9fe3ea; box-shadow: none; }
-.btn--ghost:hover { background: rgba(159,227,234,.15); }
+
+.btn:hover {
+  background: #F27610;
+  border-color: #F27610;
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  background: #C63C10;
+  border-color: #C63C10;
+  transform: translateY(0);
+}
 
 /* =============== PROJECTS =================== */
 .missions { padding: 8px clamp(16px,6vw,56px) 64px; }
