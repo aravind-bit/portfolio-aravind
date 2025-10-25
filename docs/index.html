@@ -12,31 +12,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Main CSS -->
-  <link rel="stylesheet" href="styles/main.css?v=ui400">
+  <link rel="stylesheet" href="styles/main.css?v=ui500">
 
   <!-- Preload BG -->
   <link rel="preload" as="image" href="assets/bg/falcon-1536.webp"
         imagesrcset="assets/bg/falcon-2560.webp 2x">
 </head>
 <body>
-  <!-- background layers -->
+  <!-- background -->
   <div class="falcon-bg" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
   <div class="vignette" aria-hidden="true"></div>
-  <div class="volumetric volumetric--airy" aria-hidden="true"></div>
-  <div class="lightshafts" aria-hidden="true"></div>
 
   <!-- nav -->
   <header class="nav">
     <a href="#home" class="nav__brand" aria-label="Home">ARAVIND</a>
     <nav class="nav__links" aria-label="Primary">
       <a href="#home">Home</a>
-      <a href="#finance">Finance</a>
-      <a href="#media">Media</a>
+      <a href="#projects">Projects</a>
     </nav>
   </header>
 
-  <!-- hero -->
+  <!-- hero / about -->
   <main id="home" class="hero-wrap" style="scroll-margin-top:72px">
     <section class="hero glass-block">
       <h1 class="hero__name">Aravind&nbsp;Anisetti</h1>
@@ -51,7 +48,7 @@
       </p>
 
       <div class="hero__actions">
-        <a class="btn" href="#finance">See Projects</a>
+        <a class="btn" href="#projects">See Projects</a>
         <a class="btn" href="https://github.com/aravind-bit" target="_blank" rel="noopener">GitHub</a>
         <a class="btn" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn" href="assets/resume/aravind_resume.pdf" target="_blank" rel="noopener">Resume</a>
@@ -60,145 +57,144 @@
     </section>
   </main>
 
-  <!-- FINANCE / ANALYTICS SECTION -->
-  <section id="finance" class="missions" style="scroll-margin-top:72px">
-    <header class="section-head glass-block finance-head">
-      <h2 class="section-title">Finance & Analytics</h2>
+  <!-- unified projects -->
+  <section id="projects" class="projects-block" style="scroll-margin-top:72px">
+    <header class="section-head glass-block">
+      <h2 class="section-title">Projects</h2>
       <p class="section-sub text-scrim">
-        KPI intelligence, inflation breakdowns, and transcript mining — built end-to-end:
-        data ingestion, modeling, visualization, and delivery.
+        Selected builds in analytics, visualization, ML, and agentic systems. Tap a card to flip for summary and links.
       </p>
     </header>
 
     <div class="tiles">
-      <!-- KPI Tracker -->
+      <!-- 1. Mid-Cap Tech KPI Tracker -->
       <div class="tile" role="button" tabindex="0"
            aria-label="Open Mid-Cap Tech KPI Tracker"
            aria-expanded="false">
-        <div class="tile__inner card--finance-a">
+        <div class="tile__inner card--glass">
           <div class="tile__face tile__front">
             <h3 class="tile__title">Mid-Cap Tech KPI Tracker</h3>
             <div class="techline">Python • Tableau • yfinance • AWS</div>
           </div>
           <div class="tile__face tile__back">
             <div class="tile__actions">
-              <a class="link-inline" target="_blank" rel="noopener"
-                 href="https://public.tableau.com/app/profile/aravind.anisetti/viz/Mid-CapRevenueAnalysis/Mid-CapTechKPITracker">Live Demo ↗</a>
-              <a class="link-inline" target="_blank" rel="noopener"
-                 href="https://github.com/aravind-bit">Repo ↗</a>
+              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
+                 href="https://public.tableau.com/app/profile/aravind.anisetti/viz/Mid-CapRevenueAnalysis/Mid-CapTechKPITracker">
+                Live Demo
+              </a>
+              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
+                 href="https://github.com/aravind-bit">
+                Read Me
+              </a>
+              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
+                 href="https://github.com/aravind-bit">
+                Repo
+              </a>
             </div>
             <div class="tile__content">
               Benchmarks ~20 mid-cap tech firms across growth, margins, EPS, and R&amp;D
               to surface efficiency leaders and volatility pockets.
             </div>
-            <ul class="opslist">
-              <li><strong>Data:</strong> yfinance, earnings KPIs</li>
-              <li><strong>Pipeline:</strong> Python ETL → Tableau</li>
-              <li><strong>Delivery:</strong> Interactive dashboards</li>
-            </ul>
           </div>
         </div>
       </div>
 
-      <!-- CPI Explorer -->
+      <!-- 2. CPI Explorer -->
       <div class="tile" role="button" tabindex="0"
            aria-label="Open CPI Explorer"
            aria-expanded="false">
-        <div class="tile__inner card--finance-b">
+        <div class="tile__inner card--glass">
           <div class="tile__face tile__front">
             <h3 class="tile__title">CPI Explorer</h3>
             <div class="techline">Tableau • BLS API • Time-Series</div>
           </div>
           <div class="tile__face tile__back">
             <div class="tile__actions">
-              <a class="link-inline" target="_blank" rel="noopener"
-                 href="https://public.tableau.com/app/profile/aravind.anisetti/viz/InflationAnalysis-Virginia/InflationAnalysisVA">Live Demo ↗</a>
-              <a class="link-inline" target="_blank" rel="noopener"
-                 href="https://github.com/aravind-bit">Repo ↗</a>
+              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
+                 href="https://public.tableau.com/app/profile/aravind.anisetti/viz/InflationAnalysis-Virginia/InflationAnalysisVA">
+                Live Demo
+              </a>
+              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
+                 href="https://github.com/aravind-bit">
+                Read Me
+              </a>
+              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
+                 href="https://github.com/aravind-bit">
+                Repo
+              </a>
             </div>
             <div class="tile__content">
-              Decomposes inflation by category with rolling windows —
-              showing shelter’s weight and energy’s whipsaws without spreadsheet fog.
+              Decomposes inflation by category with rolling windows — showing shelter’s weight
+              and energy’s whipsaws without spreadsheet fog.
             </div>
-            <ul class="opslist">
-              <li><strong>Data:</strong> BLS CPI, 10yr monthly</li>
-              <li><strong>Pipeline:</strong> Batch pulls → reshape → viz</li>
-              <li><strong>Delivery:</strong> Tableau Public</li>
-            </ul>
           </div>
         </div>
       </div>
 
-      <!-- Earnings Call Summarizer -->
+      <!-- 3. Earnings Call Summarizer -->
       <div class="tile" role="button" tabindex="0"
            aria-label="Open Earnings Call Summarizer"
            aria-expanded="false">
-        <div class="tile__inner card--finance-c">
+        <div class="tile__inner card--glass">
           <div class="tile__face tile__front">
             <h3 class="tile__title">Earnings Call Summarizer</h3>
             <div class="techline">Python • RAG • OpenAI • Retrieval</div>
           </div>
           <div class="tile__face tile__back">
             <div class="tile__actions">
-              <a class="link-inline" target="_blank" rel="noopener"
-                 href="https://github.com/aravind-bit">Live Demo ↗</a>
-              <a class="link-inline" target="_blank" rel="noopener"
-                 href="https://github.com/aravind-bit">Repo ↗</a>
+              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
+                 href="https://github.com/aravind-bit">
+                Live Demo
+              </a>
+              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
+                 href="https://github.com/aravind-bit">
+                Read Me
+              </a>
+              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
+                 href="https://github.com/aravind-bit">
+                Repo
+              </a>
             </div>
             <div class="tile__content">
               Agentic LLM that ingests transcripts and returns traceable KPI snippets,
               guidance highlights, and searchable evidence — less skimming, more signal.
             </div>
-            <ul class="opslist">
-              <li><strong>Data:</strong> Earnings transcripts</li>
-              <li><strong>Pipeline:</strong> RAG + retrieval QA</li>
-              <li><strong>Delivery:</strong> KPI snippets + evidence links</li>
-            </ul>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- MEDIA / AI SECTION -->
-  <section id="media" class="missions" style="scroll-margin-top:72px">
-    <header class="section-head glass-block media-head">
-      <h2 class="section-title">Media & AI</h2>
-      <p class="section-sub text-scrim">
-        Multimodal work — audio, transcript, diarization, sentiment, and retrieval —
-        with agentic logic that actually finds the clip you care about.
-      </p>
-    </header>
-
-    <div class="tiles">
-      <!-- Multimodal Media Analyst -->
+      <!-- 4. Multimodal Media Analyst -->
       <div class="tile" role="button" tabindex="0"
            aria-label="Open Multimodal Media Analyst"
            aria-expanded="false">
-        <div class="tile__inner card--media-a">
+        <div class="tile__inner card--glass">
           <div class="tile__face tile__front">
             <h3 class="tile__title">Multimodal Media Analyst</h3>
             <div class="techline">Whisper/ASR • NLP • Agents • Sentiment</div>
           </div>
           <div class="tile__face tile__back">
             <div class="tile__actions">
-              <a class="link-inline" target="_blank" rel="noopener"
-                 href="https://github.com/aravind-bit">Live Demo ↗</a>
-              <a class="link-inline" target="_blank" rel="noopener"
-                 href="https://github.com/aravind-bit">Repo ↗</a>
+              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
+                 href="https://github.com/aravind-bit">
+                Live Demo
+              </a>
+              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
+                 href="https://github.com/aravind-bit">
+                Read Me
+              </a>
+              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
+                 href="https://github.com/aravind-bit">
+                Repo
+              </a>
             </div>
             <div class="tile__content">
               Ingests video/audio → diarization + ASR → topic &amp; sentiment tags;
               an agent surfaces quotable clips and timestamps.
             </div>
-            <ul class="opslist">
-              <li><strong>Data:</strong> Audio/video streams</li>
-              <li><strong>Pipeline:</strong> Whisper ASR → NLP tagging</li>
-              <li><strong>Delivery:</strong> Agent finds highlights &amp; timestamps</li>
-            </ul>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -207,9 +203,9 @@
   </footer>
 
   <!-- JS -->
-  <script src="styles/main.js?v=ui400" defer></script>
+  <script src="styles/main.js?v=ui500" defer></script>
 
-  <!-- inline fallback binder (if defer hasn't run yet) -->
+  <!-- inline fallback binder if defer didn't run yet -->
   <script>
     (function(){
       var y=document.getElementById('year');
