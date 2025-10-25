@@ -189,20 +189,29 @@ main, section, .missions, .tiles { position: relative; z-index: 1; }
 /* ====== Warm Cinematic Card Palette ====== */
 /* ====== Cosmic Dusk Card Palette ====== */
 .card--kpi {
-  background: linear-gradient(160deg,#40205B,#6B2E52);
-  color: #fff;
+  background: linear-gradient(160deg,#132035,#20486E);
+  color: #ffffff;
 }
 .card--cpi {
-  background: linear-gradient(160deg,#6B2E52,#A1435B);
-  color: #fff;
+  background: linear-gradient(160deg,#1F3551,#366A91);
+  color: #ffffff;
 }
 .card--earnings {
-  background: linear-gradient(160deg,#A1435B,#E18A45);
-  color: #fff;
+  background: linear-gradient(160deg,#2C1F11,#C4651C);
+  color: #ffffff;
 }
 .card--media {
-  background: linear-gradient(160deg,#E18A45,#EBC7B2);
-  color: #24181F;
+  background: linear-gradient(160deg,#C4651C,#FF9330);
+  color: #1a0c00;
+}
+.tile__title,
+.tile__desc {
+  text-shadow: 0 2px 10px rgba(0,0,0,0.55);
+}
+.tile__inner {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.45),
+              inset 0 0 30px rgba(255,147,48,0.06);
+  backdrop-filter: blur(2px);
 }
 
 /* =============== FOOTER =================== */
