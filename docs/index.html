@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="styles/main.css?v=ui700">
+  <link rel="stylesheet" href="styles/main.css?v=ui800">
 
   <!-- Preload BG -->
   <link rel="preload" as="image" href="assets/bg/falcon-1536.webp"
@@ -35,11 +35,11 @@
   </header>
 
   <!-- hero / about -->
-  <main id="home" class="hero-wrap" style="scroll-margin-top:72px">
-    <section class="hero glass-block">
-      <h1 class="hero__name">Aravind&nbsp;Anisetti</h1>
+  <main id="home" class="hero-wrap hero-wrap--center" style="scroll-margin-top:72px">
+    <section class="hero hero--center glass-block">
+      <h1 class="hero__name hero__name--glow">Aravind&nbsp;Anisetti</h1>
 
-      <p class="hero__title">
+      <p class="hero__title hero__title--center">
         Data Science <span class="dot">•</span>
         Data Engineering <span class="dot">•</span>
         ML <span class="dot">•</span>
@@ -47,12 +47,12 @@
         Agentic AI
       </p>
 
-      <p class="hero__lead">
+      <p class="hero__lead hero__lead--center">
         I build lean pipelines, readable visuals, and agentic systems that turn insight into action.
-        Practical, traceable, and fast—set in a slightly cinematic galaxy.
+        Practical, traceable, and fast — set in a slightly cinematic galaxy.
       </p>
 
-      <div class="hero__actions">
+      <div class="hero__actions hero__actions--center">
         <a class="btn" href="#projects">See Projects</a>
         <a class="btn" href="https://github.com/aravind-bit" target="_blank" rel="noopener">GitHub</a>
         <a class="btn" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
@@ -64,19 +64,23 @@
 
   <!-- projects -->
   <section id="projects" class="projects-block" style="scroll-margin-top:72px">
-    <header class="section-head glass-block">
-      <h2 class="section-title">Projects</h2>
-      <p class="section-sub">
+    <header class="section-head glass-block section-head--narrow">
+      <h2 class="section-title section-title--center">Projects</h2>
+      <p class="section-sub section-sub--center">
         Selected builds in analytics, visualization, ML, and agentic systems.
         Tap a card to flip for Demo / Repo.
+      </p>
+      <p class="section-sub section-sub--mini section-sub--center">
+        I ship data products end-to-end — ingestion → modeling → surface.
       </p>
     </header>
 
     <div class="tiles">
 
-      <!-- KPI Tracker -->
+      <!-- 1. Mid-Cap Tech KPI Tracker -->
       <div class="tile" role="button" tabindex="0" aria-expanded="false">
         <div class="tile__inner card--glass">
+          <!-- Front -->
           <div class="tile__face tile__front">
             <div class="tile__front-top">
               <h3 class="tile__title">Mid-Cap Tech KPI Tracker</h3>
@@ -88,8 +92,9 @@
             </p>
           </div>
 
+          <!-- Back -->
           <div class="tile__face tile__back card--glass card--glass-back">
-            <div class="tile__actions">
+            <div class="tile__actions tile__actions--centered">
               <a class="btn btn--ghost tile__link"
                  href="https://public.tableau.com/app/profile/aravind.anisetti/viz/Mid-CapRevenueAnalysis/Mid-CapTechKPITracker"
                  target="_blank" rel="noopener">Demo</a>
@@ -101,9 +106,10 @@
         </div>
       </div>
 
-      <!-- CPI Explorer -->
+      <!-- 2. CPI Explorer -->
       <div class="tile" role="button" tabindex="0" aria-expanded="false">
         <div class="tile__inner card--glass">
+          <!-- Front -->
           <div class="tile__face tile__front">
             <div class="tile__front-top">
               <h3 class="tile__title">CPI Explorer</h3>
@@ -115,8 +121,9 @@
             </p>
           </div>
 
+          <!-- Back -->
           <div class="tile__face tile__back card--glass card--glass-back">
-            <div class="tile__actions">
+            <div class="tile__actions tile__actions--centered">
               <a class="btn btn--ghost tile__link"
                  href="https://public.tableau.com/app/profile/aravind.anisetti/viz/InflationAnalysis-Virginia/InflationAnalysisVA"
                  target="_blank" rel="noopener">Demo</a>
@@ -128,9 +135,10 @@
         </div>
       </div>
 
-      <!-- Earnings Call Summarizer -->
+      <!-- 3. Earnings Call Summarizer -->
       <div class="tile" role="button" tabindex="0" aria-expanded="false">
         <div class="tile__inner card--glass">
+          <!-- Front -->
           <div class="tile__face tile__front">
             <div class="tile__front-top">
               <h3 class="tile__title">Earnings Call Summarizer</h3>
@@ -142,8 +150,9 @@
             </p>
           </div>
 
+          <!-- Back -->
           <div class="tile__face tile__back card--glass card--glass-back">
-            <div class="tile__actions">
+            <div class="tile__actions tile__actions--centered">
               <a class="btn btn--ghost tile__link"
                  href="https://github.com/aravind-bit"
                  target="_blank" rel="noopener">Demo</a>
@@ -155,9 +164,10 @@
         </div>
       </div>
 
-      <!-- Multimodal Media Analyst -->
+      <!-- 4. Multimodal Media Analyst -->
       <div class="tile" role="button" tabindex="0" aria-expanded="false">
         <div class="tile__inner card--glass">
+          <!-- Front -->
           <div class="tile__face tile__front">
             <div class="tile__front-top">
               <h3 class="tile__title">Multimodal Media Analyst</h3>
@@ -169,8 +179,9 @@
             </p>
           </div>
 
+          <!-- Back -->
           <div class="tile__face tile__back card--glass card--glass-back">
-            <div class="tile__actions">
+            <div class="tile__actions tile__actions--centered">
               <a class="btn btn--ghost tile__link"
                  href="https://github.com/aravind-bit"
                  target="_blank" rel="noopener">Demo</a>
@@ -201,7 +212,7 @@
       if(!inner) return;
 
       function toggle(e){
-        // don't flip if clicking Demo/Repo
+        // don't flip if clicking Demo/Repo buttons
         if(e && e.target && e.target.closest && e.target.closest('a,button')) return;
         inner.classList.toggle('flipped');
         tile.setAttribute('aria-expanded', inner.classList.contains('flipped'));
