@@ -1,7 +1,10 @@
-/* ========== VARIABLES ========== */
+/* =========================
+   GLOBAL VARS
+   ========================= */
 :root{
   --ink:#fff;
   --bg-deep:#0a0f18;
+
   --glass-bg-main:rgba(10,15,24,0.32);
   --glass-border:rgba(255,255,255,0.22);
   --glass-shadow-main:
@@ -9,7 +12,9 @@
     0 0 120px rgba(170,120,255,0.28);
 }
 
-/* ========== RESET / BODY ========== */
+/* =========================
+   RESET / BODY
+   ========================= */
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -21,39 +26,52 @@ body{
   overflow-x:hidden;
 }
 
-/* ========== BACKGROUND LAYERS ========== */
+/* =========================
+   BACKGROUND LAYERS
+   ========================= */
 .falcon-bg{
-  position:fixed; inset:0; z-index:-4;
+  position:fixed;
+  inset:0;
+  z-index:-4;
   background:center/cover no-repeat;
   background-image:image-set(
     url('../assets/bg/falcon-2560.webp') type('image/webp') 2x,
     url('../assets/bg/falcon-1536.webp') type('image/webp') 1x
   );
-  /* keep strong cinematic contrast but a touch of lift */
+  /* Slightly lifted so it's not too dark under hero text */
   filter:brightness(1.1) contrast(1.05) saturate(1.06);
   pointer-events:none;
 }
 @media(max-width:900px){
-  .falcon-bg{background-attachment:scroll}
+  .falcon-bg{
+    background-attachment:scroll;
+  }
 }
 
 .grain{
-  position:fixed; inset:0; z-index:-3;
+  position:fixed;
+  inset:0;
+  z-index:-3;
   pointer-events:none;
   background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAQAAABccqhmAAAAFElEQVR42u3BMQEAAADCoPdPbQ43oAAAAAAAAJ4DGKgAAZcG0ZcAAAAASUVORK5CYII=');
   background-size:320px 320px;
   mix-blend-mode:soft-light;
   opacity:.05;
 }
+
 .vignette{
-  position:fixed; inset:0; z-index:-2;
+  position:fixed;
+  inset:0;
+  z-index:-2;
   pointer-events:none;
   background:
     radial-gradient(1400px 1000px at 60% 60%, rgba(5,8,14,0), rgba(5,8,14,.15) 65%),
     radial-gradient(100% 120% at 50% 50%, rgba(0,0,0,0), rgba(0,0,0,.22) 72%);
 }
 
-/* ========== NAV (low-distract HUD) ========== */
+/* =========================
+   NAV (slim cinematic HUD)
+   ========================= */
 .nav{
   position:fixed;
   left:0; right:0; top:0;
@@ -89,7 +107,9 @@ body{
   text-shadow:0 2px 8px rgba(0,0,0,.8);
 }
 
-/* ========== HERO WRAP (centered) ========== */
+/* =========================
+   HERO (centered)
+   ========================= */
 .hero-wrap{
   min-height:70vh;
   padding:96px 16px 32px;
@@ -97,30 +117,30 @@ body{
   z-index:1;
   text-align:center;
 
-  /* center child column */
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:flex-start;
 }
 
-/* BIG NAME */
+/* Big name up top */
 .hero__name{
   position:relative;
   font-size:clamp(40px,7vw,80px);
   font-weight:800;
-  margin:48px 0 16px;
+  margin:48px 0 20px;
   color:#fff;
   font-family:"Outfit",system-ui,sans-serif;
   line-height:1.05;
   letter-spacing:-0.02em;
+  text-align:center;
   text-shadow:
     0 4px 18px rgba(0,0,0,0.9),
     0 0 32px rgba(255,255,255,0.6),
     0 0 64px rgba(255,255,255,0.3);
 }
 
-/* halo behind the name, not a box */
+/* Radial glow halo behind the name, NOT a box */
 .hero__name--glow::after{
   content:"";
   position:absolute;
@@ -144,75 +164,110 @@ body{
   mix-blend-mode:screen;
 }
 
-/* TAGLINE + PITCH BLOCK (small glass panel) */
-.glass-blurb{
+/* =========================
+   HERO CONSOLE
+   (subtitle + about + buttons in one glass block)
+   ========================= */
+.hero-console{
   max-width:520px;
-  background:var(--glass-bg-main);
-  border:1px solid var(--glass-border);
-  backdrop-filter:blur(16px) saturate(1.2);
+  background:rgba(10,15,24,0.32);
+  border:1px solid rgba(255,255,255,0.22);
   border-radius:16px;
-  box-shadow:var(--glass-shadow-main);
-  padding:16px 20px 20px;
-  margin:0 0 16px;
-  color:var(--ink);
+  backdrop-filter:blur(16px) saturate(1.2);
+  box-shadow:
+    0 60px 120px rgba(0,0,0,0.9),
+    0 0 120px rgba(170,120,255,0.28);
+  padding:20px 20px 16px;
+  color:#fff;
+  text-align:center;
   text-shadow:
     0 2px 10px rgba(0,0,0,.9),
     0 0 24px rgba(0,0,0,.6);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:16px;
+}
+@media(max-width:480px){
+  .hero-console{
+    border-radius:14px;
+    padding:16px 16px 12px;
+    gap:14px;
+  }
 }
 
-/* tag row w/ orange dots */
+/* Subtitle / capability row */
 .hero__title{
   font-size:clamp(13px,2.8vw,16px);
-  color:#fff;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  margin:0 0 12px;
-  font-weight:700;
   line-height:1.5;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  margin:0;
+  color:#fff;
   text-shadow:
     0 2px 10px rgba(0,0,0,.9),
     0 0 12px rgba(0,0,0,.6);
-  text-align:center;
 }
+.hero__title--bigger{
+  font-size:clamp(14px,2.5vw,18px);
+  line-height:1.5;
+  letter-spacing:.09em;
+}
+
+/* Orange dots between words */
 .hero__title .dot{
   color:#ff7b00;
-  text-shadow:0 0 6px rgba(255,123,0,.9),
-               0 0 18px rgba(255,123,0,.6);
+  text-shadow:
+    0 0 6px rgba(255,123,0,.9),
+    0 0 18px rgba(255,123,0,.6);
   padding:0 4px;
   font-weight:900;
 }
 
-/* short pitch */
+/* About / pitch text */
 .hero__lead{
   margin:0;
   color:#fff;
   font-size:15px;
   font-weight:400;
   line-height:1.6;
-  text-align:center;
   text-shadow:
     0 2px 10px rgba(0,0,0,.9),
     0 0 10px rgba(0,0,0,.6);
 }
+.hero__lead--bigger{
+  font-size:16px;
+  line-height:1.6;
+}
+@media(min-width:768px){
+  .hero__lead--bigger{
+    font-size:17px;
+    line-height:1.6;
+  }
+}
 
-/* BUTTON POD */
-.actions-pod{
-  max-width:520px;
-  background:rgba(10,15,24,0.4);
-  border:1px solid rgba(255,255,255,0.22);
-  backdrop-filter:blur(14px) saturate(1.2);
-  border-radius:14px;
-  box-shadow:
-    0 24px 60px rgba(0,0,0,.8),
-    0 0 60px rgba(140,120,255,0.25);
-  padding:16px;
+/* =========================
+   HERO ACTION BUTTONS
+   ========================= */
+.hero__actions{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
   gap:12px;
 }
 
-/* BTN */
+/* We no longer draw a second glass panel for the button row;
+   the hero-console glass is the parent. */
+.hero__actions--inline{
+  background:transparent;
+  border:0;
+  box-shadow:none;
+  backdrop-filter:none;
+  padding:0;
+}
+
+/* Pill-style buttons (kept from your previous design) */
 .btn{
   display:inline-block;
   padding:10px 16px;
@@ -229,10 +284,11 @@ body{
     0 10px 24px rgba(0,0,0,.8),
     0 1px 2px rgba(255,255,255,.1) inset;
   cursor:pointer;
-  transition:transform .18s ease,
-             box-shadow .18s ease,
-             background .18s ease,
-             border .18s ease;
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    background .18s ease,
+    border .18s ease;
 }
 .btn:hover{
   transform:translateY(-2px);
@@ -249,14 +305,16 @@ body{
     0 1px 2px rgba(255,255,255,.18) inset;
 }
 
-/* ========== PROJECTS SECTION ========== */
+/* =========================
+   PROJECTS SECTION
+   ========================= */
 .projects-block{
   padding:24px clamp(16px,4vw,56px) 64px;
   position:relative;
   z-index:1;
 }
 
-/* projects header glass */
+/* Section glass header above tiles */
 .glass-header{
   max-width:680px;
   margin:0 auto 24px;
@@ -301,7 +359,9 @@ body{
   opacity:.9;
 }
 
-/* ========== TILE GRID ========== */
+/* =========================
+   TILE GRID (project cards)
+   ========================= */
 .tiles{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(min(360px,100%),1fr));
@@ -310,7 +370,7 @@ body{
   margin-top:8px;
 }
 
-/* Each tile wrapper */
+/* Clickable tile wrapper */
 .tile{
   border:0;
   padding:0;
@@ -321,11 +381,12 @@ body{
   outline:none;
 }
 .tile:focus-visible .tile__inner{
-  box-shadow:0 0 0 3px rgba(255,255,255,.4),
-             0 0 20px rgba(255,255,255,.4);
+  box-shadow:
+    0 0 0 3px rgba(255,255,255,.4),
+    0 0 20px rgba(255,255,255,.4);
 }
 
-/* Card inner */
+/* Card shell */
 .tile__inner{
   position:relative;
   width:100%;
@@ -334,6 +395,7 @@ body{
   overflow:hidden;
   transition:transform .25s ease, box-shadow .25s ease;
   will-change:transform, box-shadow;
+
   background:rgba(10,15,24,.4);
   border:1px solid rgba(255,255,255,.14);
   backdrop-filter:blur(8px) saturate(1.05);
@@ -357,8 +419,7 @@ body{
   }
 }
 
-/* Rear face darker */
-.card--glass{}
+/* Alternate back styling a bit darker */
 .card--glass-back{
   background:rgba(10,15,24,.7);
   border-top:1px solid rgba(255,255,255,.18);
@@ -367,7 +428,7 @@ body{
     0 24px 60px rgba(0,0,0,.9);
 }
 
-/* Faces */
+/* front/back faces */
 .tile__face{
   position:absolute;
   inset:0;
@@ -377,7 +438,7 @@ body{
   color:#fff;
   text-shadow:0 2px 10px rgba(0,0,0,.8);
   line-height:1.5;
-  font-size:16px;          /* larger body for readability */
+  font-size:16px; /* readability bump */
 }
 @media(max-width:600px){
   .tile__face{
@@ -387,7 +448,7 @@ body{
   }
 }
 
-/* FRONT */
+/* FRONT face */
 .tile__front{
   opacity:1;
   transform:translateY(0);
@@ -421,7 +482,7 @@ body{
   text-shadow:0 2px 6px rgba(0,0,0,.8);
 }
 
-/* body blurb on card FRONT */
+/* body copy on the front */
 .tile__blurb{
   font-size:16px;
   line-height:1.5;
@@ -434,7 +495,7 @@ body{
   .tile__blurb{font-size:15px;}
 }
 
-/* BACK */
+/* BACK face */
 .tile__back{
   opacity:0;
   transform:translateY(10px);
@@ -448,6 +509,8 @@ body{
   display:flex;
   font-size:16px;
 }
+
+/* flip states */
 .tile__inner.flipped .tile__front{
   opacity:0;
   transform:translateY(-10px);
@@ -461,7 +524,7 @@ body{
   z-index:2;
 }
 
-/* BACK ACTIONS */
+/* back-side button layout */
 .tile__actions{
   display:flex;
   flex-wrap:wrap;
@@ -474,7 +537,7 @@ body{
   flex-shrink:0;
 }
 
-/* Ghost buttons on back */
+/* ghost-style buttons on card backs */
 .btn--ghost{
   background:rgba(0,0,0,.4);
   border:1px solid rgba(255,255,255,.3);
@@ -498,7 +561,9 @@ body{
     0 1px 2px rgba(255,255,255,.15) inset;
 }
 
-/* ========== FOOTER ========== */
+/* =========================
+   FOOTER
+   ========================= */
 .footer{
   padding:36px clamp(16px,6vw,56px);
   color:#fff;
