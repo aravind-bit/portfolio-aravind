@@ -9,23 +9,23 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="styles/main.css?v=ui800">
+  <link rel="stylesheet" href="styles/main.css?v=ui1000" />
 
   <!-- Preload BG -->
   <link rel="preload" as="image" href="assets/bg/falcon-1536.webp"
-        imagesrcset="assets/bg/falcon-2560.webp 2x">
+        imagesrcset="assets/bg/falcon-2560.webp 2x" />
 </head>
 
 <body>
-  <!-- background -->
+  <!-- background layers -->
   <div class="falcon-bg" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
   <div class="vignette" aria-hidden="true"></div>
 
-  <!-- nav -->
+  <!-- top nav / HUD -->
   <header class="nav">
     <a href="#home" class="nav__brand" aria-label="Home">ARAVIND</a>
     <nav class="nav__links" aria-label="Primary">
@@ -34,47 +34,53 @@
     </nav>
   </header>
 
-  <!-- hero / about -->
-  <main id="home" class="hero-wrap hero-wrap--center" style="scroll-margin-top:72px">
-    <section class="hero hero--center glass-block">
-      <h1 class="hero__name hero__name--glow">Aravind&nbsp;Anisetti</h1>
+  <!-- HERO -->
+  <!-- tiered hero: name (free), tagline+pitch in glass, then button pod -->
+  <main id="home" class="hero-wrap" style="scroll-margin-top:72px">
 
-      <p class="hero__title hero__title--center">
-        Data Science <span class="dot">•</span>
-        Data Engineering <span class="dot">•</span>
+    <h1 class="hero__name hero__name--glow">Aravind&nbsp;Anisetti</h1>
+
+    <div class="hero__blurb glass-blurb">
+      <p class="hero__title">
+        DATA SCIENCE <span class="dot">•</span>
+        DATA ENGINEERING <span class="dot">•</span>
         ML <span class="dot">•</span>
-        Automation <span class="dot">•</span>
-        Agentic AI
+        AUTOMATION <span class="dot">•</span>
+        AGENTIC AI
       </p>
 
-      <p class="hero__lead hero__lead--center">
+      <p class="hero__lead">
         I build lean pipelines, readable visuals, and agentic systems that turn insight into action.
         Practical, traceable, and fast — set in a slightly cinematic galaxy.
       </p>
+    </div>
 
-      <div class="hero__actions hero__actions--center">
-        <a class="btn" href="#projects">See Projects</a>
-        <a class="btn" href="https://github.com/aravind-bit" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn" href="assets/resume/aravind_resume.pdf" target="_blank" rel="noopener">Resume</a>
-        <a class="btn" href="mailto:hello@example.com">Email</a>
-      </div>
-    </section>
+    <div class="hero__actions actions-pod">
+      <a class="btn" href="#projects">See Projects</a>
+      <a class="btn" href="https://github.com/aravind-bit" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="assets/resume/aravind_resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <a class="btn" href="mailto:hello@example.com">Email</a>
+    </div>
+
   </main>
 
-  <!-- projects -->
+  <!-- PROJECTS -->
   <section id="projects" class="projects-block" style="scroll-margin-top:72px">
-    <header class="section-head glass-block section-head--narrow">
-      <h2 class="section-title section-title--center">Projects</h2>
-      <p class="section-sub section-sub--center">
+
+    <!-- section header -->
+    <header class="section-head glass-header">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-sub">
         Selected builds in analytics, visualization, ML, and agentic systems.
         Tap a card to flip for Demo / Repo.
       </p>
-      <p class="section-sub section-sub--mini section-sub--center">
+      <p class="section-sub section-sub--mini">
         I ship data products end-to-end — ingestion → modeling → surface.
       </p>
     </header>
 
+    <!-- tile grid -->
     <div class="tiles">
 
       <!-- 1. Mid-Cap Tech KPI Tracker -->
@@ -91,7 +97,6 @@
               to surface efficiency leaders and volatility pockets.
             </p>
           </div>
-
           <!-- Back -->
           <div class="tile__face tile__back card--glass card--glass-back">
             <div class="tile__actions tile__actions--centered">
@@ -120,7 +125,6 @@
               shows shelter’s weight and energy’s whipsaws without spreadsheet fog.
             </p>
           </div>
-
           <!-- Back -->
           <div class="tile__face tile__back card--glass card--glass-back">
             <div class="tile__actions tile__actions--centered">
@@ -146,10 +150,10 @@
             </div>
             <p class="tile__blurb">
               Agentic LLM that ingests transcripts and returns traceable KPI snippets,
-              guidance highlights, and searchable evidence — less skimming, more signal.
+              guidance highlights, and searchable evidence —
+              less skimming, more signal.
             </p>
           </div>
-
           <!-- Back -->
           <div class="tile__face tile__back card--glass card--glass-back">
             <div class="tile__actions tile__actions--centered">
@@ -174,11 +178,10 @@
               <div class="techline">Whisper/ASR • NLP • Agents • Sentiment</div>
             </div>
             <p class="tile__blurb">
-              Ingests video/audio → diarization + ASR → topic &amp; sentiment tags;
-              an agent surfaces quotable clips and timestamps.
+              Ingests video/audio → diarization + ASR → topic &amp; sentiment tags.
+              An agent surfaces quotable clips and timestamps.
             </p>
           </div>
-
           <!-- Back -->
           <div class="tile__face tile__back card--glass card--glass-back">
             <div class="tile__actions tile__actions--centered">
@@ -193,14 +196,14 @@
         </div>
       </div>
 
-    </div>
+    </div><!-- /.tiles -->
   </section>
 
   <footer class="footer">
     <p>© <span id="year"></span> Aravind Anisetti</p>
   </footer>
 
-  <!-- inline flip binder -->
+  <!-- Flip logic + year -->
   <script>
   (function(){
     var y=document.getElementById('year');
@@ -208,14 +211,14 @@
 
     var tiles=document.querySelectorAll('.tile');
     tiles.forEach(function(tile){
-      var inner = tile.querySelector('.tile__inner');
+      var inner=tile.querySelector('.tile__inner');
       if(!inner) return;
 
       function toggle(e){
         // don't flip if clicking Demo/Repo buttons
         if(e && e.target && e.target.closest && e.target.closest('a,button')) return;
         inner.classList.toggle('flipped');
-        tile.setAttribute('aria-expanded', inner.classList.contains('flipped'));
+        tile.setAttribute('aria-expanded',inner.classList.contains('flipped'));
       }
 
       tile.addEventListener('click',toggle);
