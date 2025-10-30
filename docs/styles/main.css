@@ -571,3 +571,22 @@ body{
   font-size:14px;
   text-shadow:0 2px 8px rgba(0,0,0,.8);
 }
+/* === UI TUNE: hero width + projects typography ======================= */
+/* Match hero console width to Projects header width */
+.hero-console{
+  max-width: 680px;   /* same as .glass-header */
+}
+
+/* Give it a touch more breathing room on big screens (optional) */
+@media (min-width: 1200px){
+  .hero-console{ max-width: 720px; }
+}
+
+/* Make Projects description text match About me sizing */
+.section-sub{
+  font-size: 16px;      /* matches .hero__lead base */
+  line-height: 1.6;
+}
+@media (min-width: 768px){
+  .section-sub{ font-size: 17px; }  /* matches .hero__lead--bigger */
+}
