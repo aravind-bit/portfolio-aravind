@@ -1,241 +1,175 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Aravind Anisetti — Data Science • Data Engineering • ML • Automation • Agentic AI</title>
-  <meta name="description" content="Data science, data engineering, visualization, ML, automation, and agentic AI systems by Aravind Anisetti." />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles/main.css?v=ui1000" />
-
-  <!-- Preload BG -->
-  <link rel="preload" as="image" href="assets/bg/falcon-1536.webp"
-        imagesrcset="assets/bg/falcon-2560.webp 2x" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aravind Anisetti — Portfolio</title>
+  <meta name="description" content="Data Science & Data Engineering portfolio by Aravind Anisetti. Cinematic single-page with projects in analytics, visualization, ML and agentic systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
 </head>
-
 <body>
-  <!-- background layers -->
+  <!-- Background layers -->
   <div class="falcon-bg" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
   <div class="vignette" aria-hidden="true"></div>
 
-  <!-- top nav / HUD -->
-  <header class="nav">
-    <a href="#home" class="nav__brand" aria-label="Home">ARAVIND</a>
-    <nav class="nav__links" aria-label="Primary">
-      <a href="#home">Home</a>
+  <!-- Nav -->
+  <nav class="nav">
+    <a class="nav__brand" href="#top">ARAVIND</a>
+    <div class="nav__links">
+      <a href="#top">Home</a>
       <a href="#projects">Projects</a>
-    </nav>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="top" class="hero-wrap">
+    <h1 class="hero__name hero__name--glow">Aravind Anisetti</h1>
+
+    <div class="hero-console">
+      <p class="hero__title hero__title--bigger">
+        DATA SCIENCE <span class="dot">•</span>
+        DATA ENGINEERING <span class="dot">•</span>
+        ML <span class="dot">•</span>
+        AUTOMATION <span class="dot">•</span>
+        AGENTIC AI
+      </p>
+
+      <p class="hero__lead hero__lead--bigger">
+        I build data-driven solutions that connect raw information to strategic insights.
+        End-to-end data products—lean pipelines, visualizations and agentic systems that turn insight into action.
+        Practical, traceable, and fast — set in a slightly cinematic galaxy.
+      </p>
+
+      <div class="hero__actions hero__actions--inline">
+        <a class="btn" href="#projects">See Projects</a>
+        <a class="btn" target="_blank" rel="noopener" href="https://github.com/aravind-bit">GitHub</a>
+        <a class="btn" target="_blank" rel="noopener" href="https://www.linkedin.com/in/aravindanisetti/">LinkedIn</a>
+        <a class="btn" target="_blank" rel="noopener" href="https://aravind-bit.github.io/portfolio-aravind/resume.pdf">Resume</a>
+        <a class="btn" href="mailto:hello@example.com">Email</a>
+      </div>
+    </div>
   </header>
 
-  <!-- HERO -->
-  <!-- tiered hero: name (free), tagline+pitch in glass, then button pod -->
- <main id="home" class="hero-wrap" style="scroll-margin-top:72px">
-
-  <h1 class="hero__name hero__name--glow">Aravind&nbsp;Anisetti</h1>
-
-  <!-- unified hero glass block with subtitle, pitch, and buttons -->
-  <div class="hero-console">
-    <p class="hero__title hero__title--bigger">
-      DATA SCIENCE <span class="dot">•</span>
-      DATA ENGINEERING <span class="dot">•</span>
-      ML <span class="dot">•</span>
-      AUTOMATION <span class="dot">•</span>
-      AGENTIC AI
-    </p>
-
-    <p class="hero__lead hero__lead--bigger">
-      I build data-driven solutions that connect raw information to strategic insights.
-      End-to-end data products—lean pipelines, visualizations and agentic systems that turn insight into action. 
-      — set in a slightly cinematic galaxy.
-    </p>
-
-    <div class="hero__actions actions-pod hero__actions--inline">
-      <a class="btn" href="#projects">See Projects</a>
-      <a class="btn" href="https://github.com/aravind-bit" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="assets/resume/aravind_resume.pdf" target="_blank" rel="noopener">Resume</a>
-      <a class="btn" href="anisetti.ar@gmail.com">Email</a>
-    </div>
-  </div>
-
-</main>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="projects-block" style="scroll-margin-top:72px">
-
-    <!-- section header -->
-    <header class="section-head glass-header">
+  <!-- Projects -->
+  <section id="projects" class="projects-block">
+    <div class="glass-header">
       <h2 class="section-title">Projects</h2>
       <p class="section-sub">
-        Selected builds in analytics, visualization, ML, and agentic systems.
-        Tap a card to flip for Demo / Repo.
+        Selected builds in analytics, visualization, ML, and agentic systems. Tap a card to flip for Demo / Repo.
       </p>
       <p class="section-sub section-sub--mini">
         I ship data products end-to-end — ingestion → modeling → surface.
       </p>
-    </header>
+    </div>
 
-    <!-- tile grid -->
     <div class="tiles">
-
-      <!-- 1. Mid-Cap Tech KPI Tracker -->
-      <div class="tile" role="button" tabindex="0" aria-expanded="false">
-        <div class="tile__inner card--glass">
-          <!-- Front -->
+      <!-- KPI (Finance) -->
+      <button class="tile" aria-label="Open project: Mid-Cap Tech KPI Tracker">
+        <div class="tile__inner">
           <div class="tile__face tile__front">
-            <span class="tile__tag tag--finance">Finance</span>
             <div class="tile__front-top">
+              <span class="tile__tag tag--finance">Finance</span>
               <h3 class="tile__title">Mid-Cap Tech KPI Tracker</h3>
-              <div class="techline">Python • Tableau • yfinance • AWS</div>
+              <div class="techline">Python • Tableau • yFinance • AWS</div>
             </div>
             <p class="tile__blurb">
-              Benchmarks ~20 mid-cap tech firms across growth, margins, EPS, and R&amp;D
-              to surface efficiency leaders and volatility pockets.
+              Benchmarks ~20 mid-cap tech firms across growth, margins, EPS, and R&amp;D to surface efficiency leaders and volatility pockets.
             </p>
           </div>
-          <!-- Back -->
-          <div class="tile__face tile__back card--glass card--glass-back">
+          <div class="tile__face tile__back card--glass-back">
             <div class="tile__actions tile__actions--centered">
-              <a class="btn btn--ghost tile__link"
-                 href="https://public.tableau.com/app/profile/aravind.anisetti/viz/Mid-CapRevenueAnalysis/Mid-CapTechKPITracker"
-                 target="_blank" rel="noopener">Demo</a>
-              <a class="btn btn--ghost tile__link"
-                 href="https://github.com/aravind-bit"
-                 target="_blank" rel="noopener">Repo</a>
+              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
+                 href="https://public.tableau.com/app/profile/aravind.anisetti/viz/Mid-CapRevenueAnalysis/Mid-CapTechKPITracker">Demo</a>
+              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
+                 href="https://github.com/aravind-bit">Repo</a>
             </div>
           </div>
         </div>
-      </div>
+      </button>
 
-      <!-- 2. CPI Explorer -->
-      <div class="tile" role="button" tabindex="0" aria-expanded="false">
-        <div class="tile__inner card--glass">
-          <!-- Front -->
+      <!-- CPI (Finance) -->
+      <button class="tile" aria-label="Open project: CPI Explorer">
+        <div class="tile__inner">
           <div class="tile__face tile__front">
-            <span class="tile__tag tag--finance">Finance</span>
             <div class="tile__front-top">
+              <span class="tile__tag tag--finance">Finance</span>
               <h3 class="tile__title">CPI Explorer</h3>
               <div class="techline">Tableau • BLS API • Time-Series</div>
             </div>
             <p class="tile__blurb">
-              Decomposes inflation by category with rolling windows —
-              shows shelter’s weight and energy’s whipsaws without spreadsheet fog.
+              Decomposes inflation by category with rolling windows — shows shelter’s weight and energy’s whipsaws without spreadsheet fog.
             </p>
           </div>
-          <!-- Back -->
-          <div class="tile__face tile__back card--glass card--glass-back">
+          <div class="tile__face tile__back card--glass-back">
             <div class="tile__actions tile__actions--centered">
-              <a class="btn btn--ghost tile__link"
-                 href="https://public.tableau.com/app/profile/aravind.anisetti/viz/InflationAnalysis-Virginia/InflationAnalysisVA"
-                 target="_blank" rel="noopener">Demo</a>
-              <a class="btn btn--ghost tile__link"
-                 href="https://github.com/aravind-bit"
-                 target="_blank" rel="noopener">Repo</a>
+              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
+                 href="https://public.tableau.com/app/profile/aravind.anisetti/viz/InflationAnalysis-Virginia/InflationAnalysisVA">Demo</a>
+              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
+                 href="https://github.com/aravind-bit">Repo</a>
             </div>
           </div>
         </div>
-      </div>
+      </button>
 
-      <!-- 3. Earnings Call Summarizer -->
-      <div class="tile" role="button" tabindex="0" aria-expanded="false">
-        <div class="tile__inner card--glass">
-          <!-- Front -->
+      <!-- Earnings Call Summarizer (Media/AI adjacent but we’ll tag Media to distinguish) -->
+      <button class="tile" aria-label="Open project: Earnings Call Summarizer">
+        <div class="tile__inner">
           <div class="tile__face tile__front">
-            <span class="tile__tag tag--finance">Finance</span>
             <div class="tile__front-top">
+              <span class="tile__tag tag--media">Media</span>
               <h3 class="tile__title">Earnings Call Summarizer</h3>
               <div class="techline">Python • RAG • OpenAI • Retrieval</div>
             </div>
             <p class="tile__blurb">
-              Agentic LLM that ingests transcripts and returns traceable KPI snippets,
-              guidance highlights, and searchable evidence —
-              less skimming, more signal.
+              Agentic LLM that ingests transcripts and returns traceable KPI snippets, guidance highlights, and searchable evidence.
             </p>
           </div>
-          <!-- Back -->
-          <div class="tile__face tile__back card--glass card--glass-back">
+          <div class="tile__face tile__back card--glass-back">
             <div class="tile__actions tile__actions--centered">
-              <a class="btn btn--ghost tile__link"
-                 href="https://github.com/aravind-bit"
-                 target="_blank" rel="noopener">Demo</a>
-              <a class="btn btn--ghost tile__link"
-                 href="https://github.com/aravind-bit"
-                 target="_blank" rel="noopener">Repo</a>
+              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
+                 href="https://github.com/aravind-bit">Demo</a>
+              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
+                 href="https://github.com/aravind-bit">Repo</a>
             </div>
           </div>
         </div>
-      </div>
+      </button>
 
-      <!-- 4. Multimodal Media Analyst -->
-      <div class="tile" role="button" tabindex="0" aria-expanded="false">
-        <div class="tile__inner card--glass">
-          <!-- Front -->
+      <!-- Multimodal Media Analyst (Media) -->
+      <button class="tile" aria-label="Open project: Multimodal Media Analyst">
+        <div class="tile__inner">
           <div class="tile__face tile__front">
-            <span class="tile__tag tag--media">Media</span>
             <div class="tile__front-top">
+              <span class="tile__tag tag--media">Media</span>
               <h3 class="tile__title">Multimodal Media Analyst</h3>
               <div class="techline">Whisper/ASR • NLP • Agents • Sentiment</div>
             </div>
             <p class="tile__blurb">
-               Builds and optimizes media ROI models across TV, streaming, and digital to simulate real-world planning tools like NBCU’s One Platform. 
+              Builds and optimizes media ROI models across TV, streaming, and digital to simulate real-world planning tools like NBCU’s One Platform. 
               Combines data science modeling, optimization, and explainability into a single transparent system.
             </p>
           </div>
-          <!-- Back -->
-          <div class="tile__face tile__back card--glass card--glass-back">
+          <div class="tile__face tile__back card--glass-back">
             <div class="tile__actions tile__actions--centered">
-              <a class="btn btn--ghost tile__link"
-                 href="https://oneplan-ai-jjuugdhyklgrz6d8ptvjr3.streamlit.app/"
-                 target="_blank" rel="noopener">Demo</a>
-              <a class="btn btn--ghost tile__link"
-                 href="https://github.com/aravind-bit"
-                 target="_blank" rel="noopener">Repo</a>
+              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
+                 href="https://oneplan-ai-jjuugdhyklgrz6d8ptvjr3.streamlit.app/">Demo</a>
+              <a class="btn btn--ghost tile__link" target="_blank" rel="noopener"
+                 href="https://github.com/aravind-bit/oneplan-ai">Repo</a>
             </div>
           </div>
         </div>
-      </div>
-
-    </div><!-- /.tiles -->
+      </button>
+    </div>
   </section>
 
   <footer class="footer">
-    <p>© <span id="year"></span> Aravind Anisetti</p>
+    © 2025 Aravind Anisetti — Built like a storyboard.
   </footer>
 
-  <!-- Flip logic + year -->
-  <script>
-  (function(){
-    var y=document.getElementById('year');
-    if(y){ y.textContent=new Date().getFullYear(); }
-
-    var tiles=document.querySelectorAll('.tile');
-    tiles.forEach(function(tile){
-      var inner=tile.querySelector('.tile__inner');
-      if(!inner) return;
-
-      function toggle(e){
-        // don't flip if clicking Demo/Repo buttons
-        if(e && e.target && e.target.closest && e.target.closest('a,button')) return;
-        inner.classList.toggle('flipped');
-        tile.setAttribute('aria-expanded',inner.classList.contains('flipped'));
-      }
-
-      tile.addEventListener('click',toggle);
-      tile.addEventListener('keydown',function(e){
-        if(e.key==='Enter'||e.key===' '){
-          e.preventDefault();
-          toggle(e);
-        }
-      });
-    });
-  })();
-  </script>
+  <script src="styles/main.js" defer></script>
 </body>
 </html>
