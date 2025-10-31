@@ -1,33 +1,47 @@
-// main.js
-// 1. set year in footer
-// 2. enable tile flip on click / keyboard
+// docs/styles/main.js
+// Flip cards + auto-height so long blurbs aren't cut off.
 
-(function(){
-  var y=document.getElementById('year');
-  if(y){
-    y.textContent=new Date().getFullYear();
-  }
+document.addEventListener("DOMContentLoaded", () => {
+  const tiles = document.querySelectorAll(".tile");
 
-  var tiles=document.querySelectorAll('.tile');
-  tiles.forEach(function(tile){
-    var inner=tile.querySelector('.tile__inner');
-    if(!inner) return;
+  const measure = (inner) => {
+    const front = inner.querySelector(".tile__front");
+    const back  = inner.querySelector(".tile__back");
+    // Decide which side is showing and size the container to that face
+    const active = inner.classList.contains("flipped") ? back : front;
+    // Use scrollHeight so long text is fully visible
+    inner.style.height = active.scrollHeight + "px";
+  };
 
-    function toggle(e){
-      // don't flip when clicking inside buttons/links
-      if(e && e.target && e.target.closest && e.target.closest('a,button')) return;
-      inner.classList.toggle('flipped');
-      tile.setAttribute('aria-expanded', inner.classList.contains('flipped'));
-    }
+  // Initialize each tile and wire events
+  tiles.forEach((tile) => {
+    const inner = tile.querySelector(".tile__inner");
+    if (!inner) return;
 
-    tile.addEventListener('click',toggle);
+    // First measurement (front side)
+    requestAnimationFrame(() => measure(inner));
 
-    // keyboard access
-    tile.addEventListener('keydown',function(e){
-      if(e.key==='Enter'||e.key===' '){
+    // Click to flip (ignore clicks on links)
+    tile.addEventListener("click", (e) => {
+      if (e.target.closest("a")) return;
+      inner.classList.toggle("flipped");
+      tile.setAttribute("aria-pressed", inner.classList.contains("flipped"));
+      measure(inner);
+    });
+
+    // Keyboard flip (Enter/Space)
+    tile.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
-        toggle(e);
+        tile.click();
       }
     });
   });
-})();
+
+  // Recalculate on resize/orientation changes
+  const onResize = () => {
+    document.querySelectorAll(".tile__inner").forEach(measure);
+  };
+  window.addEventListener("resize", onResize);
+  window.addEventListener("orientationchange", onResize);
+});
