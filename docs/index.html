@@ -4,21 +4,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Aravind Anisetti — Portfolio</title>
-  <meta name="description" content="Aravind Anisetti — data products: pipelines → models → decisions. Live demos, code, and case studies." />
+  <meta name="description" content="Aravind Anisetti — pipelines → models → decisions. Live demos, code, and case studies." />
   <link rel="stylesheet" href="styles/main.css" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 
 <body>
-  <!-- Background image (set the path in CSS: --bg-image) -->
+  <!-- Fixed responsive background -->
   <div class="page-bg" aria-hidden="true"></div>
 
-  <!-- ===== HEADER / HERO ===== -->
+  <!-- ===== HERO ===== -->
   <header class="hero">
-    <div class="container glass">
+    <div class="container glass hero__panel">
       <h1 class="hero__title">Aravind Anisetti</h1>
       <p class="hero__subtitle">
-        I build data-driven solutions that connect raw information to strategic insights. End-to-end data products—lean pipelines, visualizations and agentic systems that turn insight into action — set in a slightly cinematic galaxy.
+        I build data-driven solutions that connect raw information to strategic insights. End-to-end data products—lean pipelines, visualizations and agentic systems that turn insight into action.
       </p>
 
       <nav class="hero__ctas" aria-label="Primary actions">
@@ -35,13 +35,13 @@
 
   <!-- ===== PROJECTS ===== -->
   <main id="projects" class="projects">
-    <div class="container section glass">
+    <div class="container section glass section--intro">
       <h2 class="section__title">Projects</h2>
       <p class="section__kicker">Selected builds in analytics, visualization, ML, and agentic systems.</p>
     </div>
 
     <div class="container cards">
-      <!-- ==== Mid-Cap Tech KPI Tracker (FINANCE) ==== -->
+      <!-- ==== FINANCE: Mid-Cap Tech KPI Tracker ==== -->
       <article class="card">
         <div class="card__head">
           <span class="pill pill--finance">FINANCE</span>
@@ -51,19 +51,18 @@
         <div class="card__body">
           <p class="card__what"><strong>What:</strong> Quarterly KPI dashboard with scripted refresh.</p>
           <p class="card__why"><strong>Why:</strong> Surfaces <em>efficiency leaders</em> &amp; <em>volatility pockets</em> at a glance.</p>
-          <p class="card__outcome"><strong>Outcome:</strong> <strong>Exec view in one dashboard</strong>; quarterly refresh in &lt;5 minutes via scripted update.</p>
+          <p class="card__outcome"><strong>Outcome:</strong> <strong>Exec view in one dashboard</strong>; quarterly refresh in &lt;5 minutes.</p>
           <ul class="chips" aria-label="Tech stack">
             <li>Python</li><li>Tableau</li><li>yFinance</li><li>AWS</li>
           </ul>
         </div>
         <div class="card__actions">
-          <!-- Replace # with Tableau link when available -->
           <a class="btn btn--accent" href="#" aria-label="Open KPI Tracker live demo">Demo</a>
           <a class="btn" href="https://github.com/aravind-bit/tech-equity-dashboard" target="_blank" rel="noopener" aria-label="Open KPI Tracker source code">Code</a>
         </div>
       </article>
 
-      <!-- ==== CPI Explorer (FINANCE) ==== -->
+      <!-- ==== FINANCE: CPI Explorer ==== -->
       <article class="card">
         <div class="card__head">
           <span class="pill pill--finance">FINANCE</span>
@@ -72,21 +71,19 @@
         </div>
         <div class="card__body">
           <p class="card__what"><strong>What:</strong> Category-level CPI explorer with saved analyst views.</p>
-          <p class="card__why"><strong>Why:</strong> Shows shelter’s weight and energy’s whipsaws without spreadsheet fog.</p>
+          <p class="card__why"><strong>Why:</strong> Shows shelter’s weight and energy whipsaws without spreadsheet fog.</p>
           <p class="card__outcome"><strong>Outcome:</strong> <strong>Faster category diagnostics</strong> for reports and updates.</p>
           <ul class="chips" aria-label="Tech stack">
             <li>Tableau</li><li>BLS API</li><li>Time-Series</li>
           </ul>
         </div>
         <div class="card__actions">
-          <!-- Replace # with Tableau link when available -->
           <a class="btn btn--accent" href="#" aria-label="Open CPI Explorer live demo">Demo</a>
-          <!-- Replace # with repo when published -->
           <a class="btn" href="#" aria-label="Open CPI Explorer source code">Code</a>
         </div>
       </article>
 
-      <!-- ==== FinSense (FINANCE) ==== -->
+      <!-- ==== FINANCE: FinSense ==== -->
       <article class="card">
         <div class="card__head">
           <span class="pill pill--finance">FINANCE</span>
@@ -102,12 +99,11 @@
           </ul>
         </div>
         <div class="card__actions">
-          <!-- No live app yet -->
           <a class="btn" href="https://github.com/aravind-bit/finsense-earnings-ai" target="_blank" rel="noopener" aria-label="Open FinSense source code">Code</a>
         </div>
       </article>
 
-      <!-- ==== OnePlan AI (MEDIA) ==== -->
+      <!-- ==== MEDIA: OnePlan AI ==== -->
       <article class="card">
         <div class="card__head">
           <span class="pill pill--media">MEDIA</span>
@@ -128,7 +124,7 @@
         </div>
       </article>
 
-      <!-- ==== StreamShift (MEDIA) ==== -->
+      <!-- ==== MEDIA: StreamShift ==== -->
       <article class="card">
         <div class="card__head">
           <span class="pill pill--media">MEDIA</span>
@@ -144,7 +140,6 @@
           </ul>
         </div>
         <div class="card__actions">
-          <!-- Replace # with live URL/repo when ready -->
           <a class="btn btn--accent" href="#" aria-label="Open StreamShift live demo">Demo</a>
           <a class="btn" href="#" aria-label="Open StreamShift source code">Code</a>
         </div>
@@ -167,7 +162,6 @@
   </footer>
 
   <script>
-    // set year
     document.getElementById('yr').textContent = new Date().getFullYear();
   </script>
 </body>
