@@ -41,28 +41,7 @@
     </div>
 
     <div class="container cards">
-      <!-- ==== FINANCE: Mid-Cap Tech KPI Tracker ==== -->
-      <article class="card">
-        <div class="card__head">
-          <span class="pill pill--finance">FINANCE</span>
-          <h3 class="card__title">Mid-Cap Tech KPI Tracker</h3>
-          <p class="card__subtitle">Benchmarks ~20 mid-cap tech firms across growth, margins, EPS, and R&amp;D.</p>
-        </div>
-        <div class="card__body">
-          <p class="card__what"><strong>What:</strong> Quarterly KPI dashboard with scripted refresh.</p>
-          <p class="card__why"><strong>Why:</strong> Surfaces <em>efficiency leaders</em> &amp; <em>volatility pockets</em> at a glance.</p>
-          <p class="card__outcome"><strong>Outcome:</strong> <strong>Exec view in one dashboard</strong>; quarterly refresh in &lt;5 minutes.</p>
-          <ul class="chips" aria-label="Tech stack">
-            <li>Python</li><li>Tableau</li><li>yFinance</li><li>AWS</li>
-          </ul>
-        </div>
-        <div class="card__actions">
-          <a class="btn btn--accent" href="https://public.tableau.com/app/profile/aravind.anisetti/viz/InflationAnalysis-Virginia/InflationAnalysisVA" target="_blank" rel="noopener" aria-label="Open KPI Tracker live demo">Demo</a>
-          <a class="btn" href="https://github.com/aravind-bit/tech-equity-dashboard" target="_blank" rel="noopener" aria-label="Open KPI Tracker source code">Code</a>
-        </div>
-      </article>
-
-      <!-- ==== FINANCE: CPI Explorer ==== -->
+      <!-- ==== FINANCE: CPI Explorer (put a working demo first) ==== -->
       <article class="card">
         <div class="card__head">
           <span class="pill pill--finance">FINANCE</span>
@@ -79,7 +58,7 @@
         </div>
         <div class="card__actions">
           <a class="btn btn--accent" href="https://public.tableau.com/app/profile/aravind.anisetti/viz/InflationAnalysis-Virginia/InflationAnalysisVA" target="_blank" rel="noopener" aria-label="Open CPI Explorer live demo">Demo</a>
-          <a class="btn" href="#" aria-label="Open CPI Explorer source code">Code</a>
+          <a class="btn" href="https://github.com/aravind-bit/inflation-analysis-virginia" target="_blank" rel="noopener" aria-label="Open CPI Explorer source code">Code</a>
         </div>
       </article>
 
@@ -124,6 +103,27 @@
         </div>
       </article>
 
+      <!-- ==== FINANCE: Mid-Cap Tech KPI Tracker (links fixed) ==== -->
+      <article class="card">
+        <div class="card__head">
+          <span class="pill pill--finance">FINANCE</span>
+          <h3 class="card__title">Mid-Cap Tech KPI Tracker</h3>
+          <p class="card__subtitle">Benchmarks ~20 mid-cap tech firms across growth, margins, EPS, and R&amp;D.</p>
+        </div>
+        <div class="card__body">
+          <p class="card__what"><strong>What:</strong> Quarterly KPI dashboard with scripted refresh.</p>
+          <p class="card__why"><strong>Why:</strong> Surfaces <em>efficiency leaders</em> &amp; <em>volatility pockets</em> at a glance.</p>
+          <p class="card__outcome"><strong>Outcome:</strong> <strong>Exec view in one dashboard</strong>; quarterly refresh in &lt;5 minutes.</p>
+          <ul class="chips" aria-label="Tech stack">
+            <li>Python</li><li>Tableau</li><li>yFinance</li><li>AWS</li>
+          </ul>
+        </div>
+        <div class="card__actions">
+          <a class="btn btn--accent" href="https://public.tableau.com/app/profile/aravind.anisetti/viz/Mid-CapRevenueAnalysis/Mid-CapTechKPITracker" target="_blank" rel="noopener" aria-label="Open Mid-Cap Tech KPI live demo">Demo</a>
+          <a class="btn" href="https://github.com/aravind-bit/tech-equity-dashboard" target="_blank" rel="noopener" aria-label="Open Mid-Cap Tech KPI source code">Code</a>
+        </div>
+      </article>
+
       <!-- ==== MEDIA: StreamShift ==== -->
       <article class="card">
         <div class="card__head">
@@ -140,11 +140,10 @@
           </ul>
         </div>
         <div class="card__actions">
-          <a class="btn btn--accent" href="#" aria-label="Open StreamShift live demo">Demo</a>
-          <a class="btn" href="#" aria-label="Open StreamShift source code">Code</a>
+          <a class="btn btn--accent" href="https://streamshift-aiaptrnvxydq4ka23avbsz.streamlit.app/" target="_blank" rel="noopener" aria-label="Open StreamShift live demo">Demo</a>
+          <a class="btn" href="https://github.com/aravind-bit/streamshift" target="_blank" rel="noopener" aria-label="Open StreamShift source code">Code</a>
         </div>
       </article>
-
     </div>
   </main>
 
@@ -164,5 +163,8 @@
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
   </script>
+
+  <!-- (4) Lightweight click analytics -->
+  <script defer data-domain="aravind-bit.github.io" src="https://plausible.io/js/script.js"></script>
 </body>
 </html>
