@@ -117,56 +117,87 @@ img{ max-width:100%; height:auto; display:block; }
 .section__title{ margin:.2rem 0 .1rem; font-size: clamp(24px, 3.2vw, 36px); }
 .section__kicker{ margin:0; color: var(--muted); }
 
-/* ===== Cards grid ===== */
+/* ===== Cards grid (airier) ===== */
 .cards{
-  padding: .4rem 0 2.2rem;
+  padding: .4rem 0 2.6rem;
   display:grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
 }
-@media (min-width: 960px){
-  .cards{ grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; }
+@media (min-width: 1200px){
+  .cards{ gap: 1.4rem; }
 }
 
+/* ===== Card ===== */
 .card{
   position:relative;
   border:1px solid var(--panel-border);
   border-radius:16px;
   background: rgba(12,15,22,.68);
-  padding: .9rem 1rem .95rem;
+  padding: 1.05rem 1.1rem 1.05rem;
   box-shadow: 0 6px 24px rgba(0,0,0,.28);
 }
 
-/* tighter, calmer type inside cards */
-.card__head{ margin-bottom:.35rem; }
-.card__title{ margin:.05rem 0 .15rem; font-size: clamp(18px, 2.1vw, 20px); line-height:1.2; }
-.card__subtitle{ margin:0; color: var(--muted); font-size:.95rem; }
+.card__head{
+  margin-bottom:.55rem;
+  padding-right: 96px; /* reserve space for pill so it never overlaps */
+}
+.card__title{
+  margin:.05rem 0 .2rem;
+  font-size: clamp(18px, 2.1vw, 20px);
+  line-height:1.24;
+  font-weight:700;
+}
+.card__subtitle{
+  margin:0;
+  color: var(--muted);
+  font-size:.95rem;
+}
 
-.card__body{ max-width: 60ch; }
-.card__body p{ margin:.35rem 0; font-size:.95rem; }
-.card__outcome{ font-weight:600; }
+/* calm down body text & add rhythm */
+.card__body{ max-width: 62ch; }
+.card__body p{
+  margin:.42rem 0;
+  font-size:.945rem;
+  line-height:1.55;
+}
+.card__body strong{
+  font-weight:600; color:#d7e0e8;
+}
 
+/* visual break before Outcome */
+.card__outcome{
+  margin-top:.6rem;
+  padding-top:.6rem;
+  border-top: 1px solid rgba(255,255,255,.09);
+  font-weight:700;
+}
+
+/* chips under outcome */
 .chips{
-  list-style:none; padding:0; margin:.5rem 0 .1rem;
-  display:flex; gap:.45rem; flex-wrap:wrap;
+  list-style:none; padding:0; margin:.55rem 0 .1rem;
+  display:flex; gap:.42rem; flex-wrap:wrap;
 }
 .chips li{
-  font-size:.82rem; padding:.26rem .54rem; border-radius:999px;
+  font-size:.8rem;
+  padding:.24rem .5rem;
+  border-radius:999px;
   background: var(--chip);
   border:1px solid var(--chip-border);
 }
 
 .card__actions{
-  display:flex; gap:.55rem; flex-wrap:wrap; margin-top:.65rem;
+  display:flex; gap:.55rem; flex-wrap:wrap; margin-top:.7rem;
 }
 
-/* Category pills */
+/* Category pills — fixed overlap & sizing */
 .pill{
   position:absolute; top:.75rem; right:.75rem;
   font-size:.75rem; letter-spacing:.6px;
   padding:.18rem .52rem; border-radius:999px;
   border:1px solid rgba(255,255,255,.22);
   background: rgba(0,0,0,.35);
+  z-index: 1;
 }
 .pill--media{
   color:#1f1600;
