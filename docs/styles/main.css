@@ -48,7 +48,6 @@ img{ max-width:100%; height:auto; display:block; }
 .page-bg::after{
   content:"";
   position:absolute; inset:0;
-  /* vignette + bottom lift for readability */
   background:
     radial-gradient(120% 80% at 50% 10%, rgba(8,10,16,.0) 0%, rgba(8,10,16,.55) 55%, rgba(8,10,16,.82) 100%),
     linear-gradient( to bottom, rgba(8,10,16,.15), rgba(8,10,16,.65) 55%, rgba(8,10,16,.88) 100%);
@@ -117,7 +116,7 @@ img{ max-width:100%; height:auto; display:block; }
 .section__title{ margin:.2rem 0 .1rem; font-size: clamp(24px, 3.2vw, 36px); }
 .section__kicker{ margin:0; color: var(--muted); }
 
-/* ===== Cards grid (airier) ===== */
+/* ===== Cards grid (airier & responsive) ===== */
 .cards{
   padding: .4rem 0 2.6rem;
   display:grid;
@@ -125,7 +124,7 @@ img{ max-width:100%; height:auto; display:block; }
   gap: 1.25rem;
 }
 @media (min-width: 1200px){
-  .cards{ gap: 1.4rem; }
+  .cards{ gap: 1.6rem; } /* (5) a bit more breathing room on desktop */
 }
 
 /* ===== Card ===== */
@@ -154,12 +153,12 @@ img{ max-width:100%; height:auto; display:block; }
   font-size:.95rem;
 }
 
-/* calm down body text & add rhythm */
-.card__body{ max-width: 62ch; }
+/* (5) calmer, shorter line length & rhythm */
+.card__body{ max-width: 56ch; }
 .card__body p{
-  margin:.42rem 0;
+  margin:.48rem 0;
   font-size:.945rem;
-  line-height:1.55;
+  line-height:1.58;
 }
 .card__body strong{
   font-weight:600; color:#d7e0e8;
@@ -190,7 +189,7 @@ img{ max-width:100%; height:auto; display:block; }
   display:flex; gap:.55rem; flex-wrap:wrap; margin-top:.7rem;
 }
 
-/* Category pills — fixed overlap & sizing */
+/* Category pills */
 .pill{
   position:absolute; top:.75rem; right:.75rem;
   font-size:.75rem; letter-spacing:.6px;
