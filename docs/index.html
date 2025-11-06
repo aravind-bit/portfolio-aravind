@@ -7,6 +7,9 @@
   <meta name="description" content="Aravind Anisetti — pipelines → models → decisions. Live demos, code, and case studies." />
   <link rel="stylesheet" href="styles/main.css" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- (1) Analytics: Plausible pageviews -->
+  <script defer data-domain="aravind-bit.github.io" src="https://plausible.io/js/script.js"></script>
 </head>
 
 <body>
@@ -22,14 +25,39 @@
       </p>
 
       <nav class="hero__ctas" aria-label="Primary actions">
-        <a class="btn" href="#projects" aria-label="Skip to projects">See Projects</a>
-        <a class="btn" href="https://github.com/aravind-bit" target="_blank" rel="noopener" aria-label="Open GitHub profile">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/aravind-a-7534b6168/" target="_blank" rel="noopener" aria-label="Open LinkedIn profile">LinkedIn</a>
-        <a class="btn" href="assets/resume/aravind_resume.pdf" target="_blank" rel="noopener" aria-label="Open resume PDF">Resume</a>
-        <a class="btn" href="mailto:aravindanisetti@gmail.com?subject=Portfolio%20Inquiry%20—%20Data%20Engineer%2FData%20Scientist" aria-label="Email Aravind">Email</a>
-      </nav>
+        <a class="btn"
+           href="#projects"
+           aria-label="Skip to projects"
+           data-event="Hero Button"
+           data-project="See Projects">See Projects</a>
 
-      <!-- Featured projects ship live demos + 60-sec videos + 1-page case studies. -->
+        <a class="btn"
+           href="https://github.com/aravind-bit"
+           target="_blank" rel="noopener"
+           aria-label="Open GitHub profile"
+           data-event="Hero Button"
+           data-project="GitHub">GitHub</a>
+
+        <a class="btn"
+           href="https://www.linkedin.com/in/aravind-a-7534b6168/"
+           target="_blank" rel="noopener"
+           aria-label="Open LinkedIn profile"
+           data-event="Hero Button"
+           data-project="LinkedIn">LinkedIn</a>
+
+        <a class="btn"
+           href="assets/resume/aravind_resume.pdf"
+           target="_blank" rel="noopener"
+           aria-label="Open resume PDF"
+           data-event="Hero Button"
+           data-project="Resume">Resume</a>
+
+        <a class="btn"
+           href="mailto:anisetti.ar@gmail.com?subject=Portfolio%20Inquiry%20—%20Data%20Engineer%2FData%20Scientist"
+           aria-label="Email Aravind"
+           data-event="Hero Button"
+           data-project="Email">Email</a>
+      </nav>
     </div>
   </header>
 
@@ -41,8 +69,8 @@
     </div>
 
     <div class="container cards">
-      <!-- ==== FINANCE: CPI Explorer (put a working demo first) ==== -->
-      <article class="card">
+      <!-- ==== FINANCE: CPI Explorer ==== -->
+      <article class="card" data-type="finance">
         <div class="card__head">
           <span class="pill pill--finance">FINANCE</span>
           <h3 class="card__title">CPI Explorer</h3>
@@ -57,13 +85,22 @@
           </ul>
         </div>
         <div class="card__actions">
-          <a class="btn btn--accent" href="https://public.tableau.com/app/profile/aravind.anisetti/viz/InflationAnalysis-Virginia/InflationAnalysisVA" target="_blank" rel="noopener" aria-label="Open CPI Explorer live demo">Demo</a>
-          <a class="btn" href="https://github.com/aravind-bit/inflation-analysis-virginia" target="_blank" rel="noopener" aria-label="Open CPI Explorer source code">Code</a>
+          <a class="btn btn--accent"
+             href="https://public.tableau.com/app/profile/aravind.anisetti/viz/InflationAnalysis-Virginia/InflationAnalysisVA"
+             target="_blank" rel="noopener"
+             aria-label="Open CPI Explorer live demo"
+             data-event="Demo" data-project="CPI Explorer">Demo</a>
+
+          <a class="btn"
+             href="https://github.com/aravind-bit/inflation-analysis-virginia"
+             target="_blank" rel="noopener"
+             aria-label="Open CPI Explorer source code"
+             data-event="Repo" data-project="CPI Explorer">Code</a>
         </div>
       </article>
 
       <!-- ==== FINANCE: FinSense ==== -->
-      <article class="card">
+      <article class="card" data-type="finance">
         <div class="card__head">
           <span class="pill pill--finance">FINANCE</span>
           <h3 class="card__title">FinSense — Earnings Call Analyst</h3>
@@ -78,12 +115,16 @@
           </ul>
         </div>
         <div class="card__actions">
-          <a class="btn" href="https://github.com/aravind-bit/finsense-earnings-ai" target="_blank" rel="noopener" aria-label="Open FinSense source code">Code</a>
+          <a class="btn"
+             href="https://github.com/aravind-bit/finsense-earnings-ai"
+             target="_blank" rel="noopener"
+             aria-label="Open FinSense source code"
+             data-event="Repo" data-project="FinSense — Earnings Call Analyst">Code</a>
         </div>
       </article>
 
       <!-- ==== MEDIA: OnePlan AI ==== -->
-      <article class="card">
+      <article class="card" data-type="media">
         <div class="card__head">
           <span class="pill pill--media">MEDIA</span>
           <h3 class="card__title">OnePlan AI — Budget Optimizer</h3>
@@ -98,13 +139,22 @@
           </ul>
         </div>
         <div class="card__actions">
-          <a class="btn btn--accent" href="https://oneplan-ai-jjuugdhyklgrz6d8ptvjr3.streamlit.app/" target="_blank" rel="noopener" aria-label="Open OnePlan live demo">Demo</a>
-          <a class="btn" href="https://github.com/aravind-bit/oneplan-ai" target="_blank" rel="noopener" aria-label="Open OnePlan source code">Code</a>
+          <a class="btn btn--accent"
+             href="https://oneplan-ai-jjuugdhyklgrz6d8ptvjr3.streamlit.app/"
+             target="_blank" rel="noopener"
+             aria-label="Open OnePlan live demo"
+             data-event="Demo" data-project="OnePlan AI — Budget Optimizer">Demo</a>
+
+          <a class="btn"
+             href="https://github.com/aravind-bit/oneplan-ai"
+             target="_blank" rel="noopener"
+             aria-label="Open OnePlan source code"
+             data-event="Repo" data-project="OnePlan AI — Budget Optimizer">Code</a>
         </div>
       </article>
 
-      <!-- ==== FINANCE: Mid-Cap Tech KPI Tracker (links fixed) ==== -->
-      <article class="card">
+      <!-- ==== FINANCE: Mid-Cap Tech KPI Tracker ==== -->
+      <article class="card" data-type="finance">
         <div class="card__head">
           <span class="pill pill--finance">FINANCE</span>
           <h3 class="card__title">Mid-Cap Tech KPI Tracker</h3>
@@ -119,13 +169,22 @@
           </ul>
         </div>
         <div class="card__actions">
-          <a class="btn btn--accent" href="https://public.tableau.com/app/profile/aravind.anisetti/viz/Mid-CapRevenueAnalysis/Mid-CapTechKPITracker" target="_blank" rel="noopener" aria-label="Open Mid-Cap Tech KPI live demo">Demo</a>
-          <a class="btn" href="https://github.com/aravind-bit/tech-equity-dashboard" target="_blank" rel="noopener" aria-label="Open Mid-Cap Tech KPI source code">Code</a>
+          <a class="btn btn--accent"
+             href="https://public.tableau.com/app/profile/aravind.anisetti/viz/Mid-CapRevenueAnalysis/Mid-CapTechKPITracker"
+             target="_blank" rel="noopener"
+             aria-label="Open Mid-Cap Tech KPI live demo"
+             data-event="Demo" data-project="Mid-Cap Tech KPI Tracker">Demo</a>
+
+          <a class="btn"
+             href="https://github.com/aravind-bit/tech-equity-dashboard"
+             target="_blank" rel="noopener"
+             aria-label="Open Mid-Cap Tech KPI source code"
+             data-event="Repo" data-project="Mid-Cap Tech KPI Tracker">Code</a>
         </div>
       </article>
 
       <!-- ==== MEDIA: StreamShift ==== -->
-      <article class="card">
+      <article class="card" data-type="media">
         <div class="card__head">
           <span class="pill pill--media">MEDIA</span>
           <h3 class="card__title">StreamShift — Media Merger Analysis</h3>
@@ -140,8 +199,17 @@
           </ul>
         </div>
         <div class="card__actions">
-          <a class="btn btn--accent" href="https://streamshift-aiaptrnvxydq4ka23avbsz.streamlit.app/" target="_blank" rel="noopener" aria-label="Open StreamShift live demo">Demo</a>
-          <a class="btn" href="https://github.com/aravind-bit/streamshift" target="_blank" rel="noopener" aria-label="Open StreamShift source code">Code</a>
+          <a class="btn btn--accent"
+             href="https://streamshift-aiaptrnvxydq4ka23avbsz.streamlit.app/"
+             target="_blank" rel="noopener"
+             aria-label="Open StreamShift live demo"
+             data-event="Demo" data-project="StreamShift — Media Merger Analysis">Demo</a>
+
+          <a class="btn"
+             href="https://github.com/aravind-bit/streamshift"
+             target="_blank" rel="noopener"
+             aria-label="Open StreamShift source code"
+             data-event="Repo" data-project="StreamShift — Media Merger Analysis">Code</a>
         </div>
       </article>
     </div>
@@ -151,20 +219,40 @@
   <footer class="footer">
     <div class="container">
       <nav class="footer__links" aria-label="Footer links">
-        <a href="assets/resume/aravind_resume.pdf" target="_blank" rel="noopener">Resume</a>
-        <a href="mailto:aravindanisetti@gmail.com">Email</a>
-        <a href="https://github.com/aravind-bit" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/aravind-a-7534b6168/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="assets/resume/aravind_resume.pdf" target="_blank" rel="noopener"
+           data-event="Footer" data-project="Resume">Resume</a>
+        <a href="mailto:aravindanisetti@gmail.com"
+           data-event="Footer" data-project="Email">Email</a>
+        <a href="https://github.com/aravind-bit" target="_blank" rel="noopener"
+           data-event="Footer" data-project="GitHub">GitHub</a>
+        <a href="https://www.linkedin.com/in/aravind-a-7534b6168/" target="_blank" rel="noopener"
+           data-event="Footer" data-project="LinkedIn">LinkedIn</a>
       </nav>
       <p class="footer__copy">© <span id="yr"></span> Aravind Anisetti</p>
     </div>
   </footer>
 
+  <!-- Year + (3) Click analytics wiring for Plausible -->
   <script>
-    document.getElementById('yr').textContent = new Date().getFullYear();
-  </script>
+    // Year
+    (function(){ var y=document.getElementById('yr'); if(y){ y.textContent=new Date().getFullYear(); } })();
 
-  <!-- (4) Lightweight click analytics -->
-  <script defer data-domain="aravind-bit.github.io" src="https://plausible.io/js/script.js"></script>
+    // (2) Send custom click events to Plausible using data- attributes
+    (function(){
+      function send(evName, props){
+        if (typeof window.plausible === "function") {
+          window.plausible(evName, { props: props || {} });
+        }
+      }
+      // Track all anchors that declare data-event
+      document.querySelectorAll('a[data-event]').forEach(function(a){
+        a.addEventListener('click', function(){
+          var ev = a.getAttribute('data-event') || 'Click';
+          var pr = a.getAttribute('data-project') || 'Unknown';
+          send(ev, { project: pr });
+        }, { capture:true });
+      });
+    })();
+  </script>
 </body>
 </html>
