@@ -1,266 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aravind Anisetti — Portfolio</title>
-  <meta name="description" content="Aravind Anisetti — pipelines → models → decisions. Live demos, code, and case studies." />
-  <link rel="stylesheet" href="styles/main.css" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- (1) Analytics: Plausible pageviews -->
-  <script defer data-domain="aravind-bit.github.io" src="https://plausible.io/js/script.js"></script>
+  <meta charset="UTF-8" />
+  <title>Redirecting…</title>
+  <!-- Immediate redirect to the new portfolio -->
+  <meta http-equiv="refresh" content="0; url=https://aravind-bit.github.io/" />
+  <link rel="canonical" href="https://aravind-bit.github.io/" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    a { color: #38bdf8; }
+  </style>
 </head>
-
 <body>
-  <!-- Fixed responsive background -->
-  <div class="page-bg" aria-hidden="true"></div>
-
-  <!-- ===== HERO ===== -->
-  <header class="hero">
-    <div class="container glass hero__panel">
-      <h1 class="hero__title">Aravind Anisetti</h1>
-      <p class="hero__subtitle">
-        I build and own analytics products – from requirements and data pipelines to BI, AI agents, and stakeholder rollout. I sit between business and engineering to turn messy data into decisions.
-        <!--I build data-driven solutions that connect raw information to strategic insights. End-to-end data products—lean pipelines, visualizations and AI agents & automation that turn insight into action.-->
-      </p>
-
-      <nav class="hero__ctas" aria-label="Primary actions">
-        <a class="btn"
-           href="#projects"
-           aria-label="Skip to projects"
-           data-event="Hero Button"
-           data-project="See Projects">See Projects</a>
-
-        <a class="btn"
-           href="https://github.com/aravind-bit"
-           target="_blank" rel="noopener"
-           aria-label="Open GitHub profile"
-           data-event="Hero Button"
-           data-project="GitHub">GitHub</a>
-
-        <a class="btn"
-           href="https://www.linkedin.com/in/aravind-a-7534b6168/"
-           target="_blank" rel="noopener"
-           aria-label="Open LinkedIn profile"
-           data-event="Hero Button"
-           data-project="LinkedIn">LinkedIn</a>
-
-        <a class="btn"
-           href="assets/resume/aravind_resume.pdf"
-           target="_blank" rel="noopener"
-           aria-label="Open resume PDF"
-           data-event="Hero Button"
-           data-project="Resume">Resume</a>
-
-        <a class="btn"
-           href="mailto:anisetti.ar@gmail.com?subject=Portfolio%20Inquiry%20—%20Data%20Engineer%2FData%20Scientist"
-           aria-label="Email Aravind"
-           data-event="Hero Button"
-           data-project="Email">Email</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ===== PROJECTS ===== -->
-  <main id="projects" class="projects">
-    <div class="container section glass section--intro">
-      <h2 class="section__title">Projects</h2>
-      <p class="section__kicker">Selected analytics products shipped for finance & media – scoped with stakeholders, designed for decision-makers.</p>
-        <!--Selected builds in analytics, visualization, ML, and agentic systems.-->
-    </div>
-
-    <div class="container cards">
-          <!-- ==== FINANCE: FinSense ==== -->
-      <article class="card" data-type="finance">
-        <div class="card__head">
-          <span class="pill pill--finance">FINANCE</span>
-          <h3 class="card__title">FinSense — Earnings Intelligence Assistant</h3>
-          <p class="card__subtitle">Agentic LLM that ingests transcripts and returns traceable KPI snippets.</p>
-        </div>
-        <div class="card__body">
-          <p class="card__what"><strong>What:</strong> Ingests IR transcripts; surfaces KPI quotes, guidance shifts, and links.</p>
-          <p class="card__why"><strong>Why:</strong> Cuts PM/IR read time from hours to minutes with evidence preserved.</p>
-          <p class="card__outcome"><strong>Outcome:</strong> <strong>~70% faster read-through</strong> across 2–4 quarters; consistent quote-level traceability.</p>
-          <ul class="chips" aria-label="Tech stack">
-            <li>Python</li><li>LLM/RAG</li><li>Embeddings</li><li>Pandas</li><li>AWS</li>
-          </ul>
-        </div>
-        <div class="card__actions">
-          <a class="btn btn--accent"
-             href="https://finsense-earnings-ai-pukp5rnrs2ehkahbetjabq.streamlit.app/"
-             target="_blank" rel="noopener"
-             aria-label="FinSense live demo"
-             data-event="Demo" data-project="FinSense — Earnings Call Analyst">Demo</a>
-
-        <div class="card__actions">
-          <a class="btn"
-             href="https://github.com/aravind-bit/finsense-earnings-ai"
-             target="_blank" rel="noopener"
-             aria-label="Open FinSense source code"
-             data-event="Repo" data-project="FinSense — Earnings Call Analyst">Code</a>
-        </div>
-      </article>
-
-      <!-- ==== MEDIA: OnePlan AI ==== -->
-      <article class="card" data-type="media">
-        <div class="card__head">
-          <span class="pill pill--media">MEDIA</span>
-          <h3 class="card__title">OnePlan AI — Budget Optimizer</h3>
-          <p class="card__subtitle">Push-button cross-channel reallocation to maximize conversions or reach.</p>
-        </div>
-        <div class="card__body">
-          <p class="card__what"><strong>What:</strong> Scenario tool that recommends where the next dollar should go.</p>
-          <p class="card__why"><strong>Why:</strong> Replaces static planning with fast, explainable what-ifs for planners.</p>
-          <p class="card__outcome"><strong>Outcome:</strong> <strong>+8–10% conversions</strong> in simulation by shifting spend toward higher-ROI channels.</p>
-          <ul class="chips" aria-label="Tech stack">
-            <li>Python</li><li>Streamlit</li><li>Pandas</li><li>XGBoost</li><li>AWS</li>
-          </ul>
-        </div>
-        <div class="card__actions">
-          <a class="btn btn--accent"
-             href="https://oneplan-ai-jjuugdhyklgrz6d8ptvjr3.streamlit.app/"
-             target="_blank" rel="noopener"
-             aria-label="Open OnePlan live demo"
-             data-event="Demo" data-project="OnePlan AI — Budget Optimizer">Demo</a>
-
-          <a class="btn"
-             href="https://github.com/aravind-bit/oneplan-ai"
-             target="_blank" rel="noopener"
-             aria-label="Open OnePlan source code"
-             data-event="Repo" data-project="OnePlan AI — Budget Optimizer">Code</a>
-        </div>
-      </article>
-            <!-- ==== MEDIA: StreamShift ==== -->
-      <article class="card" data-type="media">
-        <div class="card__head">
-          <span class="pill pill--media">MEDIA</span>
-          <h3 class="card__title">StreamShift — Media Merger Analysis</h3>
-          <p class="card__subtitle">“Who streams what after a deal?” Auditable sandbox with explainable rules.</p>
-        </div>
-        <div class="card__body">
-          <p class="card__what"><strong>What:</strong> Title-level mapping with rules + embeddings to simulate post-merger availability.</p>
-          <p class="card__why"><strong>Why:</strong> Turns headlines + rights chatter into <em>auditable</em> scenarios with sources.</p>
-          <p class="card__outcome"><strong>Outcome:</strong> <strong>1-click rippleboard</strong> with per-title status and source links for every claim.</p>
-          <ul class="chips" aria-label="Tech stack">
-            <li>Streamlit</li><li>Pandas</li><li>Plotly</li><li>Embeddings</li><li>FAISS</li>
-          </ul>
-        </div>
-        <div class="card__actions">
-          <a class="btn btn--accent"
-             href="https://streamshift-aiaptrnvxydq4ka23avbsz.streamlit.app/"
-             target="_blank" rel="noopener"
-             aria-label="Open StreamShift live demo"
-             data-event="Demo" data-project="StreamShift — Media Merger Analysis">Demo</a>
-
-          <a class="btn"
-             href="https://github.com/aravind-bit/streamshift"
-             target="_blank" rel="noopener"
-             aria-label="Open StreamShift source code"
-             data-event="Repo" data-project="StreamShift — Media Merger Analysis">Code</a>
-        </div>
-      </article>
-      
-      <!-- ==== FINANCE: CPI Explorer ==== -->
-      <article class="card" data-type="finance">
-        <div class="card__head">
-          <span class="pill pill--finance">FINANCE</span>
-          <h3 class="card__title">CPI Explorer</h3>
-          <p class="card__subtitle">Decomposes inflation by category with rolling windows.</p>
-        </div>
-        <div class="card__body">
-          <p class="card__what"><strong>What:</strong> Category-level CPI explorer with saved analyst views.</p>
-          <p class="card__why"><strong>Why:</strong> Shows shelter’s weight and energy whipsaws without spreadsheet fog.</p>
-          <p class="card__outcome"><strong>Outcome:</strong> <strong>Faster category diagnostics</strong> for reports and updates.</p>
-          <ul class="chips" aria-label="Tech stack">
-            <li>Tableau</li><li>BLS API</li><li>Time-Series</li>
-          </ul>
-        </div>
-        <div class="card__actions">
-          <a class="btn btn--accent"
-             href="https://public.tableau.com/app/profile/aravind.anisetti/viz/InflationAnalysis-Virginia/InflationAnalysisVA"
-             target="_blank" rel="noopener"
-             aria-label="Open CPI Explorer live demo"
-             data-event="Demo" data-project="CPI Explorer">Demo</a>
-
-          <a class="btn"
-             href="https://github.com/aravind-bit/inflation-analysis-virginia"
-             target="_blank" rel="noopener"
-             aria-label="Open CPI Explorer source code"
-             data-event="Repo" data-project="CPI Explorer">Code</a>
-        </div>
-      </article>
-
-      <!-- ==== FINANCE: Mid-Cap Tech KPI Tracker ==== -->
-      <article class="card" data-type="finance">
-        <div class="card__head">
-          <span class="pill pill--finance">FINANCE</span>
-          <h3 class="card__title">Mid-Cap Tech KPI Tracker</h3>
-          <p class="card__subtitle">Benchmarks ~20 mid-cap tech firms across growth, margins, EPS, and R&amp;D.</p>
-        </div>
-        <div class="card__body">
-          <p class="card__what"><strong>What:</strong> Quarterly KPI dashboard with scripted refresh.</p>
-          <p class="card__why"><strong>Why:</strong> Surfaces <em>efficiency leaders</em> &amp; <em>volatility pockets</em> at a glance.</p>
-          <p class="card__outcome"><strong>Outcome:</strong> <strong>Exec view in one dashboard</strong>; quarterly refresh in &lt;5 minutes.</p>
-          <ul class="chips" aria-label="Tech stack">
-            <li>Python</li><li>Tableau</li><li>yFinance</li><li>AWS</li>
-          </ul>
-        </div>
-        <div class="card__actions">
-          <a class="btn btn--accent"
-             href="https://public.tableau.com/app/profile/aravind.anisetti/viz/Mid-CapRevenueAnalysis/Mid-CapTechKPITracker"
-             target="_blank" rel="noopener"
-             aria-label="Open Mid-Cap Tech KPI live demo"
-             data-event="Demo" data-project="Mid-Cap Tech KPI Tracker">Demo</a>
-
-          <a class="btn"
-             href="https://github.com/aravind-bit/tech-equity-dashboard"
-             target="_blank" rel="noopener"
-             aria-label="Open Mid-Cap Tech KPI source code"
-             data-event="Repo" data-project="Mid-Cap Tech KPI Tracker">Code</a>
-        </div>
-      </article>
-    </div>
-  </main>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="container">
-      <nav class="footer__links" aria-label="Footer links">
-        <a href="assets/resume/aravind_resume.pdf" target="_blank" rel="noopener"
-           data-event="Footer" data-project="Resume">Resume</a>
-        <a href="mailto:aravindanisetti@gmail.com"
-           data-event="Footer" data-project="Email">Email</a>
-        <a href="https://github.com/aravind-bit" target="_blank" rel="noopener"
-           data-event="Footer" data-project="GitHub">GitHub</a>
-        <a href="https://www.linkedin.com/in/aravind-a-7534b6168/" target="_blank" rel="noopener"
-           data-event="Footer" data-project="LinkedIn">LinkedIn</a>
-      </nav>
-      <p class="footer__copy">© <span id="yr"></span> Aravind Anisetti</p>
-    </div>
-  </footer>
-
-  <!-- Year + (3) Click analytics wiring for Plausible -->
-  <script>
-    // Year
-    (function(){ var y=document.getElementById('yr'); if(y){ y.textContent=new Date().getFullYear(); } })();
-
-    // (2) Send custom click events to Plausible using data- attributes
-    (function(){
-      function send(evName, props){
-        if (typeof window.plausible === "function") {
-          window.plausible(evName, { props: props || {} });
-        }
-      }
-      // Track all anchors that declare data-event
-      document.querySelectorAll('a[data-event]').forEach(function(a){
-        a.addEventListener('click', function(){
-          var ev = a.getAttribute('data-event') || 'Click';
-          var pr = a.getAttribute('data-project') || 'Unknown';
-          send(ev, { project: pr });
-        }, { capture:true });
-      });
-    })();
-  </script>
+  <div>
+    <h1>Moving to a new home…</h1>
+    <p>
+      This portfolio has moved to
+      <a href="https://aravind-bit.github.io/">https://aravind-bit.github.io/</a>.
+      If you’re not redirected automatically, click the link.
+    </p>
+  </div>
 </body>
 </html>
+
