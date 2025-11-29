@@ -3,3 +3,4 @@ dist/
 .cache/
 *.log
 assets/bg/originals/
+docs/index_backup.html
